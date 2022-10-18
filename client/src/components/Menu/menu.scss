@@ -1,0 +1,53 @@
+@import '../../global.scss';
+
+.menu {
+    width: 300px;
+    height: 100%;
+    background-color: $gunmetal;
+    // position: relative;
+    // left: -10rem;
+    margin-left: -15rem;
+    transition: all 0.5s ease;
+    border-right: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+
+    &:hover {
+        margin-left: 0;
+    }
+
+    h1 {
+        margin: 1rem 0;
+    }
+
+    .menuItem {
+        height: 3rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        transition: all 0.5s ease;
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $babyBlue;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+        
+        .menuIcon {
+            height: 2rem;
+            width: 2rem;
+            margin-left: 1rem;
+            margin-right: 0.5rem;
+        }
+    }
+}

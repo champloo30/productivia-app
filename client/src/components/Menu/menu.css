@@ -1,0 +1,45 @@
+.menu {
+  width: 300px;
+  height: 100%;
+  background-color: #242F40;
+  margin-left: -15rem;
+  transition: all 0.5s ease;
+  border-right: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+}
+.menu:hover {
+  margin-left: 0;
+}
+.menu h1 {
+  margin: 1rem 0;
+}
+.menu .menuItem {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+  color: white;
+  text-decoration: none;
+}
+.menu .menuItem:hover {
+  background-color: #A4BEF3;
+}
+.menu .menuItem p {
+  font-size: 1.25rem;
+}
+.menu .menuItem .menuIcon {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+/*# sourceMappingURL=menu.css.map */
