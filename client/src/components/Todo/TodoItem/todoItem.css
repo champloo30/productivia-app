@@ -1,0 +1,62 @@
+.todo-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-right: 2px solid #A4BEF3;
+  border-bottom: 2px solid #A4BEF3;
+  margin-bottom: 1rem;
+}
+.todo-item .cb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo-item .cb input[type=checkbox] {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.todo-item .cb .todo-label {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.todo-item .btn-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.todo-item .btn-group .todo-btn {
+  height: 2.5rem;
+  width: 5rem;
+  margin: 0 0.25rem 0.5rem;
+  background-color: #242F40;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.todo-item .btn-group .edit {
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+  transition: all 0.5s ease;
+}
+.todo-item .btn-group .edit:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.todo-item .btn-group .delete {
+  border: 2px solid #B80F0A;
+  color: #B80F0A;
+  transition: all 0.5s ease;
+  margin-right: 1rem;
+}
+.todo-item .btn-group .delete:hover {
+  background-color: #B80F0A;
+  color: #242F40;
+}
+
+/*# sourceMappingURL=todoItem.css.map */

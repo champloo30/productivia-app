@@ -1,0 +1,23 @@
+.btn {
+  height: 2.5rem;
+  width: 12.5rem;
+  margin-right: 1rem;
+  border: none;
+  background-color: #242F40;
+  color: #A4BEF3;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+}
+.btn:hover {
+  border-bottom: 2px solid #A4BEF3;
+  border-left: 2px solid #A4BEF3;
+}
+
+.btn[aria-pressed=true] {
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  color: white;
+}
+
+/*# sourceMappingURL=filterButton.css.map */

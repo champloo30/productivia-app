@@ -10,7 +10,7 @@ export default function Menu() {
     <div className='menu'>
       <h1>Menu</h1>
       <Link to='/' className="menuItem">
-        <p>Todo</p>
+        <p>Todo List</p>
         <img className='menuIcon' src={task} alt="Todo" />
       </Link>
       <Link to='/notes' className="menuItem">

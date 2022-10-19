@@ -1,7 +1,10 @@
+@import './global.scss';
+
 .app {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
   width: 100%;
+  background-color: $gunmetal;
 }

@@ -1,72 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './todo.scss'
+import TodoItem from './TodoItem/TodoItem'
+import Form from './Form/Form'
+import FilterButton from './FilterButton/FilterButton'
+import { nanoid } from 'nanoid'
 
-export default function Todo() {
+export default function Todo(props) {
+  const [tasks, setTasks] = useState(props.tasks)
+
   const today = new Date()
   // const options = {weekday: 'long', month: 'long', day: 'numeric', year: 'numberic'}
+
+  function toggleTaskCompleted(id) {
+    const updatedTasks = tasks.map((task) => {
+      if (id === task.id) {
+        return {...task, completed: !task.completed}
+      }
+      return task
+    })
+    setTasks(updatedTasks)
+  }
+
+  const taskList = tasks.map((task) => (
+    <TodoItem 
+      id={task.id} 
+      name={task.name} 
+      completed={task.completed} 
+      key={task.id}
+      toggleTaskCompleted={toggleTaskCompleted}
+    />
+  ))
+
+  function addTask(name) {
+    const newTask = { id: `todo-${nanoid()}`, name, completed: false }
+    setTasks([...tasks, newTask])
+  }
+
+  const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task'
+  const headingText = `${taskList.length} ${tasksNoun} remaining`
 
   return (
     <div className='todo'>
       <div className="todo-container">
         <h1>To-Do List</h1>
         <h2>{today.toDateString()}</h2>
-        <form className='create-todo' action="">
-          <input className='todo-input' type="text" name="todo" id="new-todo" placeholder='What are we doing today?' required />
-          <button className='submit'>+</button>
-        </form>
-        <div className="filters">
-          <button className='btn' aria-pressed='true'>
-            <span>Show all tasks</span>
-          </button>
-          <button className="btn" aria-pressed='false'>
-            <span>Show active tasks</span>
-          </button>
-          <button className="btn" aria-pressed='false'>
-            <span>Show completed tasks</span>
-          </button>
+        <Form addTask={addTask} />
+        <div className="filter-buttons">
+          <FilterButton id='all' active='true' />
+          <FilterButton id='active' active='false' />
+          <FilterButton id='complete' active='false' />
         </div>
-        <h2 id='list-heading'>4 Tasks Remaining</h2>
+        <h2 id='list-heading'>{headingText}</h2>
         <ul className='todo-list' aria-labelledby='list-heading'>
-          <li className="todo-item">
-            <div className='cb'>
-              <input type="checkbox" id="todo-0" />
-              <label className='todo-label' htmlFor="todo-0">Eat</label>
-            </div>
-            <div className="btn-group">
-              <button className="todo-btn edit" type='button'>Edit</button>
-              <button className="todo-btn delete" type='button'>Delete</button>
-            </div>
-          </li>
-          <li className="todo-item">
-            <div className='cb'>
-              <input type="checkbox" id="todo-1" />
-              <label className='todo-label' htmlFor="todo-1">Code</label>
-            </div>
-            <div className="btn-group">
-              <button className="todo-btn edit" type='button'>Edit</button>
-              <button className="todo-btn delete" type='button'>Delete</button>
-            </div>
-          </li>
-          <li className="todo-item">
-            <div className='cb'>
-              <input type="checkbox" id="todo-2" />
-              <label className='todo-label' htmlFor="todo-2">Sleep</label>
-            </div>
-            <div className="btn-group">
-              <button className="todo-btn edit" type='button'>Edit</button>
-              <button className="todo-btn delete" type='button'>Delete</button>
-            </div>
-          </li>
-          <li className="todo-item">
-            <div className='cb'>
-              <input type="checkbox" id="todo-3" />
-              <label className='todo-label' htmlFor="todo-3">Repeat</label>
-            </div>
-            <div className="btn-group">
-              <button className="todo-btn edit" type='button'>Edit</button>
-              <button className="todo-btn delete" type='button'>Delete</button>
-            </div>
-          </li>
+          {taskList}
         </ul>
       </div>
     </div>

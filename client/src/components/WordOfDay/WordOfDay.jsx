@@ -1,5 +1,5 @@
 import React from 'react'
-import './wordofday.scss'
+import './wordOfDay.scss'
 
 export default function WordOfDay() {
   return (

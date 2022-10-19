@@ -1,0 +1,24 @@
+@import '../../../global.scss';
+
+.btn {
+    height: 2.5rem;
+    width: 12.5rem;
+    margin-right: 1rem;
+    border: none;
+    background-color: $gunmetal;
+    color: $babyBlue;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+
+    &:hover {
+        border-bottom: 2px solid $babyBlue;
+        border-left: 2px solid $babyBlue;
+    }
+}
+
+.btn[aria-pressed='true'] {
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    color: white;
+}
