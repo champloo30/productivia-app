@@ -11,6 +11,11 @@ export default function Todo(props) {
   const today = new Date()
   // const options = {weekday: 'long', month: 'long', day: 'numeric', year: 'numberic'}
 
+  function deleteTask(id) {
+    const remainingTasks = tasks.filter((task) => id !== task.id)
+    setTasks(remainingTasks)
+  }
+
   function toggleTaskCompleted(id) {
     const updatedTasks = tasks.map((task) => {
       if (id === task.id) {
@@ -28,6 +33,7 @@ export default function Todo(props) {
       completed={task.completed} 
       key={task.id}
       toggleTaskCompleted={toggleTaskCompleted}
+      deleteTask={deleteTask}
     />
   ))
 
@@ -37,7 +43,9 @@ export default function Todo(props) {
   }
 
   const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task'
-  const headingText = `${taskList.length} ${tasksNoun} remaining`
+  const headingTextWithTasks = `${taskList.length} ${tasksNoun} remaining`
+  const headingTextWithoutTasks = "Let's add a task!"
+  const headingText = taskList.length >= 1 ? headingTextWithTasks : headingTextWithoutTasks
 
   return (
     <div className='todo'>
