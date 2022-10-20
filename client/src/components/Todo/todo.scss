@@ -18,12 +18,13 @@
         justify-content: space-evenly;
 
         h1 {
-            font-size: 3rem;
-        }
+            font-size: 2.5rem;
+            margin-top: 2rem;
 
-        h2 {
-            font-size: 1.75rem;
-            font-weight: 400;
+            span {
+                font-size: 2rem;
+                font-weight: 300;
+            }
         }
 
         .filter-buttons {
@@ -31,10 +32,13 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
+            margin-top: 2rem;
         }
 
         #list-heading {
             font-size: 1.75rem;
+            margin-top: 3rem;
+            font-weight: 400;
         }
 
         .todo-list {
@@ -44,6 +48,7 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
+            margin-top: 2rem;
         }
     }
 }
