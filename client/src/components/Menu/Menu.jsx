@@ -4,6 +4,7 @@ import './menu.scss'
 import task from '../../assets/tasks-svgrepo-com.svg'
 import notes from '../../assets/notes-svgrepo-com.svg'
 import speech from '../../assets/speech-bubble-svgrepo-com.svg'
+import timer from '../../assets/timer-svgrepo-com.svg'
 
 export default function Menu() {
   return (
@@ -17,7 +18,11 @@ export default function Menu() {
         <p>Notes</p>
         <img className='menuIcon' src={notes} alt="Todo" />
       </Link>
-      <Link to='/wordoftheday' className="menuItem">
+      <Link to='/pomodoro-timer' className="menuItem">
+        <p>Pomodoro Timer</p>
+        <img className='menuIcon' src={timer} alt="Todo" />
+      </Link>
+      <Link to='/word-of-the-day' className="menuItem">
         <p>Word of the Day</p>
         <img className='menuIcon' src={speech} alt="Todo" />
       </Link>
