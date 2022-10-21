@@ -14,17 +14,21 @@ const FILTER_MAP = {
 const FILTER_NAMES = Object.keys(FILTER_MAP)
 
 export default function Todo(props) {
-  const [tasks, setTasks] = useState(props.tasks)
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem('new-task')
+    if (savedTasks) {
+      return JSON.parse(savedTasks)
+    } else {
+      return props.tasks
+    }
+  })
   const [filter, setFilter] = useState('All')
 
-  const today = new Date()
+  useEffect(() => {
+    localStorage.setItem('new-task', JSON.stringify(tasks))
+  }, [tasks])
 
-  function getLocalTask() {
-    const localTasks = JSON.parse(localStorage.getItem('new-task'))
-    window.addEventListener('load', () => {
-      setTasks(localTasks)
-    })
-  }
+  const today = new Date()
 
   function editTask(id, newName) {
     const editedTaskList = tasks.map((task) => {
@@ -62,7 +66,6 @@ export default function Todo(props) {
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask={deleteTask}
       editTask={editTask}
-      getLocalTask={getLocalTask}
     />
   ))
 
@@ -78,7 +81,6 @@ export default function Todo(props) {
   function addTask(name) {
     const newTask = { id: `todo-${nanoid()}`, name, completed: false }
     setTasks([...tasks, newTask])
-    localStorage.setItem('new-task', JSON.stringify(tasks))
   }
 
   const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task'

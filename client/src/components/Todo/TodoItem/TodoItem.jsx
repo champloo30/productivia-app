@@ -58,13 +58,13 @@ export default function TodoItem(props) {
         <label className='todo-label' htmlFor={props.id}>{props.name}</label>
       </div>
       <div className="btn-group">
-        <button 
+        {props.completed === true ? null : <button 
           className="todo-btn edit" 
           type='button' 
           onClick={() => setEditing(true)}
         >
           Edit
-        </button>
+        </button>}
         <button 
           className="todo-btn delete" 
           type='button' 
