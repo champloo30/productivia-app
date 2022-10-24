@@ -15,7 +15,7 @@ export default function Form(props) {
   }
 
   return (
-    <form className='create-todo' onSubmit={handleSubmit} action="">
+    <form className='create-todo' onSubmit={handleSubmit}>
         <input 
           className='todo-input' 
           type="text" 

@@ -30,6 +30,9 @@
   font-size: 2rem;
   font-weight: 300;
 }
+.todo-item .viewing .cb .checked {
+  text-decoration: line-through;
+}
 .todo-item .viewing .btn-group {
   display: flex;
   align-items: center;

@@ -55,7 +55,9 @@ export default function TodoItem(props) {
           defaultChecked={props.completed} 
           onChange={() => props.toggleTaskCompleted(props.id)}
         />
-        <label className='todo-label' htmlFor={props.id}>{props.name}</label>
+        <label className='todo-label' htmlFor={props.id}>
+          {props.name}
+        </label>
       </div>
       <div className="btn-group">
         {props.completed === true ? null : <button 

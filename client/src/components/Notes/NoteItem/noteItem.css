@@ -1,0 +1,29 @@
+.note-item {
+  height: 8rem;
+  width: 13rem;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.note-item:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.note-item h1 {
+  font-size: 1.5rem;
+}
+.note-item p {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=noteItem.css.map */

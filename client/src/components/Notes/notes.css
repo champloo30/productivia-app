@@ -1,8 +1,62 @@
 .notes {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #242F40;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notes .notes-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.notes .notes-container .btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notes .notes-container .bottom-section {
+  height: 60%;
+  width: 100%;
+  border-top: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.notes .notes-container .bottom-section .add-form {
+  height: 3.5rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-top: 1rem;
+  background-color: #242F40;
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.notes .notes-container .bottom-section .add-form:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.notes .notes-container .bottom-section .add-form span {
+  font-size: 2rem;
+}
+.notes .notes-container .bottom-section .note-list {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=notes.css.map */

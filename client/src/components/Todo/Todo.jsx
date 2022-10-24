@@ -14,6 +14,7 @@ const FILTER_MAP = {
 const FILTER_NAMES = Object.keys(FILTER_MAP)
 
 export default function Todo(props) {
+  
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem('new-task')
     if (savedTasks) {
@@ -91,7 +92,7 @@ export default function Todo(props) {
   return (
     <div className='todo'>
       <div className="todo-container">
-        <h1>To-Do List: <span>{today.toDateString()}</span></h1>
+        <h1>My Tasks: <span>{today.toDateString()}</span></h1>
         <Form addTask={addTask} />
         <div className="filter-buttons">
           {filterList}

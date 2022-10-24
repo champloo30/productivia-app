@@ -1,22 +1,27 @@
 .btn {
-  height: 2rem;
-  width: 12.5rem;
-  margin-right: 1rem;
-  border: none;
+  height: 3rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #242F40;
+  border: none;
   color: #A4BEF3;
-  font-size: 1rem;
+  margin-right: 1rem;
   cursor: pointer;
-  transition: all 0.15s ease-out;
 }
 .btn:hover {
-  border-bottom: 2px solid #A4BEF3;
   border-left: 2px solid #A4BEF3;
+  border-bottom: 2px solid #A4BEF3;
+  color: #A4BEF3;
+}
+.btn span {
+  font-size: 1rem;
 }
 
 .btn[aria-pressed=true] {
-  border-bottom: 2px solid white;
   border-left: 2px solid white;
+  border-bottom: 2px solid white;
   color: white;
 }
 

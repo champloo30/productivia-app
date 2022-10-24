@@ -5,17 +5,22 @@ import task from '../../assets/tasks-svgrepo-com.svg'
 import notes from '../../assets/notes-svgrepo-com.svg'
 import speech from '../../assets/speech-bubble-svgrepo-com.svg'
 import timer from '../../assets/timer-svgrepo-com.svg'
+import home from '../../assets/home-svgrepo-com.svg'
 
 export default function Menu() {
   return (
     <div className='menu'>
       <h1>Menu</h1>
       <Link to='/' className="menuItem">
-        <p>Todo List</p>
+        <p>Home</p>
+        <img className='menuIcon' src={home} alt="Todo" />
+      </Link>
+      <Link to='/todo-list' className="menuItem">
+        <p>My Tasks</p>
         <img className='menuIcon' src={task} alt="Todo" />
       </Link>
       <Link to='/notes' className="menuItem">
-        <p>Notes</p>
+        <p>My Notes</p>
         <img className='menuIcon' src={notes} alt="Todo" />
       </Link>
       <Link to='/pomodoro-timer' className="menuItem">
