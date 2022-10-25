@@ -9,12 +9,7 @@ import WOD from './components/WordOfDay/WordOfDay'
 
 function App() {
   const TASK_DATA = []
-  const NOTE_DATA = [
-    { id: 'note-1', category: 'Notes', title: 'Note One', content: 'lorem ipsum asvdn vasvas dvadsv paojva'},
-    { id: 'note-2', category: 'Notes', title: 'Note Two', content: 'lorem ipsum asvdn vasvas dvadsv dasdgvar'},
-    { id: 'note-3', category: 'Notes', title: 'Note Three', content: 'lorem ipsum asvdn vasvas dvadsv btsr'},
-    { id: 'journal-1', category: 'Journal', title: 'Journal One', content: 'lorem ipsum asvdn vasvas dvadsv btsr'}
-  ]
+  const NOTE_DATA = []
 
   return (
     <div className="app">

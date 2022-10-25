@@ -1,0 +1,51 @@
+.note-modal {
+  height: 7rem;
+  width: 7rem;
+  position: absolute;
+  z-index: 4;
+  margin-left: 12.5rem;
+  margin-bottom: 2rem;
+  background-color: #242F40;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.note-modal .note-modal-container {
+  height: 100%;
+  width: 95%;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.note-modal .note-modal-container .note-btn {
+  height: 2.5rem;
+  width: 5rem;
+  border-radius: 50px;
+  background-color: #242F40;
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.note-modal .note-modal-container .edit {
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+}
+.note-modal .note-modal-container .edit:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.note-modal .note-modal-container .delete {
+  border: 2px solid #B80F0A;
+  color: #B80F0A;
+}
+.note-modal .note-modal-container .delete:hover {
+  background-color: #B80F0A;
+  color: #242F40;
+}
+
+/*# sourceMappingURL=noteModal.css.map */

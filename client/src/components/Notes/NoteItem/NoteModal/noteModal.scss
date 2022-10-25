@@ -1,0 +1,57 @@
+@import '../../../../global.scss';
+
+.note-modal {
+    height: 7rem;
+    width: 7rem;
+    position: absolute;
+    z-index: 4;
+    margin-left: 12.5rem;
+    margin-bottom: 2rem;
+    background-color: $gunmetal;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .note-modal-container {
+        height: 100%;
+        width: 95%;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .note-btn {
+            height: 2.5rem;
+            width: 5rem;
+            border-radius: 50px;
+            background-color: $gunmetal;
+            font-size: 1rem;
+            margin-right: 1rem;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+    
+        .edit {
+            border: 2px solid $babyBlue;
+            color: $babyBlue;
+    
+            &:hover {
+                background-color: $babyBlue;
+                color: $gunmetal;
+            }
+        }
+    
+        .delete {
+            border: 2px solid $crimson;
+            color: $crimson;
+    
+            &:hover {
+                background-color: $crimson;
+                color: $gunmetal;
+            }
+        }
+    }
+}

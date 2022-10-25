@@ -2,6 +2,7 @@
 
 .form-modal {
     position: absolute;
+    z-index: 5;
     height: 35rem;
     width: 60rem;
     background-color: $gunmetal;

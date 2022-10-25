@@ -4,6 +4,7 @@ import './formModal.scss'
 export default function Form(props) {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
+  const [category, setCategory] = useState(props.category)
 
   function handleTitleChange(e) {
     setTitle(e.target.value)
@@ -13,16 +14,32 @@ export default function Form(props) {
     setContent(e.target.value)
   }
 
-  function handleSubmit(e) {}
+  function handleSubmit(e) {
+    e.preventDefault()
+    category === 'Notes' ? props.addNotes(title, content) : props.addJournal(title, content)
+    setTitle('')
+    setContent('')
+    props.onClose()
+  }
 
   if (!props.show) {
     return null
   }
 
   return (
-    <form className='form-modal' onClick={e => e.stopPropagation()}>
+    <form className='form-modal' onSubmit={handleSubmit}>
       <div className="form-container">
         <h1>New Note</h1>
+        <div className="radios">
+          <div className="radioset">
+            <input type="radio" name="note-journal" id="note" value={category} onClick={() => setCategory('Notes')} />
+            <label htmlFor="note">Note</label>
+          </div>
+          <div className="radioset">
+            <input type="radio" name="note-journal" id="journal" value={category} onClick={() => setCategory('Journal')} />
+            <label htmlFor="journal">Journal</label>
+          </div>
+        </div>
         <div className="fieldset">
           <input 
             type="text" 
