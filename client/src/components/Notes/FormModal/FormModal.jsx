@@ -33,11 +33,11 @@ export default function Form(props) {
         <div className="radios">
           <div className="radioset">
             <input type="radio" name="note-journal" id="note" value={category} onClick={() => setCategory('Notes')} />
-            <label htmlFor="note">Note</label>
+            <label className='radio-label' htmlFor="note">Note</label>
           </div>
           <div className="radioset">
             <input type="radio" name="note-journal" id="journal" value={category} onClick={() => setCategory('Journal')} />
-            <label htmlFor="journal">Journal</label>
+            <label className='radio-label' htmlFor="journal">Journal</label>
           </div>
         </div>
         <div className="fieldset">

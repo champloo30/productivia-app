@@ -28,11 +28,11 @@ export default function Notes(props) {
     localStorage.setItem('new-item', JSON.stringify(notes))
   }, [notes])
 
-  // function deleteItem(id) {
-  //   // const remainingItems = notes.filter((note) => id !== note.id)
-  //   // setNotes(remainingItems)
-  //   console.log(props.id);
-  // }
+  function deleteItem(id) {
+    const remainingItems = notes.filter((note) => id !== note.id)
+    setNotes(remainingItems)
+    console.log(props.id);
+  }
 
   const noteList = notes
   .filter(FILTER_MAP[filter])
@@ -43,8 +43,7 @@ export default function Notes(props) {
       title={note.title} 
       content={note.content} 
       key={note.id}
-      notes={notes}
-      setNotes={setNotes}
+      deleteItem={deleteItem}
     />
   ))
 

@@ -1,7 +1,7 @@
 @import '../../../global.scss';
 
 .todo-item {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -16,11 +16,15 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 0.5rem;
+        flex-wrap: wrap;
 
         .cb {
+            width: 60%;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            margin-top: -0.5rem;
     
             input[type='checkbox'] {
                 height: 2rem;
@@ -28,10 +32,21 @@
                 margin: 0 1rem;
                 cursor: pointer;
             }
-    
-            .todo-label {
+
+            .todo-label[data-title] {
+                width: 100%;
+                position: relative;
                 font-size: 2rem;
                 font-weight: 300;
+
+                &:hover::before {
+                    height: 3rem;
+                    width: 35rem;
+                    content: attr(data-title);
+                    position: absolute;
+                    background-color: $gunmetal;
+                    cursor: pointer;
+                }
             }
 
             .checked {

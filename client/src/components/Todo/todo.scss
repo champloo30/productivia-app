@@ -2,12 +2,13 @@
 
 .todo {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: $gunmetal;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     .todo-container {
         height: 100%;
@@ -46,8 +47,10 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            overflow: hidden;
             margin-top: 2rem;
         }
     }

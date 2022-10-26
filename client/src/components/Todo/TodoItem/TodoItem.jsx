@@ -46,6 +46,15 @@ export default function TodoItem(props) {
     </form>
   )
 
+  function truncate() {
+    if (props.name.length > 15) {
+      return props.name.substring(0, 15) + '...'
+    }
+    return props.name
+  }
+
+  
+
   const viewingTemplate = (
     <div className='viewing'>
       <div className='cb'>
@@ -55,8 +64,8 @@ export default function TodoItem(props) {
           defaultChecked={props.completed} 
           onChange={() => props.toggleTaskCompleted(props.id)}
         />
-        <label className='todo-label' htmlFor={props.id}>
-          {props.name}
+        <label data-title={props.name} id='todo-label' className='todo-label' htmlFor={props.id}>
+          {truncate()}
         </label>
       </div>
       <div className="btn-group">

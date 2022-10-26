@@ -2,21 +2,12 @@ import React, { useState } from 'react'
 import './noteItem.scss'
 import NoteModal from './NoteModal/NoteModal'
 
-export default function NoteItem(props) {
+export default function NoteItem(props, {deleteItem}) {
   const [showMenu, setShowMenu] = useState(false)
-  const [notes, setNotes] = useState(props.notes)
+  // const [notes, setNotes] = useState(props.notes)
 
   function onOpen() {
     setShowMenu(!showMenu)
-  }
-
-  function deleteItem(id) {
-    const noteItems = notes.indexOf(id)
-    if (noteItems > -1) {
-      notes.splice(noteItems, 1)
-    }
-    setNotes(noteItems)
-    console.log(props.id);
   }
 
   return (
