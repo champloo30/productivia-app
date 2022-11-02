@@ -3,10 +3,10 @@ import './formModal.scss'
 
 export default function Form(props) {
   const [title, setTitle] = useState('')
-  const [newTitle, setNewTitle] = useState(title)
+  const [newTitle, setNewTitle] = useState('')
   const [content, setContent] = useState('')
-  const [newContent, setNewContent] = useState(content)
-  const [category, setCategory] = useState(props.category)
+  const [newContent, setNewContent] = useState('')
+  const [category, setCategory] = useState('')
 
   function handleTitleChange(e) {
     setTitle(e.target.value)
@@ -14,6 +14,14 @@ export default function Form(props) {
 
   function handleContentChange(e) {
     setContent(e.target.value)
+  }
+
+  function handleNewTitleChange(e) {
+    setNewTitle(e.target.value)
+  }
+
+  function handleNewContentChange(e) {
+    setNewContent(e.target.value)
   }
 
   function handleFormSubmit(e) {
@@ -26,10 +34,19 @@ export default function Form(props) {
 
   function handleEditSubmit(e) {
     e.preventDefault()
+    props.editNote(props.id, newTitle, newContent)
     setNewTitle('')
     setNewContent('')
     props.onClose()
-    props.setEditing(false)
+    props.setNoteEditing(false)
+    console.log(props.id);
+    console.log(newTitle);
+    console.log(newContent);
+  }
+
+  function onEditClose() {
+    props.setNoteEditing(false)
+    props.onClose()
   }
 
   if (!props.show) {
@@ -37,72 +54,78 @@ export default function Form(props) {
   }
 
   const editingTemplate = (
-    <div className="form-container">
-      <h1>Update {props.category}</h1>
-      <div className="fieldset">
-        <input 
-          type="text" 
-          name="title" 
-          value={newTitle} 
-          placeholder={newTitle} 
-          onChange={handleTitleChange} 
-        />
-        <textarea 
-          name="content" 
-          value={newContent} 
-          id="textarea" 
-          placeholder={newContent} 
-          required 
-          onChange={handleContentChange}
-        ></textarea>
+    <form className='form-modal' onSubmit={handleEditSubmit}>
+      <div className="form-container">
+        <h1>Update {category === 'Notes' ? 'Note' : 'Journal'}</h1>
+        <div className="fieldset">
+          <input 
+            id={props.id}
+            type="text" 
+            name="title" 
+            value={newTitle} 
+            placeholder={`${title}`} 
+            onChange={handleNewTitleChange} 
+          />
+          <textarea 
+            name="content" 
+            value={newContent} 
+            id="textarea" 
+            placeholder={content} 
+            required 
+            onChange={handleNewContentChange}
+          ></textarea>
+        </div>
+        <div className="bottom-btn-group">
+          <button className='note-btn close' type='button' onClick={onEditClose}>Close</button>
+          <button className='note-btn save' type='submit'>Save</button>
+        </div>
       </div>
-      <div className="bottom-btn-group">
-        <button className='note-btn close' type='button' onClick={props.onClose}>Close</button>
-        <button className='note-btn save' type='submit'>Save</button>
-      </div>
-    </div>
+    </form>
   )
 
   const formTemplate = (
-    <div className="form-container">
-      <h1>New Note</h1>
-      <div className="radios">
-        <div className="radioset">
-          <input type="radio" name="note-journal" id="note" value={category} onClick={() => setCategory('Notes')} />
-          <label className='radio-label' htmlFor="note">Note</label>
+    <form className='form-modal' onSubmit={handleFormSubmit}>
+      <div className="form-container">
+        <h1>New Note</h1>
+        <div className="radios">
+          <div className="radioset">
+            <input type="radio" name="note-journal" id="note" value={category} onClick={() => setCategory('Notes')} />
+            <label className='radio-label' htmlFor="note">Note</label>
+          </div>
+          <div className="radioset">
+            <input type="radio" name="note-journal" id="journal" value={category} onClick={() => setCategory('Journal')} />
+            <label className='radio-label' htmlFor="journal">Journal</label>
+          </div>
         </div>
-        <div className="radioset">
-          <input type="radio" name="note-journal" id="journal" value={category} onClick={() => setCategory('Journal')} />
-          <label className='radio-label' htmlFor="journal">Journal</label>
+        <div className="fieldset">
+          <input 
+            id={props.id}
+            type="text" 
+            name="title" 
+            value={title} 
+            placeholder='Title' 
+            onChange={handleTitleChange} 
+          />
+          <textarea 
+            name="content" 
+            value={content} 
+            id="textarea" 
+            placeholder='Type your content here' 
+            required 
+            onChange={handleContentChange}
+          ></textarea>
+        </div>
+        <div className="bottom-btn-group">
+          <button className='note-btn close' type='button' onClick={props.onClose}>Close</button>
+          <button className='note-btn save' type='submit'>Save</button>
         </div>
       </div>
-      <div className="fieldset">
-        <input 
-          type="text" 
-          name="title" 
-          value={title} 
-          placeholder='Title' 
-          onChange={handleTitleChange} 
-        />
-        <textarea 
-          name="content" 
-          value={content} 
-          id="textarea" 
-          placeholder='Type your content here' 
-          required 
-          onChange={handleContentChange}
-        ></textarea>
-      </div>
-      <div className="bottom-btn-group">
-        <button className='note-btn close' type='button' onClick={props.onClose}>Close</button>
-        <button className='note-btn save' type='submit'>Save</button>
-      </div>
-    </div>
+    </form>
   )
 
   return (
-    <form className='form-modal' onSubmit={props.isEditing === true ? handleEditSubmit() : handleFormSubmit()}>
-      {props.isEditing === true ? editingTemplate : formTemplate}
-    </form>
+    <>
+      {props.isNoteEditing === true ? editingTemplate : formTemplate}
+    </>
   )
 }

@@ -38,6 +38,7 @@ export default function Todo(props) {
       }
       return task
     })
+    console.log(id, newName);
     setTasks(editedTaskList)
   }
 

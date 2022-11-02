@@ -6,10 +6,15 @@ export default function NoteModal(props) {
     return null
   }
 
+  function edit() {
+    props.setShow(true)
+    props.setNoteEditing(true)
+  }
+
   return (
     <div className='note-modal'>
       <div className="note-modal-container">
-        <button type='button' className='note-btn edit' onClick={() => {props.setShow === true && props.setEditing(true)}}>Edit</button>
+        <button type='button' className='note-btn edit' onClick={() => edit()}>Edit</button>
         <button type='button'className='note-btn delete' onClick={() => props.deleteItem(props.id)}>Delete</button>
       </div>
     </div>

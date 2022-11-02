@@ -51,7 +51,7 @@
   align-items: flex-start;
   justify-content: center;
 }
-.form-modal .form-container .fieldset #new-note {
+.form-modal .form-container .fieldset input[type=text] {
   height: 4rem;
   width: 50%;
   background-color: #242F40;
@@ -62,7 +62,7 @@
   font-size: 2rem;
   color: white;
 }
-.form-modal .form-container .fieldset #new-note::placeholder {
+.form-modal .form-container .fieldset input[type=text]::placeholder {
   font-size: 2rem;
   color: white;
 }

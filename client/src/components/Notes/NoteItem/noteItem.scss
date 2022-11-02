@@ -1,12 +1,11 @@
 @import '../../../global.scss';
 
-.note-item {
+.hidden-menu {
     height: 8rem;
-    width: 13rem;
+    width: 8rem;
     border: 2px solid white;
     border-radius: 20px;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
     margin-top: 2rem;
@@ -15,42 +14,140 @@
     text-decoration: none;
     transition: all 0.5s ease;
 
-    .dots {
-        height: 2rem;
-        width: 2rem;
-        position: absolute;
-        z-index: 3;
-        margin-left: 10rem;
-        margin-bottom: 4.5rem;
+    .left {
+        flex: 8;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-evenly;
-        background-color: $gunmetal;
-        border: none;
-        border-radius: 50px;
-        transition: all 0.5s ease;
-        cursor: pointer;
 
-        &:hover {
-            background-color: $babyBlue;
+        h1 {
+            font-size: 1.5rem;
         }
+    
+        p {
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+    }
+
+    .right {
+        flex: 4;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img {
+            height: 100%;
+            width: 2rem;
+
+            .arrow {
+                margin-top: 1rem;
+                height: 1.25rem;
+                width: 1.25rem;
+                cursor: pointer;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
         
-        .dot {
-            height: 4px;
-            width: 4px;
-            background-color: white;
-            border: none;
-            border-radius: 50px;
+    }
+}
+
+.active-menu {
+    height: 8rem;
+    width: 14rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    text-decoration: none;
+    transition: all 0.5s ease;
+
+    .left {
+        flex: 8;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    
+        p {
+            font-size: 0.9rem;
+            font-weight: 300;
         }
     }
 
-    h1 {
-        font-size: 1.5rem;
-    }
+    .right {
+        flex: 4;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    p {
-        font-size: 0.9rem;
-        font-weight: 300;
+        .img {
+            height: 100%;
+            width: 2rem;
+
+            .arrow {
+                margin-top: 1rem;
+                height: 1.25rem;
+                width: 1.25rem;
+                cursor: pointer;
+            }
+        }
+
+        .active {
+            height: 100%;
+            width: 6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        
+            .note-btn {
+                height: 2.5rem;
+                width: 5rem;
+                border-radius: 50px;
+                background-color: $gunmetal;
+                font-size: 1rem;
+                margin-right: 1rem;
+                cursor: pointer;
+                transition: all 0.5s ease;
+            }
+        
+            .edit {
+                border: 2px solid $babyBlue;
+                color: $babyBlue;
+        
+                &:hover {
+                    background-color: $babyBlue;
+                    color: $gunmetal;
+                }
+            }
+        
+            .delete {
+                border: 2px solid $crimson;
+                color: $crimson;
+        
+                &:hover {
+                    background-color: $crimson;
+                    color: $gunmetal;
+                }
+            }
+        }
     }
 }

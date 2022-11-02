@@ -58,7 +58,7 @@
             align-items: flex-start;
             justify-content: center;
     
-            #new-note {
+            input[type='text'] {
                 height: 4rem;
                 width: 50%;
                 background-color: $gunmetal;

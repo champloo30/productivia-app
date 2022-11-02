@@ -23,20 +23,29 @@ export default function Notes(props) {
   })
   const [filter, setFilter] = useState('Notes')
   const [show, setShow] = useState(false)
-  const [isEditing, setEditing] = useState(false) 
+  const [isNoteEditing, setNoteEditing] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('new-item', JSON.stringify(notes))
   }, [notes])
 
+  const id = notes.map((note) => {
+    return note.id
+  })
+
   function editNote(id, newTitle, newContent) {
     const editedNoteList = notes.map((note) => {
-      if (id === note.id) {
-        return {...notes, title: newTitle, content: newContent}
+      console.log(note.id);
+      if (note.id === id) {
+        console.log(id);
+        console.log(note.id);
+        return {...note, title: newTitle, content: newContent}
       }
       return note
     })
+    console.log(id, newTitle, newContent);
     setNotes(editedNoteList)
+    console.log(editedNoteList);
   }
 
   const noteList = notes
@@ -49,9 +58,9 @@ export default function Notes(props) {
       content={note.content} 
       key={note.id}
       setNotes={setNotes}
-      editNote={editNote}
-      isEditing={isEditing}
-      setEditing={setEditing}
+      setShow={setShow}
+      isNoteEditing={isNoteEditing}
+      setNoteEditing={setNoteEditing}
     />
   ))
 
@@ -103,12 +112,14 @@ export default function Notes(props) {
         </div>
         <div className="bottom-section">
           <FormModal 
+            id={id}
             onClose={onClose} 
             show={show} 
             addNotes={addNotes} 
             addJournal={addJournal}
-            isEditing={isEditing}
-            setEditing={setEditing}
+            editNote={editNote}
+            isNoteEditing={isNoteEditing}
+            setNoteEditing={setNoteEditing}
           />
           <button type='button' className='add-form' onClick={onOpen}>
             <span>+</span>
