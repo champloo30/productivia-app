@@ -29,23 +29,23 @@ export default function Notes(props) {
     localStorage.setItem('new-item', JSON.stringify(notes))
   }, [notes])
 
-  const id = notes.map((note) => {
-    return note.id
-  })
+  const noteId = notes.filter(FILTER_MAP[filter]).map((note) => (note.id))
+  console.log(noteId);
 
   function editNote(id, newTitle, newContent) {
     const editedNoteList = notes.map((note) => {
-      console.log(note.id);
-      if (note.id === id) {
-        console.log(id);
-        console.log(note.id);
+      if (id === note.id) {
         return {...note, title: newTitle, content: newContent}
       }
       return note
     })
     console.log(id, newTitle, newContent);
     setNotes(editedNoteList)
-    console.log(editedNoteList);
+  }
+
+  function deleteItem(id) {
+    const remainingItems = notes.filter((note) => id !== note.id)
+    setNotes(remainingItems)
   }
 
   const noteList = notes
@@ -59,8 +59,8 @@ export default function Notes(props) {
       key={note.id}
       setNotes={setNotes}
       setShow={setShow}
-      isNoteEditing={isNoteEditing}
       setNoteEditing={setNoteEditing}
+      deleteItem={deleteItem}
     />
   ))
 
@@ -112,7 +112,7 @@ export default function Notes(props) {
         </div>
         <div className="bottom-section">
           <FormModal 
-            id={id}
+            id={noteId}
             onClose={onClose} 
             show={show} 
             addNotes={addNotes} 

@@ -18,10 +18,12 @@ export default function Form(props) {
 
   function handleNewTitleChange(e) {
     setNewTitle(e.target.value)
+    console.log(newTitle);
   }
 
   function handleNewContentChange(e) {
     setNewContent(e.target.value)
+    console.log(newContent);
   }
 
   function handleFormSubmit(e) {
@@ -35,11 +37,9 @@ export default function Form(props) {
   function handleEditSubmit(e) {
     e.preventDefault()
     props.editNote(props.id, newTitle, newContent)
-    setNewTitle('')
-    setNewContent('')
-    props.onClose()
-    props.setNoteEditing(false)
-    console.log(props.id);
+    setNewTitle(newTitle)
+    setNewContent(newContent)
+    onEditClose()
     console.log(newTitle);
     console.log(newContent);
   }
@@ -63,20 +63,20 @@ export default function Form(props) {
             type="text" 
             name="title" 
             value={newTitle} 
-            placeholder={`${title}`} 
+            placeholder='new title' 
             onChange={handleNewTitleChange} 
           />
           <textarea 
             name="content" 
             value={newContent} 
             id="textarea" 
-            placeholder={content} 
+            placeholder='new content' 
             required 
             onChange={handleNewContentChange}
           ></textarea>
         </div>
         <div className="bottom-btn-group">
-          <button className='note-btn close' type='button' onClick={onEditClose}>Close</button>
+          <button className='note-btn close' type='button' onClick={() => onEditClose()}>Close</button>
           <button className='note-btn save' type='submit'>Save</button>
         </div>
       </div>

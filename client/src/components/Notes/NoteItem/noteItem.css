@@ -46,6 +46,7 @@
 }
 .hidden-menu .right .hidden {
   display: none;
+  height: 100%;
 }
 
 .active-menu {
