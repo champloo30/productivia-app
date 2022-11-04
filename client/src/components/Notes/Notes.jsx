@@ -23,14 +23,10 @@ export default function Notes(props) {
   })
   const [filter, setFilter] = useState('Notes')
   const [show, setShow] = useState(false)
-  const [isNoteEditing, setNoteEditing] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('new-item', JSON.stringify(notes))
   }, [notes])
-
-  const noteId = notes.filter(FILTER_MAP[filter]).map((note) => (note.id))
-  console.log(noteId);
 
   function editNote(id, newTitle, newContent) {
     const editedNoteList = notes.map((note) => {
@@ -59,7 +55,7 @@ export default function Notes(props) {
       key={note.id}
       setNotes={setNotes}
       setShow={setShow}
-      setNoteEditing={setNoteEditing}
+      editNote={editNote}
       deleteItem={deleteItem}
     />
   ))
@@ -112,14 +108,11 @@ export default function Notes(props) {
         </div>
         <div className="bottom-section">
           <FormModal 
-            id={noteId}
             onClose={onClose} 
             show={show} 
             addNotes={addNotes} 
             addJournal={addJournal}
             editNote={editNote}
-            isNoteEditing={isNoteEditing}
-            setNoteEditing={setNoteEditing}
           />
           <button type='button' className='add-form' onClick={onOpen}>
             <span>+</span>

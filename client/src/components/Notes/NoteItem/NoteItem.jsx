@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import './noteItem.scss'
+import NoteModal from './NoteModal/NoteModal'
 import arrow from '../../../assets/right-arrow-svgrepo-com.svg'
 
 export default function NoteItem(props) {
   const [showMenu, setShowMenu] = useState(false)
+  const [isNoteEditing, setNoteEditing] = useState(false)
 
   function openEditForm() {
-    props.setShow(true)
-    props.setNoteEditing(true)
+    setNoteEditing(!isNoteEditing)
+    console.log(isNoteEditing);
   }
 
   function toggle() {
@@ -33,12 +35,27 @@ export default function NoteItem(props) {
     noteItem.classList.remove('active-menu')
   }
 
+  function truncate() {
+    if (props.content.length > 25) {
+      return props.content.substring(0, 25) + '...'
+    }
+    return props.content
+  }
 
   return (
     <li className='hidden-menu' id={props.id}>
+      <div className="modal">
+        <NoteModal
+          id={props.id}
+          category={props.category}
+          isNoteEditing={isNoteEditing}
+          setNoteEditing={setNoteEditing}
+          editNote={props.editNote}
+        />
+      </div>
       <div className="left">
         <h1>{props.title}</h1>
-        <p className='content'>{props.content}</p>
+        <p className='content'>{truncate()}</p>
         <p className='date'>Date</p>
       </div>
       <div className="right">

@@ -3,9 +3,7 @@ import './formModal.scss'
 
 export default function Form(props) {
   const [title, setTitle] = useState('')
-  const [newTitle, setNewTitle] = useState('')
   const [content, setContent] = useState('')
-  const [newContent, setNewContent] = useState('')
   const [category, setCategory] = useState('')
 
   function handleTitleChange(e) {
@@ -16,16 +14,6 @@ export default function Form(props) {
     setContent(e.target.value)
   }
 
-  function handleNewTitleChange(e) {
-    setNewTitle(e.target.value)
-    console.log(newTitle);
-  }
-
-  function handleNewContentChange(e) {
-    setNewContent(e.target.value)
-    console.log(newContent);
-  }
-
   function handleFormSubmit(e) {
     e.preventDefault()
     category === 'Notes' ? props.addNotes(title, content) : props.addJournal(title, content)
@@ -34,56 +22,11 @@ export default function Form(props) {
     props.onClose()
   }
 
-  function handleEditSubmit(e) {
-    e.preventDefault()
-    props.editNote(props.id, newTitle, newContent)
-    setNewTitle(newTitle)
-    setNewContent(newContent)
-    onEditClose()
-    console.log(newTitle);
-    console.log(newContent);
-  }
-
-  function onEditClose() {
-    props.setNoteEditing(false)
-    props.onClose()
-  }
-
   if (!props.show) {
     return null
   }
 
-  const editingTemplate = (
-    <form className='form-modal' onSubmit={handleEditSubmit}>
-      <div className="form-container">
-        <h1>Update {category === 'Notes' ? 'Note' : 'Journal'}</h1>
-        <div className="fieldset">
-          <input 
-            id={props.id}
-            type="text" 
-            name="title" 
-            value={newTitle} 
-            placeholder='new title' 
-            onChange={handleNewTitleChange} 
-          />
-          <textarea 
-            name="content" 
-            value={newContent} 
-            id="textarea" 
-            placeholder='new content' 
-            required 
-            onChange={handleNewContentChange}
-          ></textarea>
-        </div>
-        <div className="bottom-btn-group">
-          <button className='note-btn close' type='button' onClick={() => onEditClose()}>Close</button>
-          <button className='note-btn save' type='submit'>Save</button>
-        </div>
-      </div>
-    </form>
-  )
-
-  const formTemplate = (
+  return (
     <form className='form-modal' onSubmit={handleFormSubmit}>
       <div className="form-container">
         <h1>New Note</h1>
@@ -121,11 +64,5 @@ export default function Form(props) {
         </div>
       </div>
     </form>
-  )
-
-  return (
-    <>
-      {props.isNoteEditing === true ? editingTemplate : formTemplate}
-    </>
   )
 }

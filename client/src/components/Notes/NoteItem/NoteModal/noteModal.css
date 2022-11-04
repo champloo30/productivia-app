@@ -1,27 +1,68 @@
 .note-modal {
-  height: 7rem;
-  width: 7rem;
-  position: absolute;
-  z-index: 4;
-  margin-left: 12.5rem;
-  margin-bottom: 2rem;
+  position: fixed;
+  z-index: 6;
+  height: 37.5rem;
+  width: 60rem;
   background-color: #242F40;
   border: 2px solid white;
   border-radius: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
-.note-modal .note-modal-container {
+.note-modal .note-container {
   height: 100%;
-  width: 95%;
-  margin-left: 1rem;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
-.note-modal .note-modal-container .note-btn {
+.note-modal .note-container h1 {
+  font-size: 2.75rem;
+}
+.note-modal .note-container .fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.note-modal .note-container .fieldset input[type=text] {
+  height: 4rem;
+  width: 50%;
+  background-color: #242F40;
+  border: none;
+  border-bottom: 2px solid white;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  font-size: 2rem;
+  color: white;
+}
+.note-modal .note-container .fieldset input[type=text]::placeholder {
+  font-size: 2rem;
+  color: white;
+}
+.note-modal .note-container .fieldset #textarea {
+  height: 15rem;
+  width: 98%;
+  background-color: #242F40;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 1rem 0 0 1rem;
+  font-size: 1.125rem;
+  color: white;
+}
+.note-modal .note-container .fieldset #textarea::placeholder {
+  font-size: 1.125rem;
+  color: white;
+}
+.note-modal .note-container .bottom-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.note-modal .note-container .bottom-btn-group .note-btn {
   height: 2.5rem;
   width: 5rem;
   border-radius: 50px;
@@ -31,20 +72,20 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.note-modal .note-modal-container .edit {
+.note-modal .note-container .bottom-btn-group .close {
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
 }
-.note-modal .note-modal-container .edit:hover {
+.note-modal .note-container .bottom-btn-group .close:hover {
   background-color: #A4BEF3;
   color: #242F40;
 }
-.note-modal .note-modal-container .delete {
-  border: 2px solid #B80F0A;
-  color: #B80F0A;
+.note-modal .note-container .bottom-btn-group .save {
+  border: 2px solid #E0B0FF;
+  color: #E0B0FF;
 }
-.note-modal .note-modal-container .delete:hover {
-  background-color: #B80F0A;
+.note-modal .note-container .bottom-btn-group .save:hover {
+  background-color: #E0B0FF;
   color: #242F40;
 }
 

@@ -2,7 +2,7 @@
 
 .hidden-menu {
     height: 8rem;
-    width: 8rem;
+    width: 9rem;
     border: 2px solid white;
     border-radius: 20px;
     display: flex;
@@ -62,7 +62,7 @@
 
 .active-menu {
     height: 8rem;
-    width: 14rem;
+    width: 15rem;
     border: 2px solid white;
     border-radius: 20px;
     display: flex;
@@ -73,6 +73,13 @@
     padding-left: 1rem;
     text-decoration: none;
     transition: all 0.5s ease;
+
+    .modal {
+        position: fixed;
+        top: 5%;
+        left: 18.3%;
+        transform: translate(-50%, -50%);
+    }
 
     .left {
         flex: 8;
