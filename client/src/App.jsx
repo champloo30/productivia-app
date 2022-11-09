@@ -6,6 +6,7 @@ import Todo from './components/Todo/Todo';
 import Notes from './components/Notes/Notes'
 import Pomodoro from './components/PomodoroTimer/PomodoroTimer'
 import WOD from './components/WordOfDay/WordOfDay'
+import Form from './components/Todo/Form/Form';
 
 function App() {
   const TASK_DATA = []
@@ -16,10 +17,11 @@ function App() {
       <Menu />
       <Routes>
         <Route path='/' element={<Home tasks={TASK_DATA} />} />
-        <Route path='/todo-list' element={<Todo tasks={TASK_DATA} />} />
-        <Route path='/notes' element={<Notes notes={NOTE_DATA} />} />
-        <Route path='/pomodoro-timer' element={<Pomodoro />} />
-        <Route path='/word-of-the-day' element={<WOD />} />
+        <Route path='/myTasks' element={<Todo tasks={TASK_DATA} />} />
+        <Route path='/myTasks/addTask' element={<Form />} />
+        <Route path='/myNotes' element={<Notes notes={NOTE_DATA} />} />
+        <Route path='/pomodoroTimer' element={<Pomodoro />} />
+        <Route path='/wordOfTheDay' element={<WOD />} />
       </Routes>
     </div>
   );

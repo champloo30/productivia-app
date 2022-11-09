@@ -1,15 +1,15 @@
 const express = require('express')
 
-const todoListRoutes = express.Router()
+const myTasksRoutes = express.Router()
 
 const dbo = require('../db/conn')
 
 const ObjectId = require('mongodb').ObjectId
 
-todoListRoutes.route('/todo-list').get(function (req, res) {
+myTasksRoutes.route('/myTasks').get(function (req, res) {
     let db_connect = dbo.getDb('productivia')
     db_connect
-        .collection('todo-list')
+        .collection('myTasks')
         .find({})
         .toArray(function (err, result) {
             if (err) throw err
@@ -17,30 +17,30 @@ todoListRoutes.route('/todo-list').get(function (req, res) {
         })
 })
 
-todoListRoutes.route('/todo-list/:id').get(function (req, res) {
+myTasksRoutes.route('/myTasks/:id').get(function (req, res) {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     db_connect
-        .collection('todo-list')
+        .collection('myTasks')
         .findOne(myquery, function (err, result) {
             if (err) throw err
             res.json(result)
         })
 })
 
-todoListRoutes.route('/todo-list/add').post(function (req, response) {
+myTasksRoutes.route('/myTasks/addTask').post(function (req, response) {
     let db_connect = dbo.getDb()
     let mytodo = {
         name: req.body.name,
         completed: req.body.completed,
     }
-    db_connect.collection('todo-list').insertOne(mytodo, function (err, res) {
+    db_connect.collection('myTasks').insertOne(mytodo, function (err, res) {
         if (err) throw err
         response.json(res)
     })
 })
 
-todoListRoutes.route('/update/:id').post(function (req, response) {
+myTasksRoutes.route('/myTasks/edit:id').post(function (req, response) {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     let newvalues = {
@@ -50,7 +50,7 @@ todoListRoutes.route('/update/:id').post(function (req, response) {
         },
     }
     db_connect
-        .collection('todo-list')
+        .collection('myTasks')
         .updateOne(myquery, newvalues, function (err, res) {
             if (err) throw err
             console.log('1 document updated');
@@ -58,14 +58,14 @@ todoListRoutes.route('/update/:id').post(function (req, response) {
         })
 })
 
-todoListRoutes.route('/:id').delete((req, response) => {
+myTasksRoutes.route('/:id').delete((req, response) => {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
-    db_connect.collection('todo-list').deleteOne(myquery, function (err, obj) {
+    db_connect.collection('myTasks').deleteOne(myquery, function (err, obj) {
         if (err) throw err
         console.log('1 document deleted');
         response.json(obj)
     })
 })
 
-module.exports = todoListRoutes
+module.exports = myTasksRoutes

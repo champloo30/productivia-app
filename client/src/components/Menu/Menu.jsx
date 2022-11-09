@@ -13,23 +13,23 @@ export default function Menu() {
       <h1>Menu</h1>
       <Link to='/' className="menuItem">
         <p>Home</p>
-        <img className='menuIcon' src={home} alt="Todo" />
+        <img className='menuIcon' src={home} alt="home" />
       </Link>
-      <Link to='/todo-list' className="menuItem">
+      <Link to='/myTasks' className="menuItem">
         <p>My Tasks</p>
-        <img className='menuIcon' src={task} alt="Todo" />
+        <img className='menuIcon' src={task} alt="my tasks" />
       </Link>
-      <Link to='/notes' className="menuItem">
+      <Link to='/myNotes' className="menuItem">
         <p>My Notes</p>
-        <img className='menuIcon' src={notes} alt="Todo" />
+        <img className='menuIcon' src={notes} alt="my notes" />
       </Link>
-      <Link to='/pomodoro-timer' className="menuItem">
+      <Link to='/pomodoroTimer' className="menuItem">
         <p>Pomodoro Timer</p>
-        <img className='menuIcon' src={timer} alt="Todo" />
+        <img className='menuIcon' src={timer} alt="pomodoro timer" />
       </Link>
-      <Link to='/word-of-the-day' className="menuItem">
+      <Link to='/wordOfTheDay' className="menuItem">
         <p>Word of the Day</p>
-        <img className='menuIcon' src={speech} alt="Todo" />
+        <img className='menuIcon' src={speech} alt="word of the day" />
       </Link>
     </div>
   )

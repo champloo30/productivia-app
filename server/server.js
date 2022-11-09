@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
-app.use(require('./routes/todo-list'))
+app.use(require('./routes/myTasks'))
 
 const dbo = require('./db/conn')
 

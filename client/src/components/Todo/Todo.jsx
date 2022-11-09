@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './todo.scss'
-import TodoItem from './TodoItem/TodoItem'
-import Form from './Form/Form'
+// import TodoItem from './TodoItem/TodoItem'
 import FilterButton from './FilterButton/FilterButton'
-import { nanoid } from 'nanoid'
+// import { nanoid } from 'nanoid'
 
 const FILTER_MAP = {
   All: () => true,
@@ -12,6 +12,38 @@ const FILTER_MAP = {
 }
 
 const FILTER_NAMES = Object.keys(FILTER_MAP)
+
+const Task = (props) => (
+  <div className='viewing'>
+    <div className='cb'>
+      <input 
+        type="checkbox" 
+        id={props.id} 
+        defaultChecked={props.completed} 
+        onChange={() => props.toggleTaskCompleted(props.id)}
+      />
+      <label data-title={props.task.name} id='todo-label' className='todo-label' htmlFor={props.id}>
+        Hello
+      </label>
+    </div>
+    <div className="btn-group">
+      {props.completed === true ? null : <button 
+        className="todo-btn edit" 
+        type='button' 
+        // onClick={() => setEditing(true)}
+      >
+        Edit
+      </button>}
+      <button 
+        className="todo-btn delete" 
+        type='button' 
+        onClick={() => props.deleteTask(props.id)}
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+)
 
 export default function Todo(props) {
   
@@ -57,14 +89,22 @@ export default function Todo(props) {
     setTasks(updatedTasks)
   }
 
+  function truncate() {
+    if (props.task.name.length > 15) {
+      return props.name.substring(0, 15) + '...'
+    }
+    return props.task.name
+  }
+    
+
   const taskList = tasks
   .filter(FILTER_MAP[filter])
   .map((task) => (
-    <TodoItem 
-      id={task.id} 
+    <Task 
+      id={task.props._id} 
       name={task.name} 
       completed={task.completed} 
-      key={task.id}
+      key={task.props._id}
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask={deleteTask}
       editTask={editTask}
@@ -80,10 +120,10 @@ export default function Todo(props) {
     />
   ))
 
-  function addTask(name) {
-    const newTask = { id: `todo-${nanoid()}`, name, completed: false }
-    setTasks([...tasks, newTask])
-  }
+  // function addTask(name) {
+  //   const newTask = { id: `todo-${nanoid()}`, name, completed: false }
+  //   setTasks([...tasks, newTask])
+  // }
 
   const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task'
   const headingTextWithTasks = `${taskList.length} ${tasksNoun} remaining`
@@ -94,7 +134,7 @@ export default function Todo(props) {
     <div className='todo'>
       <div className="todo-container">
         <h1>My Tasks: <span>{today.toDateString()}</span></h1>
-        <Form addTask={addTask} />
+        <Link to='addTask' className='button'>+</Link>
         <div className="filter-buttons">
           {filterList}
         </div>
