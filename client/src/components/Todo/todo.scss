@@ -28,6 +28,31 @@
             }
         }
 
+        .add-btn {
+            height: 5rem;
+            width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+            margin-top: 1rem;
+            background-color: $gunmetal;
+            border: 2px solid $babyBlue;
+            color: $babyBlue;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.5s ease;
+
+            &:hover {
+                background-color: $babyBlue;
+                color: $gunmetal;
+            }
+
+            span {
+                font-size: 2rem;
+            }
+        }
+
         .filter-buttons {
             width: 100%;
             display: flex;
@@ -52,6 +77,118 @@
             flex-wrap: wrap;
             overflow: hidden;
             margin-top: 2rem;
+
+            .todo-item {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                border-right: 2px solid $babyBlue;
+                border-bottom: 2px solid $babyBlue;
+                margin-bottom: 1rem;
+            
+                .editing {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 0.5rem;
+                    flex-wrap: wrap;
+            
+                    .cb {
+                        width: 60%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        margin-top: -0.5rem;
+                
+                        input[type='checkbox'] {
+                            height: 2rem;
+                            width: 2rem;
+                            margin: 0 1rem;
+                            cursor: pointer;
+                        }
+            
+                        .todo-label[data-title] {
+                            width: 100%;
+                            position: relative;
+                            font-size: 2rem;
+                            font-weight: 300;
+            
+                            &:hover::before {
+                                height: 3rem;
+                                width: 35rem;
+                                content: attr(data-title);
+                                position: absolute;
+                                background-color: $gunmetal;
+                                cursor: pointer;
+                            }
+                        }
+            
+                        .checked {
+                            text-decoration: line-through;
+                        }
+                    }
+                
+                    .btn-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                
+                        .todo-btn {
+                            height: 2.5rem;
+                            width: 5rem;
+                            margin: 0 0.25rem 0.5rem;
+                            background-color: $gunmetal;
+                            border-radius: 50px;
+                            font-size: 1rem;
+                            font-weight: 700;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+                
+                        .link, .cancel {
+                            border: 2px solid $babyBlue;
+                            color: $babyBlue;
+                            transition: all 0.5s ease;
+                
+                            &:hover {
+                                background-color: $babyBlue;
+                                color: $gunmetal;
+                            }
+                        }
+                
+                        .delete {
+                            border: 2px solid $crimson;
+                            color: $crimson;
+                            transition: all 0.5s ease;
+                            margin-right: 1rem;
+                
+                            &:hover {
+                                background-color: $crimson;
+                                color: $gunmetal;
+                            }
+                        }
+                
+                        .save {
+                            border: 2px solid $mauve;
+                            color: $mauve;
+                            transition: all 0.5s ease;
+                            margin-right: 1rem;
+                
+                            &:hover {
+                                background-color: $mauve;
+                                color: $gunmetal;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

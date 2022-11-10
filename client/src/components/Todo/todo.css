@@ -24,6 +24,28 @@
   font-size: 2rem;
   font-weight: 300;
 }
+.todo .todo-container .add-btn {
+  height: 5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-top: 1rem;
+  background-color: #242F40;
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.todo .todo-container .add-btn:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.todo .todo-container .add-btn span {
+  font-size: 2rem;
+}
 .todo .todo-container .filter-buttons {
   width: 100%;
   display: flex;
@@ -46,6 +68,103 @@
   flex-wrap: wrap;
   overflow: hidden;
   margin-top: 2rem;
+}
+.todo .todo-container .todo-list .todo-item {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-right: 2px solid #A4BEF3;
+  border-bottom: 2px solid #A4BEF3;
+  margin-bottom: 1rem;
+}
+.todo .todo-container .todo-list .todo-item .editing {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.todo .todo-container .todo-list .todo-item .editing .cb {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: -0.5rem;
+}
+.todo .todo-container .todo-list .todo-item .editing .cb input[type=checkbox] {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.todo .todo-container .todo-list .todo-item .editing .cb .todo-label[data-title] {
+  width: 100%;
+  position: relative;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.todo .todo-container .todo-list .todo-item .editing .cb .todo-label[data-title]:hover::before {
+  height: 3rem;
+  width: 35rem;
+  content: attr(data-title);
+  position: absolute;
+  background-color: #242F40;
+  cursor: pointer;
+}
+.todo .todo-container .todo-list .todo-item .editing .cb .checked {
+  text-decoration: line-through;
+}
+.todo .todo-container .todo-list .todo-item .editing .btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo .todo-container .todo-list .todo-item .editing .btn-group .todo-btn {
+  height: 2.5rem;
+  width: 5rem;
+  margin: 0 0.25rem 0.5rem;
+  background-color: #242F40;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.todo .todo-container .todo-list .todo-item .editing .btn-group .link, .todo .todo-container .todo-list .todo-item .editing .btn-group .cancel {
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+  transition: all 0.5s ease;
+}
+.todo .todo-container .todo-list .todo-item .editing .btn-group .link:hover, .todo .todo-container .todo-list .todo-item .editing .btn-group .cancel:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.todo .todo-container .todo-list .todo-item .editing .btn-group .delete {
+  border: 2px solid #B80F0A;
+  color: #B80F0A;
+  transition: all 0.5s ease;
+  margin-right: 1rem;
+}
+.todo .todo-container .todo-list .todo-item .editing .btn-group .delete:hover {
+  background-color: #B80F0A;
+  color: #242F40;
+}
+.todo .todo-container .todo-list .todo-item .editing .btn-group .save {
+  border: 2px solid #E0B0FF;
+  color: #E0B0FF;
+  transition: all 0.5s ease;
+  margin-right: 1rem;
+}
+.todo .todo-container .todo-list .todo-item .editing .btn-group .save:hover {
+  background-color: #E0B0FF;
+  color: #242F40;
 }
 
 /*# sourceMappingURL=todo.css.map */

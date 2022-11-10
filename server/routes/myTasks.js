@@ -40,14 +40,16 @@ myTasksRoutes.route('/myTasks/addTask').post(function (req, response) {
     })
 })
 
-myTasksRoutes.route('/myTasks/edit:id').post(function (req, response) {
+myTasksRoutes.route('/myTasks/edit/:id').post(function (req, response) {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     let newvalues = {
         $set: {
             name: req.body.name,
-            completed: req.body.completed,
         },
+        $set: {
+            completed: req.body.completed,
+        }
     }
     db_connect
         .collection('myTasks')

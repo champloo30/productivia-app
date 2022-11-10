@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './todo.scss'
-// import TodoItem from './TodoItem/TodoItem'
 import FilterButton from './FilterButton/FilterButton'
-// import { nanoid } from 'nanoid'
 
 const FILTER_MAP = {
   All: () => true,
@@ -14,74 +12,75 @@ const FILTER_MAP = {
 const FILTER_NAMES = Object.keys(FILTER_MAP)
 
 const Task = (props) => (
-  <div className='viewing'>
-    <div className='cb'>
-      <input 
-        type="checkbox" 
-        id={props.id} 
-        defaultChecked={props.completed} 
-        onChange={() => props.toggleTaskCompleted(props.id)}
-      />
-      <label data-title={props.task.name} id='todo-label' className='todo-label' htmlFor={props.id}>
-        Hello
-      </label>
+  <li className="todo-item">
+    <div className='editing'>
+      <div className='cb'>
+        <input 
+          type="checkbox" 
+          id={props.task._id} 
+          defaultChecked={props.task.completed} 
+          onChange={() => props.toggleTaskCompleted(props._id)}
+        />
+        <label data-title={props.task.name} id='todo-label' className='todo-label' htmlFor={props.task._id}>
+          {props.task.name}
+        </label>
+      </div>
+      <div className="btn-group">
+        {props.task.completed === true ? null : <Link 
+          className="todo-btn link" 
+          to={`edit/${props.task._id}`} 
+        >
+          Edit
+        </Link>}
+        <button 
+          className="todo-btn delete" 
+          type='button' 
+          onClick={() => props.deleteTask(props.id)}
+        >
+          Delete
+        </button>
+      </div>
     </div>
-    <div className="btn-group">
-      {props.completed === true ? null : <button 
-        className="todo-btn edit" 
-        type='button' 
-        // onClick={() => setEditing(true)}
-      >
-        Edit
-      </button>}
-      <button 
-        className="todo-btn delete" 
-        type='button' 
-        onClick={() => props.deleteTask(props.id)}
-      >
-        Delete
-      </button>
-    </div>
-  </div>
+  </li>
 )
 
 export default function Todo(props) {
   
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem('new-task')
-    if (savedTasks) {
-      return JSON.parse(savedTasks)
-    } else {
-      return props.tasks
-    }
-  })
+  const [tasks, setTasks] = useState([])
   const [filter, setFilter] = useState('All')
 
   useEffect(() => {
-    localStorage.setItem('new-task', JSON.stringify(tasks))
-  }, [tasks])
+    async function getTasks() {
+      const response = await fetch(`http://localhost:5000/myTasks`)
+
+      if (!response.ok) {
+        const message = `An error has occurred: ${response.statusText}`
+        window.alert(message)
+        return
+      }
+
+      const tasks = await response.json()
+      setTasks(tasks)
+    }
+    getTasks()
+    return
+  }, [tasks.length])
 
   const today = new Date()
 
-  function editTask(id, newName) {
-    const editedTaskList = tasks.map((task) => {
-      if (id === task.id) {
-        return {...task, name: newName}
-      }
-      return task
+  async function deleteTask(id) {
+    await fetch(`http://localhost:5000/${id}`, {
+      method: 'DELETE'
     })
-    console.log(id, newName);
-    setTasks(editedTaskList)
-  }
 
-  function deleteTask(id) {
-    const remainingTasks = tasks.filter((task) => id !== task.id)
+    const remainingTasks = tasks.filter((task) => task._id !== id)
     setTasks(remainingTasks)
   }
 
   function toggleTaskCompleted(id) {
     const updatedTasks = tasks.map((task) => {
-      if (id === task.id) {
+      if (id === task._id) {
+        console.log(task.completed);
         return {...task, completed: !task.completed}
       }
       return task
@@ -89,27 +88,20 @@ export default function Todo(props) {
     setTasks(updatedTasks)
   }
 
-  function truncate() {
-    if (props.task.name.length > 15) {
-      return props.name.substring(0, 15) + '...'
-    }
-    return props.task.name
+  function taskList() {
+    return tasks
+    .filter(FILTER_MAP[filter])
+    .map((task) => {
+      return (
+        <Task 
+          task={task}
+          deleteTask={() => deleteTask(task._id)}
+          toggleTaskCompleted={() => toggleTaskCompleted(task._id)}
+          key={task._id}
+        />
+      )
+    })
   }
-    
-
-  const taskList = tasks
-  .filter(FILTER_MAP[filter])
-  .map((task) => (
-    <Task 
-      id={task.props._id} 
-      name={task.name} 
-      completed={task.completed} 
-      key={task.props._id}
-      toggleTaskCompleted={toggleTaskCompleted}
-      deleteTask={deleteTask}
-      editTask={editTask}
-    />
-  ))
 
   const filterList = FILTER_NAMES.map((name) => (
     <FilterButton 
@@ -120,11 +112,6 @@ export default function Todo(props) {
     />
   ))
 
-  // function addTask(name) {
-  //   const newTask = { id: `todo-${nanoid()}`, name, completed: false }
-  //   setTasks([...tasks, newTask])
-  // }
-
   const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task'
   const headingTextWithTasks = `${taskList.length} ${tasksNoun} remaining`
   const headingTextWithoutTasks = "Let's add a task!"
@@ -134,13 +121,15 @@ export default function Todo(props) {
     <div className='todo'>
       <div className="todo-container">
         <h1>My Tasks: <span>{today.toDateString()}</span></h1>
-        <Link to='addTask' className='button'>+</Link>
+        <Link to='addTask' className='add-btn'>
+          <span>+</span>
+        </Link>
         <div className="filter-buttons">
           {filterList}
         </div>
         <h2 id='list-heading'>{headingText}</h2>
         <ul className='todo-list' aria-labelledby='list-heading'>
-          {taskList}
+          {taskList()}
         </ul>
       </div>
     </div>
