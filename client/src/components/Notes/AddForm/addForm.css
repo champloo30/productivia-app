@@ -1,17 +1,23 @@
-.form-modal {
-  position: absolute;
-  z-index: 5;
+.add-form {
+  height: 100vh;
+  width: 100%;
+  background-color: #242F40;
+}
+.add-form .add-form-container {
+  height: 100%;
+  width: 90%;
+}
+.add-form .add-form-container .form {
   height: 37.5rem;
   width: 60rem;
   background-color: #242F40;
   border: 2px solid white;
   border-radius: 20px;
-  margin-top: -12rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-.form-modal .form-container {
+.add-form .add-form-container .form .form-container {
   height: 100%;
   width: 90%;
   display: flex;
@@ -19,39 +25,41 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.form-modal .form-container h1 {
+.add-form .add-form-container .form .form-container h1 {
   font-size: 2.75rem;
+  color: white;
 }
-.form-modal .form-container .radios {
+.add-form .add-form-container .form .form-container .radios {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 1rem;
 }
-.form-modal .form-container .radios .radioset {
+.add-form .add-form-container .form .form-container .radios .radioset {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 1rem;
 }
-.form-modal .form-container .radios .radioset input[type=radio] {
+.add-form .add-form-container .form .form-container .radios .radioset input[type=radio] {
   height: 1.5rem;
   width: 1.5rem;
   margin-right: 0.25rem;
 }
-.form-modal .form-container .radios .radioset .radio-label {
+.add-form .add-form-container .form .form-container .radios .radioset .radio-label {
   font-size: 1.5rem;
   font-weight: 300;
+  color: white;
 }
-.form-modal .form-container .fieldset {
+.add-form .add-form-container .form .form-container .fieldset {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
-.form-modal .form-container .fieldset input[type=text] {
+.add-form .add-form-container .form .form-container .fieldset input[type=text] {
   height: 4rem;
   width: 50%;
   background-color: #242F40;
@@ -62,11 +70,11 @@
   font-size: 2rem;
   color: white;
 }
-.form-modal .form-container .fieldset input[type=text]::placeholder {
+.add-form .add-form-container .form .form-container .fieldset input[type=text]::placeholder {
   font-size: 2rem;
   color: white;
 }
-.form-modal .form-container .fieldset #textarea {
+.add-form .add-form-container .form .form-container .fieldset #textarea {
   height: 15rem;
   width: 98%;
   background-color: #242F40;
@@ -76,16 +84,16 @@
   font-size: 1.125rem;
   color: white;
 }
-.form-modal .form-container .fieldset #textarea::placeholder {
+.add-form .add-form-container .form .form-container .fieldset #textarea::placeholder {
   font-size: 1.125rem;
   color: white;
 }
-.form-modal .form-container .bottom-btn-group {
+.add-form .add-form-container .form .form-container .bottom-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.form-modal .form-container .bottom-btn-group .note-btn {
+.add-form .add-form-container .form .form-container .bottom-btn-group .note-btn {
   height: 2.5rem;
   width: 5rem;
   border-radius: 50px;
@@ -95,21 +103,21 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.form-modal .form-container .bottom-btn-group .close {
+.add-form .add-form-container .form .form-container .bottom-btn-group .close {
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
 }
-.form-modal .form-container .bottom-btn-group .close:hover {
+.add-form .add-form-container .form .form-container .bottom-btn-group .close:hover {
   background-color: #A4BEF3;
   color: #242F40;
 }
-.form-modal .form-container .bottom-btn-group .save {
+.add-form .add-form-container .form .form-container .bottom-btn-group .save {
   border: 2px solid #E0B0FF;
   color: #E0B0FF;
 }
-.form-modal .form-container .bottom-btn-group .save:hover {
+.add-form .add-form-container .form .form-container .bottom-btn-group .save:hover {
   background-color: #E0B0FF;
   color: #242F40;
 }
 
-/*# sourceMappingURL=formModal.css.map */
+/*# sourceMappingURL=addForm.css.map */

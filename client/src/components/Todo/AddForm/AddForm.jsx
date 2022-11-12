@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import './form.scss'
+import { Link, useNavigate } from 'react-router-dom'
+import './addForm.scss'
 
 export default function Form(props) {
   const [form, setForm] = useState({
@@ -50,7 +50,10 @@ export default function Form(props) {
             placeholder='What are we doing today?' 
             required 
           />
-          <button className='submit'>+</button>
+          <div className="btn-group">
+            <Link to='/myNotes'>Close</Link>
+            <button className='submit'>+</button>
+          </div>
         </form>
       </div>
     </div>

@@ -1,16 +1,10 @@
 import React, { useState } from 'react'
 import './noteItem.scss'
-import NoteModal from './NoteModal/NoteModal'
 import arrow from '../../../assets/right-arrow-svgrepo-com.svg'
+import { Link } from 'react-router-dom'
 
-export default function NoteItem(props) {
+export default function Note(props) {
   const [showMenu, setShowMenu] = useState(false)
-  const [isNoteEditing, setNoteEditing] = useState(false)
-
-  function openEditForm() {
-    setNoteEditing(!isNoteEditing)
-    console.log(isNoteEditing);
-  }
 
   function toggle() {
     setShowMenu(!showMenu)
@@ -24,13 +18,13 @@ export default function NoteItem(props) {
   }
 
   function open() {
-    const noteItem = document.getElementById(props.id)
+    const noteItem = document.getElementById(props._id)
     noteItem.classList.remove('hidden-menu')
     noteItem.classList.add('active-menu')
   }
 
   function close() {
-    const noteItem = document.getElementById(props.id)
+    const noteItem = document.getElementById(props._id)
     noteItem.classList.add('hidden-menu')
     noteItem.classList.remove('active-menu')
   }
@@ -43,30 +37,21 @@ export default function NoteItem(props) {
   }
 
   return (
-    <li className='hidden-menu' id={props.id}>
-      <div className="modal">
-        <NoteModal
-          id={props.id}
-          category={props.category}
-          isNoteEditing={isNoteEditing}
-          setNoteEditing={setNoteEditing}
-          editNote={props.editNote}
-        />
+    <li className='hidden-menu' id={props.note._id}>
+    <div className="left">
+      <h1>{props.note.title}</h1>
+      <p className='content'>{truncate()}</p>
+      <p className='date'>Date</p>
+    </div>
+    <div className="right">
+      <div className="img">
+        <img className='arrow' src={arrow} alt="" onClick={toggle} />
       </div>
-      <div className="left">
-        <h1>{props.title}</h1>
-        <p className='content'>{truncate()}</p>
-        <p className='date'>Date</p>
+      <div id='noteMenu' className="hidden active">
+        <Link to={`edit/${props.task._id}`} className='note-btn edit'>Edit</Link>
+        <button type='button'className='note-btn delete' onClick={() => props.deleteItem(props.id)}>Delete</button>
       </div>
-      <div className="right">
-        <div className="img">
-          <img className='arrow' src={arrow} alt="" onClick={toggle} />
-        </div>
-        <div id='noteMenu' className="hidden active">
-          <button type='button' className='note-btn edit' onClick={() => openEditForm()}>Edit</button>
-          <button type='button'className='note-btn delete' onClick={() => props.deleteItem(props.id)}>Delete</button>
-        </div>
-      </div>
-    </li>
+    </div>
+  </li>
   )
 }

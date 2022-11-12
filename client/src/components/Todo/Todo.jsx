@@ -112,10 +112,10 @@ export default function Todo(props) {
     />
   ))
 
-  const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task'
-  const headingTextWithTasks = `${taskList.length} ${tasksNoun} remaining`
+  const tasksNoun = taskList().length !== 1 ? 'tasks' : 'task'
+  const headingTextWithTasks = `${taskList().length} ${tasksNoun} remaining`
   const headingTextWithoutTasks = "Let's add a task!"
-  const headingText = taskList.length >= 1 ? headingTextWithTasks : headingTextWithoutTasks
+  const headingText = taskList().length >= 1 ? headingTextWithTasks : headingTextWithoutTasks
 
   return (
     <div className='todo'>
