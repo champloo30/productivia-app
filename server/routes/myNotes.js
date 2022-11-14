@@ -46,7 +46,6 @@ myNotesRoutes.route('/myNotes/edit/:id').post(function (req, response) {
     let myquery = { _id: ObjectId(req.params.id) }
     let newvalues = {
         $set: {
-            category: req.body.category,
             title: req.body.title,
             content: req.body.content,
         }

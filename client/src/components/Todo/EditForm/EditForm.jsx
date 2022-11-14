@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import './editForm.scss'
 
 export default function EditForm(props) {
@@ -61,6 +61,7 @@ export default function EditForm(props) {
     <div className="edit-form">
       <div className="edit-container">
         <form className='edit-todo' onSubmit={handleEditSubmit}>
+          <h1>Edit Task</h1>
           <input 
             className='todo-input' 
             type="text" 
@@ -71,7 +72,10 @@ export default function EditForm(props) {
             placeholder='What are we changing today?' 
             required 
           />
-          <button className='submit'>+</button>
+          <div className="btn-group">
+            <Link className='btn cancel' to='/myTasks'>Close</Link>
+            <button className='btn save'>Save</button>
+          </div>
         </form>
       </div>
     </div>

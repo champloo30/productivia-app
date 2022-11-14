@@ -29,7 +29,7 @@
         }
 
         .add-btn {
-            height: 5rem;
+            height: 4rem;
             width: 2.5rem;
             display: flex;
             align-items: center;
@@ -58,12 +58,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         #list-heading {
             font-size: 1.75rem;
-            margin-top: 3rem;
+            margin-top: 1rem;
             font-weight: 400;
         }
 
@@ -79,7 +79,7 @@
             margin-top: 2rem;
 
             .todo-item {
-                width: 50%;
+                width: 45%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -88,7 +88,7 @@
                 border-bottom: 2px solid $babyBlue;
                 margin-bottom: 1rem;
             
-                .editing {
+                .viewing {
                     width: 100%;
                     display: flex;
                     align-items: center;
@@ -118,17 +118,14 @@
                             font-weight: 300;
             
                             &:hover::before {
-                                height: 3rem;
-                                width: 35rem;
+                                height: 4rem;
+                                width: 31rem;
+                                margin-top: -0.5rem;
                                 content: attr(data-title);
                                 position: absolute;
                                 background-color: $gunmetal;
                                 cursor: pointer;
                             }
-                        }
-            
-                        .checked {
-                            text-decoration: line-through;
                         }
                     }
                 
@@ -152,7 +149,7 @@
                             cursor: pointer;
                         }
                 
-                        .link, .cancel {
+                        .link {
                             border: 2px solid $babyBlue;
                             color: $babyBlue;
                             transition: all 0.5s ease;

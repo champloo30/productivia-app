@@ -15,6 +15,9 @@
   align-items: center;
   justify-content: space-evenly;
 }
+.notes .notes-container h1 {
+  font-size: 2.5rem;
+}
 .notes .notes-container .btn-group {
   display: flex;
   align-items: center;
@@ -30,7 +33,7 @@
   justify-content: center;
 }
 .notes .notes-container .bottom-section .add-form {
-  height: 3.5rem;
+  height: 3rem;
   width: 3rem;
   display: flex;
   align-items: center;
@@ -42,13 +45,14 @@
   color: #A4BEF3;
   cursor: pointer;
   transition: all 0.5s ease;
+  text-decoration: none;
 }
 .notes .notes-container .bottom-section .add-form:hover {
   background-color: #A4BEF3;
   color: #242F40;
 }
 .notes .notes-container .bottom-section .add-form span {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .notes .notes-container .bottom-section .note-list {
   height: 100%;
@@ -60,7 +64,7 @@
 }
 .notes .notes-container .bottom-section .note-list .hidden-menu {
   height: 8rem;
-  width: 9rem;
+  width: 12rem;
   border: 2px solid white;
   border-radius: 20px;
   display: flex;
@@ -116,7 +120,7 @@
 }
 .notes .notes-container .bottom-section .note-list .active-menu {
   height: 8rem;
-  width: 15rem;
+  width: 18rem;
   border: 2px solid white;
   border-radius: 20px;
   display: flex;
@@ -135,7 +139,7 @@
   transform: translate(-50%, -50%);
 }
 .notes .notes-container .bottom-section .note-list .active-menu .left {
-  flex: 8;
+  flex: 5.5;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -161,7 +165,7 @@
   color: #A4BEF3;
 }
 .notes .notes-container .bottom-section .note-list .active-menu .right {
-  flex: 4;
+  flex: 6.5;
   height: 100%;
   display: flex;
   align-items: center;
@@ -189,12 +193,17 @@
   margin-right: 1rem;
   cursor: pointer;
   transition: all 0.5s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .active .edit {
+.notes .notes-container .bottom-section .note-list .active-menu .right .active .view {
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .active .edit:hover {
+.notes .notes-container .bottom-section .note-list .active-menu .right .active .view:hover {
   background-color: #A4BEF3;
   color: #242F40;
 }

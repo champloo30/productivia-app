@@ -17,6 +17,10 @@
         align-items: center;
         justify-content: space-evenly;
 
+        h1 {
+            font-size: 2.5rem;
+        }
+
         .btn-group {
             display: flex;
             align-items: center;
@@ -33,7 +37,7 @@
             justify-content: center;
 
             .add-form {
-                height: 3.5rem;
+                height: 3rem;
                 width: 3rem;
                 display: flex;
                 align-items: center;
@@ -45,6 +49,7 @@
                 color: $babyBlue;
                 cursor: pointer;
                 transition: all 0.5s ease;
+                text-decoration: none;
 
                 &:hover {
                     background-color: $babyBlue;
@@ -52,7 +57,7 @@
                 }
 
                 span {
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                 }
             }
 
@@ -67,7 +72,7 @@
 
                 .hidden-menu {
                     height: 8rem;
-                    width: 9rem;
+                    width: 12rem;
                     border: 2px solid white;
                     border-radius: 20px;
                     display: flex;
@@ -133,7 +138,7 @@
                 
                 .active-menu {
                     height: 8rem;
-                    width: 15rem;
+                    width: 18rem;
                     border: 2px solid white;
                     border-radius: 20px;
                     display: flex;
@@ -153,7 +158,7 @@
                     }
                 
                     .left {
-                        flex: 8;
+                        flex: 5.5;
                         height: 100%;
                         display: flex;
                         flex-direction: column;
@@ -183,7 +188,7 @@
                     }
                 
                     .right {
-                        flex: 4;
+                        flex: 6.5;
                         height: 100%;
                         display: flex;
                         align-items: center;
@@ -212,9 +217,14 @@
                                 margin-right: 1rem;
                                 cursor: pointer;
                                 transition: all 0.5s ease;
+                                text-decoration: none;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-left: 2rem;
                             }
                         
-                            .edit {
+                            .view {
                                 border: 2px solid $babyBlue;
                                 color: $babyBlue;
                         

@@ -13,29 +13,28 @@ const FILTER_NAMES = Object.keys(FILTER_MAP)
 const Note = (props) => (
   <li className='hidden-menu' id={props.note._id}>
     <div className="left">
-      <h1>{props.note.title}</h1>
-      <p className='content'>{truncate(props)}</p>
+      <h1>{truncateTitle(props)}</h1>
+      <p className='content'>{truncateContent(props)}</p>
       <p className='date'>Date</p>
     </div>
     <div className="right">
-      <div id='plus' className="plus">+</div>
+      <div id='plus' className="plus" onClick={() => props.toggle(props._id)}>+</div>
       <div id='noteMenu' className="hidden active">
-        <Link to={`edit/${props.note._id}`} className='note-btn edit'>Edit</Link>
-        <button type='button'className='note-btn delete' onClick={() => props.deleteItem(props.id)}>Delete</button>
+        <Link to={`${props.note._id}`} className='note-btn view'>View</Link>
+        <button type='button'className='note-btn delete' onClick={() => props.deleteNote(props.id)}>Delete</button>
       </div>
     </div>
   </li>
 )
 
-// function toggle(props) {
-//   const noteItem = document.getElementById(`${props.note._id}`)
+function truncateTitle(props) {
+  if (props.note.title.length > 8) {
+    return props.note.title.substring(0, 8) + '...'
+  }
+  return props.note.title
+}
 
-//   noteItem.classList.remove('hidden-menu')
-//   noteItem.classList.add('active-menu')
-//   console.log(noteItem);
-// }
-
-function truncate(props) {
+function truncateContent(props) {
   if (props.note.content.length > 20) {
     return props.note.content.substring(0, 20) + '...'
   }
@@ -45,6 +44,7 @@ function truncate(props) {
 export default function Notes(props) {
   const [notes, setNotes] = useState([])
   const [filter, setFilter] = useState('Notes')
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     async function getNotes() {
@@ -63,16 +63,29 @@ export default function Notes(props) {
     return
   }, [notes.length])
 
-  // function editNote(id, newTitle, newContent) {
-  //   const editedNoteList = notes.map((note) => {
-  //     if (id === note.id) {
-  //       return {...note, title: newTitle, content: newContent}
-  //     }
-  //     return note
-  //   })
-  //   console.log(id, newTitle, newContent);
-  //   setNotes(editedNoteList)
-  // }
+  function toggle(id) {
+    setShow(!show)
+
+    const currentNote = notes.find((note) => note._id === id)
+
+    if (show === true) {
+      close()
+    } else {
+      open()
+    }
+
+    function open() {
+      const noteItem = document.getElementById(currentNote._id)
+      noteItem.classList.remove('hidden-menu')
+      noteItem.classList.add('active-menu')
+    }
+
+    function close() {
+      const noteItem = document.getElementById(currentNote._id)
+      noteItem.classList.add('hidden-menu')
+      noteItem.classList.remove('active-menu')
+    }
+  }
 
   async function deleteNote(id) {
     await fetch(`http://localhost:5000/${id}`, {
@@ -81,6 +94,7 @@ export default function Notes(props) {
 
     const remainingNotes = notes.filter((note) => note._id !== id)
     setNotes(remainingNotes)
+    console.log(remainingNotes);
   }
 
   function noteList() { 
@@ -89,6 +103,7 @@ export default function Notes(props) {
     .map((note) => (
       <Note 
         note={note} 
+        toggle={() => toggle(note._id)}
         deleteNote={() => deleteNote(note._id)}
         key={note._id}
       />

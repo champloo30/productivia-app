@@ -1,0 +1,215 @@
+@import '../../../global.scss';
+
+.edit {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    .edit-container {
+        height: 100%;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .edit-note {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            h1 {
+                font-size: 2.75rem;
+            }
+
+            .fieldset {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                input[type='text'] {
+                    height: 4rem;
+                    width: 50%;
+                    background-color: $gunmetal;
+                    border: none;
+                    border-bottom: 2px solid white;
+                    margin-bottom: 2rem;
+                    padding-left: 1rem;
+                    font-size: 2rem;
+                    color: white;
+
+                    &::placeholder {
+                        font-size: 2rem;
+                        color: white;
+                    }
+                }
+
+                #textarea {
+                    height: 15rem;
+                    width: 100%;
+                    background-color: $gunmetal;
+                    border: 2px solid white;
+                    border-radius: 20px;
+                    padding: 1rem 0 0 1rem;
+                    font-size: 1.125rem;
+                    color: white;
+                    font-weight: 300;
+
+                    &::placeholder {
+                        font-size: 1.125rem;
+                        color: white;
+                    }
+                }
+            }
+
+            .btn-group {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                .btn {
+                    height: 2.5rem;
+                    width: 5rem;
+                    border-radius: 50px;
+                    background-color: $gunmetal;
+                    font-size: 1rem;
+                    margin-right: 1rem;
+                    cursor: pointer;
+                    transition: all 0.5s ease;
+                }
+    
+                .cancel {
+                    border: 2px solid $babyBlue;
+                    color: $babyBlue;
+                    text-decoration: none;
+    
+                    &:hover {
+                        background-color: $babyBlue;
+                        color: $gunmetal;
+                    }
+                }
+    
+                .save {
+                    border: 2px solid $mauve;
+                    color: $mauve;
+    
+                    &:hover {
+                        background-color: $mauve;
+                        color: $gunmetal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.note-modal {
+    position: fixed;
+    z-index: 6;
+    height: 37.5rem;
+    width: 60rem;
+    background-color: $gunmetal;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .note-container {
+        height: 100%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        h1 {
+            font-size: 2.75rem;
+        }
+    
+        .fieldset {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+    
+            input[type='text'] {
+                height: 4rem;
+                width: 50%;
+                background-color: $gunmetal;
+                border: none;
+                border-bottom: 2px solid white;
+                margin-bottom: 2rem;
+                padding-left: 1rem;
+                font-size: 2rem;
+                color: white;
+
+                &::placeholder {
+                    font-size: 2rem;
+                    color: white;
+                }
+            }
+
+            #textarea {
+                height: 15rem;
+                width: 98%;
+                background-color: $gunmetal;
+                border: 2px solid white;
+                border-radius: 20px;
+                padding: 1rem 0 0 1rem;
+                font-size: 1.125rem;
+                color: white;
+
+                &::placeholder {
+                    font-size: 1.125rem;
+                    color: white;
+                }
+            }
+        }
+
+        .bottom-btn-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .note-btn {
+                height: 2.5rem;
+                width: 5rem;
+                border-radius: 50px;
+                background-color: $gunmetal;
+                font-size: 1rem;
+                margin-right: 1rem;
+                cursor: pointer;
+                transition: all 0.5s ease;
+            }
+
+            .close {
+                border: 2px solid $babyBlue;
+                color: $babyBlue;
+
+                &:hover {
+                    background-color: $babyBlue;
+                    color: $gunmetal;
+                }
+            }
+
+            .save {
+                border: 2px solid $mauve;
+                color: $mauve;
+
+                &:hover {
+                    background-color: $mauve;
+                    color: $gunmetal;
+                }
+            }
+        }
+    }
+}

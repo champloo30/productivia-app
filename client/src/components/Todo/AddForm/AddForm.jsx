@@ -40,6 +40,7 @@ export default function Form(props) {
     <div className="form">
       <div className="form-container">
         <form className='create-todo' onSubmit={handleSubmit}>
+          <h1>Add A Task</h1>
           <input 
             className='todo-input' 
             type="text" 
@@ -51,8 +52,8 @@ export default function Form(props) {
             required 
           />
           <div className="btn-group">
-            <Link to='/myNotes'>Close</Link>
-            <button className='submit'>+</button>
+            <Link className='btn cancel' to='/myTasks'>Close</Link>
+            <button className='btn save'>Save</button>
           </div>
         </form>
       </div>

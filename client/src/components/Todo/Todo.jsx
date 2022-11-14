@@ -13,7 +13,7 @@ const FILTER_NAMES = Object.keys(FILTER_MAP)
 
 const Task = (props) => (
   <li className="todo-item">
-    <div className='editing'>
+    <div className='viewing'>
       <div className='cb'>
         <input 
           type="checkbox" 
@@ -22,7 +22,7 @@ const Task = (props) => (
           onChange={() => props.toggleTaskCompleted(props._id)}
         />
         <label data-title={props.task.name} id='todo-label' className='todo-label' htmlFor={props.task._id}>
-          {props.task.name}
+          {truncate(props)}
         </label>
       </div>
       <div className="btn-group">
@@ -43,6 +43,13 @@ const Task = (props) => (
     </div>
   </li>
 )
+
+function truncate(props) {
+  if (props.task.name.length > 10) {
+    return props.task.name.substring(0, 10) + '...'
+  }
+  return props.task.name
+}
 
 export default function Todo(props) {
   
@@ -77,10 +84,20 @@ export default function Todo(props) {
     setTasks(remainingTasks)
   }
 
-  function toggleTaskCompleted(id) {
+  async function toggleTaskCompleted(id) {
+    const currentTask = tasks.find((e) => e._id === id)
+    console.log(currentTask);
+    await fetch(`http://localhost:5000/myTasks/edit/${id}`, {
+      method: 'POST',
+      body: JSON.stringify({name: currentTask.name, completed: !currentTask.completed}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
     const updatedTasks = tasks.map((task) => {
       if (id === task._id) {
         console.log(task.completed);
+       
         return {...task, completed: !task.completed}
       }
       return task
