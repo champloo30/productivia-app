@@ -2,7 +2,66 @@
 
 .pomodoro {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: $gunmetal;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .pomodoro-container {
+        height: 100%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .btn-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress {
+            height: 20rem;
+            width: 40rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 8px solid $babyBlue;
+            border-radius: 100px;
+
+            h1 {
+                font-size: 12rem;
+                font-weight: 400;
+                margin: 0;
+                padding: 1rem;
+            }
+        }
+
+        
+
+        .bottom-btn {
+            height: 3.5rem;
+            width: 7.5rem;
+            border-radius: 100px;
+            background-color: $gunmetal;
+            font-size: 1.75rem;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            text-decoration: none;
+        }
+        
+        .start {
+            border: 2px solid $babyBlue;
+            color: $babyBlue;
+            text-transform: uppercase;
+    
+            &:hover {
+                background-color: $babyBlue;
+                color: $gunmetal;
+            }
+        }
+    }
 }

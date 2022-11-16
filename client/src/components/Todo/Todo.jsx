@@ -52,10 +52,10 @@ function truncate(props) {
 }
 
 export default function Todo(props) {
-  
   const [tasks, setTasks] = useState([])
   const [filter, setFilter] = useState('All')
 
+  // get task from db
   useEffect(() => {
     async function getTasks() {
       const response = await fetch(`http://localhost:5000/myTasks`)
@@ -75,6 +75,7 @@ export default function Todo(props) {
 
   const today = new Date()
 
+  // delete task
   async function deleteTask(id) {
     await fetch(`http://localhost:5000/${id}`, {
       method: 'DELETE'
@@ -84,6 +85,7 @@ export default function Todo(props) {
     setTasks(remainingTasks)
   }
 
+  // toggle completion of task
   async function toggleTaskCompleted(id) {
     const currentTask = tasks.find((e) => e._id === id)
     console.log(currentTask);
@@ -129,6 +131,7 @@ export default function Todo(props) {
     />
   ))
 
+  // header statement for how many are reamining
   const tasksNoun = taskList().length !== 1 ? 'tasks' : 'task'
   const headingTextWithTasks = `${taskList().length} ${tasksNoun} remaining`
   const headingTextWithoutTasks = "Let's add a task!"

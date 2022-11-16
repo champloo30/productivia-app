@@ -20,8 +20,19 @@ const Note = (props) => (
     <div className="right">
       <div id='plus' className="plus" onClick={() => props.toggle(props._id)}>+</div>
       <div id='noteMenu' className="hidden active">
-        <Link to={`${props.note._id}`} className='note-btn view'>View</Link>
-        <button type='button'className='note-btn delete' onClick={() => props.deleteNote(props.id)}>Delete</button>
+        <Link
+          to={`${props.note._id}`} 
+          className='note-btn view'
+        >
+          View
+        </Link>
+        <button 
+          type='button' 
+          className='note-btn delete' 
+          onClick={() => props.deleteNote(props.id)}
+        >
+          Delete
+        </button>
       </div>
     </div>
   </li>
@@ -46,6 +57,7 @@ export default function Notes(props) {
   const [filter, setFilter] = useState('Notes')
   const [show, setShow] = useState(false)
 
+  // get note from db
   useEffect(() => {
     async function getNotes() {
       const response = await fetch(`http://localhost:5000/myNotes`)
@@ -63,6 +75,17 @@ export default function Notes(props) {
     return
   }, [notes.length])
 
+  // delete note
+  async function deleteNote(id) {
+    await fetch(`http://localhost:5000/${id}`, {
+      method: 'DELETE'
+    })
+
+    const remainingNotes = notes.filter((note) => note._id !== id)
+    setNotes(remainingNotes)
+  }
+
+  // toggle open and close function
   function toggle(id) {
     setShow(!show)
 
@@ -85,16 +108,6 @@ export default function Notes(props) {
       noteItem.classList.add('hidden-menu')
       noteItem.classList.remove('active-menu')
     }
-  }
-
-  async function deleteNote(id) {
-    await fetch(`http://localhost:5000/${id}`, {
-      method: 'DELETE'
-    })
-
-    const remainingNotes = notes.filter((note) => note._id !== id)
-    setNotes(remainingNotes)
-    console.log(remainingNotes);
   }
 
   function noteList() { 

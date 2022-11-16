@@ -1,8 +1,58 @@
 .pomodoro {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #242F40;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pomodoro .pomodoro-container {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.pomodoro .pomodoro-container .btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pomodoro .pomodoro-container .progress {
+  height: 20rem;
+  width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid #A4BEF3;
+  border-radius: 100px;
+}
+.pomodoro .pomodoro-container .progress h1 {
+  font-size: 12rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 1rem;
+}
+.pomodoro .pomodoro-container .bottom-btn {
+  height: 3.5rem;
+  width: 7.5rem;
+  border-radius: 100px;
+  background-color: #242F40;
+  font-size: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.pomodoro .pomodoro-container .start {
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+  text-transform: uppercase;
+}
+.pomodoro .pomodoro-container .start:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
 }
 
 /*# sourceMappingURL=pomodoroTimer.css.map */
