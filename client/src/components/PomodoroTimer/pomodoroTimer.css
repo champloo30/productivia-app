@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
 }
-.pomodoro .pomodoro-container {
+.pomodoro .container {
   height: 100%;
   width: 90%;
   display: flex;
@@ -15,12 +15,28 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.pomodoro .pomodoro-container .btn-group {
+.pomodoro .container .t-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
-.pomodoro .pomodoro-container .progress {
+.pomodoro .container .t-btn-group .t-btn {
+  height: 3.5rem;
+  width: 11rem;
+  background-color: #242F40;
+  border: 2px solid #A4BEF3;
+  border-radius: 50px;
+  font-size: 1.75rem;
+  color: #A4BEF3;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.pomodoro .container .t-btn-group .t-btn:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.pomodoro .container .progress {
   height: 20rem;
   width: 40rem;
   display: flex;
@@ -29,13 +45,19 @@
   border: 8px solid #A4BEF3;
   border-radius: 100px;
 }
-.pomodoro .pomodoro-container .progress h1 {
+.pomodoro .container .progress h1 {
   font-size: 12rem;
   font-weight: 400;
   margin: 0;
   padding: 1rem;
 }
-.pomodoro .pomodoro-container .bottom-btn {
+.pomodoro .container .b-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.pomodoro .container .b-btn-group .b-btn {
   height: 3.5rem;
   width: 7.5rem;
   border-radius: 100px;
@@ -45,14 +67,193 @@
   transition: all 0.5s ease;
   text-decoration: none;
 }
-.pomodoro .pomodoro-container .start {
+.pomodoro .container .b-btn-group .pause {
+  border: 2px solid #E0B0FF;
+  color: #E0B0FF;
+}
+.pomodoro .container .b-btn-group .pause:hover {
+  background-color: #E0B0FF;
+  color: #242F40;
+}
+.pomodoro .container .b-btn-group .start {
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
-  text-transform: uppercase;
 }
-.pomodoro .pomodoro-container .start:hover {
+.pomodoro .container .b-btn-group .start:hover {
   background-color: #A4BEF3;
   color: #242F40;
+}
+
+.short {
+  width: 100%;
+  height: 100vh;
+  background-color: #E0B0FF;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.short .container {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.short .container .t-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.short .container .t-btn-group .t-btn {
+  height: 3.5rem;
+  width: 11rem;
+  background-color: #E0B0FF;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-size: 1.75rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.short .container .t-btn-group .t-btn:hover {
+  background-color: white;
+  color: #E0B0FF;
+}
+.short .container .progress {
+  height: 20rem;
+  width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid white;
+  border-radius: 100px;
+}
+.short .container .progress h1 {
+  font-size: 12rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 1rem;
+}
+.short .container .b-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.short .container .b-btn-group .b-btn {
+  height: 3.5rem;
+  width: 7.5rem;
+  border-radius: 100px;
+  background-color: #E0B0FF;
+  font-size: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.short .container .b-btn-group .pause {
+  border: 2px solid #242F40;
+  color: #242F40;
+}
+.short .container .b-btn-group .pause:hover {
+  background-color: #242F40;
+  color: #E0B0FF;
+}
+.short .container .b-btn-group .start {
+  border: 2px solid white;
+  color: white;
+}
+.short .container .b-btn-group .start:hover {
+  background-color: white;
+  color: #E0B0FF;
+}
+
+.long {
+  width: 100%;
+  height: 100vh;
+  background-color: #A4BEF3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.long .container {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.long .container .t-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.long .container .t-btn-group .t-btn {
+  height: 3.5rem;
+  width: 11rem;
+  background-color: #A4BEF3;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-size: 1.75rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.long .container .t-btn-group .t-btn:hover {
+  background-color: white;
+  color: #A4BEF3;
+}
+.long .container .progress {
+  height: 20rem;
+  width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid white;
+  border-radius: 100px;
+}
+.long .container .progress h1 {
+  font-size: 12rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 1rem;
+}
+.long .container .b-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.long .container .b-btn-group .b-btn {
+  height: 3.5rem;
+  width: 7.5rem;
+  border-radius: 100px;
+  background-color: #A4BEF3;
+  font-size: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.long .container .b-btn-group .pause {
+  border: 2px solid #242F40;
+  color: #242F40;
+}
+.long .container .b-btn-group .pause:hover {
+  background-color: #242F40;
+  color: #A4BEF3;
+}
+.long .container .b-btn-group .start {
+  border: 2px solid white;
+  color: white;
+}
+.long .container .b-btn-group .start:hover {
+  background-color: white;
+  color: #A4BEF3;
 }
 
 /*# sourceMappingURL=pomodoroTimer.css.map */

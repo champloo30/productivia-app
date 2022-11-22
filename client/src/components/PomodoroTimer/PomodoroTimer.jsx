@@ -1,53 +1,46 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './pomodoroTimer.scss'
-import FilterButton from './FilterButton/FilterButton'
+import { useTimer } from 'react-timer-hook'
 
-const FILTER_MAP = {
-  Pomodoro: (timer) => timer.category === 'Pomodoro',
-  Short: (timer) => timer.category === 'Short',
-  Long: (timer) => timer.category === 'Long',
-  Custom: (timer) => timer.category === 'Custom'
-}
+export default function PomodoroTimer({ expiryTimestamp, mode, setSec, pomodoro, short, long }) {
 
-const FILTER_NAMES = Object.keys(FILTER_MAP)
+  const { seconds, minutes, isRunning, pause, resume, restart } = useTimer({ expiryTimestamp, onExpire: () => alert(`${mode} timer has completed`), autoStart: false })
 
-export default function PomodoroTimer() {
-  const [timer, setTimer] = useState('')
-  const [filter, setFilter] = useState('Pomodoro')
-  const [mode, setMode] = useState({
-    pomodoro: 25,
-    short: 5,
-    long: 15,
-    custom: ''
-  })
-  const [startStop, setStartStop] = useState('start')
-
-  // function mode() {}
-  console.log(filter);
-  if (filter === 'Pomodoro') {
-    setMode(mode.pomodoro)
-  }
-
-  const filterList = FILTER_NAMES.map((name) => (
-    <FilterButton 
-      key={name} 
-      name={name} 
-      isPressed={name === filter}
-      setFilter={setFilter}
-      setMode={setMode}
-    />
-  ))
+  console.log(mode);
+  console.log(minutes);
+  console.log(expiryTimestamp);
 
   return (
-    <div className='pomodoro'>
-      <div className="pomodoro-container">
-        <div className="btn-group">
-          {filterList}
+    <div className={mode}>
+      <div className="container">
+        <div className="t-btn-group">
+          <button className='t-btn' onClick={() => pomodoro()}>Pomodoro</button>
+          <button className='t-btn' onClick={() => short()}>Short</button>
+          <button className='t-btn' onClick={() => long()}>Long</button>
         </div>
         <div className="progress">
-          <h1>{mode}:00</h1>
+          <h1>{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
         </div>
-        <button className="bottom-btn start">{startStop}</button>
+        <div className="b-btn-group">
+          <button className="b-btn start" onClick={() => {
+            const time = new Date()
+            if (mode === 'pomodoro') {
+              time.setSeconds(time.getSeconds() + 1500)
+            } else if (mode === 'short') {
+              time.setSeconds(time.getSeconds() + 300)
+            } else if (mode === 'long') {
+              time.setSeconds(time.getSeconds() + 900)
+            }
+            restart(time)
+            pause()
+            }
+          } >
+            Restart
+          </button>
+          <button className="b-btn pause" onClick={isRunning ? pause : resume} >
+            {isRunning ? 'Pause' : 'Start'}
+          </button>
+        </div>
       </div>
     </div>
   )

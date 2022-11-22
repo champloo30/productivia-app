@@ -1,4 +1,4 @@
-.menu {
+.pomodoro-menu {
   width: 300px;
   height: 100vh;
   background-color: #242F40;
@@ -11,13 +11,13 @@
   justify-content: flex-start;
   color: white;
 }
-.menu:hover {
+.pomodoro-menu:hover {
   margin-left: 0;
 }
-.menu h1 {
+.pomodoro-menu h1 {
   margin: 1rem 0;
 }
-.menu .menuItem {
+.pomodoro-menu .menuItem {
   height: 3rem;
   width: 100%;
   display: flex;
@@ -29,13 +29,101 @@
   color: white;
   text-decoration: none;
 }
-.menu .menuItem:hover {
+.pomodoro-menu .menuItem:hover {
   background-color: #A4BEF3;
 }
-.menu .menuItem p {
+.pomodoro-menu .menuItem p {
   font-size: 1.25rem;
 }
-.menu .menuItem .menuIcon {
+.pomodoro-menu .menuItem .menuIcon {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.short-menu {
+  width: 300px;
+  height: 100vh;
+  background-color: #E0B0FF;
+  margin-left: -15rem;
+  transition: all 0.5s ease;
+  border-right: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+}
+.short-menu:hover {
+  margin-left: 0;
+}
+.short-menu h1 {
+  margin: 1rem 0;
+}
+.short-menu .menuItem {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+  color: white;
+  text-decoration: none;
+}
+.short-menu .menuItem:hover {
+  background-color: #242F40;
+}
+.short-menu .menuItem p {
+  font-size: 1.25rem;
+}
+.short-menu .menuItem .menuIcon {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.long-menu {
+  width: 300px;
+  height: 100vh;
+  background-color: #A4BEF3;
+  margin-left: -15rem;
+  transition: all 0.5s ease;
+  border-right: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+}
+.long-menu:hover {
+  margin-left: 0;
+}
+.long-menu h1 {
+  margin: 1rem 0;
+}
+.long-menu .menuItem {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+  color: white;
+  text-decoration: none;
+}
+.long-menu .menuItem:hover {
+  background-color: #242F40;
+}
+.long-menu .menuItem p {
+  font-size: 1.25rem;
+}
+.long-menu .menuItem .menuIcon {
   height: 2rem;
   width: 2rem;
   margin-left: 1rem;
