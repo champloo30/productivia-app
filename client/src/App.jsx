@@ -15,27 +15,9 @@ import { useState } from 'react';
 
 function App() {
   const [mode, setMode] = useState('pomodoro')
-  const [sec, setSec] = useState(1500)
 
   const time = new Date()
-  time.setSeconds(time.getSeconds() + sec)
-
-  console.log(sec);
-
-  function pomodoro() {
-    setMode('pomodoro')
-    setSec(1500)
-  }
-
-  function short() {
-    setMode('short')
-    setSec(300)
-  }
-
-  function long() {
-    setMode('long')
-    setSec(900)
-  }
+  time.setSeconds(time.getSeconds() + 1500)
 
   return (
     <div className="app">
@@ -49,7 +31,7 @@ function App() {
         <Route path='/myNotes/addNote' element={<AddNote />} />
         <Route path='/myNotes/:id' element={<ViewNote />} />
         <Route path='/myNotes/edit/:id' element={<EditNote />} />
-        <Route path='/pomodoroTimer' element={<Pomodoro expiryTimestamp={time} mode={mode} setSec={setSec} pomodoro={pomodoro} short={short} long={long} />} />
+        <Route path='/pomodoroTimer' element={<Pomodoro expiryTimestamp={time} mode={mode} setMode={setMode} />} />
         <Route path='/wordOfTheDay' element={<WOD />} />
       </Routes>
     </div>

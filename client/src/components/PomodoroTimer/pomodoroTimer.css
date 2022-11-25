@@ -50,6 +50,9 @@
   font-weight: 400;
   margin: 0;
   padding: 1rem;
+  color: transparent;
+  -webkit-text-stroke-color: #A4BEF3;
+  -webkit-text-stroke-width: 5px;
 }
 .pomodoro .container .b-btn-group {
   display: flex;
@@ -136,6 +139,9 @@
   font-weight: 400;
   margin: 0;
   padding: 1rem;
+  color: transparent;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 5px;
 }
 .short .container .b-btn-group {
   display: flex;
@@ -222,6 +228,9 @@
   font-weight: 400;
   margin: 0;
   padding: 1rem;
+  color: transparent;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 5px;
 }
 .long .container .b-btn-group {
   display: flex;
