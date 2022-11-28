@@ -2,7 +2,89 @@
 
 .wordofday {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: $gunmetal;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .wordofday-container {
+        height: 100%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            height: 3rem;
+            width: 12rem;
+            font-size: 1.125rem;
+            font-weight: 400;
+            border: 2px solid $babyBlue;
+            border-radius: 100px;
+            transition: all 0.5s ease;
+
+            &:hover {
+                background-color: $babyBlue;
+                color: $gunmetal;
+            }
+        }
+
+        .word-info {
+            height: 30%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .info-container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .word {
+                    font-size: 2.25rem;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                }
+
+                .part-of-speech {
+                    font-size: 0.875rem;
+                    font-style: italic;
+                }
+
+                .syllables-list {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.25rem;
+
+                    .syllables {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+                }
+
+                .definition {
+                    font-size: 1.25rem;
+                    font-weight: 300;
+                }
+
+                .no-definition {
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                    color: $crimson;
+                }
+            }
+        }
+    }
 }

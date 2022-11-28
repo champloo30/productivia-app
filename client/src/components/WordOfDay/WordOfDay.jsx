@@ -22,19 +22,26 @@ export default function WordOfDay() {
 
   console.log(response);
 
+  const noDefiniton = "This didn't come with a definition. Please try again!"
+  
   return (
     <div className='wordofday'>
       <div className="wordofday-container">
-        <button onClick={() => fetchWords()}>Get Random Word</button>
+        <h1>Word of the Day</h1>
+        <button className='btn' onClick={() => fetchWords()}>Get Random Word</button>
         <div className="word-info">
           {response ? 
-            <div>
-              <p>{response.word}</p>
-              {response.syllables ? <p>{response.syllables.list}</p> : null}
-              {response.pronunciation ? <p>{response.pronunciation.all}</p> : null}
-              {response.results ? <p>{response.results[0].definition}</p> : null}
-              {response.results ? <p>{response.results[0].partOfSpeech}</p> : null}
-              {response.results ? <p>{response.results[0].synonyms}</p> : null}
+            <div className='info-container'>
+              <p className='word'>{response.word}</p>
+              {response.results ? <p className='part-of-speech'>{response.results[0].partOfSpeech}</p> : null}
+              <div className="syllables-list">
+                {response.syllables ? 
+                  response.syllables.list.map((syllable) => 
+                    <p className='syllables' id={syllable}>{syllable}</p>
+                  ) 
+                : null}
+              </div>
+              {response.results ? <p className='definition'>{response.results[0].definition}</p> : <p className='no-definition'>{noDefiniton}</p>}
             </div>
           : null}
         </div>

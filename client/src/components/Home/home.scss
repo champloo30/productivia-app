@@ -15,6 +15,222 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .item-container {
+            height: 50%;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .tasks-notes {
+                flex: 6;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+
+                hr {
+                    width: 80%;
+                }
+            }
+
+            hr {
+                height: 100%;
+            }
+
+            .mini-timer {
+                flex: 6;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .pomodoro {
+                    height: 12rem;
+                    width: 22rem;
+                    background-color: $gunmetal;
+                    color: white;
+                    border: 5px solid white;
+                    border-radius: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    .t-btn-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+
+                        .t-btn {
+                            height: 2.5rem;
+                            width: 2.5rem;
+                            background-color: $gunmetal;
+                            color: white;
+                            border: 2px solid white;
+                            border-radius: 100px;
+                            cursor: pointer;
+                            transition: all 0.5s ease;
+
+                            &:hover {
+                                background-color: white;
+                                color: $gunmetal;
+                            }
+                        }
+                    }
+
+                    .progress {
+                        margin-top: -0.5rem;
+
+                        .time {
+                            margin: 0;
+                            font-size: 4rem;
+                        }
+                    }
+
+                    .b-btn-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+
+                        .b-btn {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .short {
+                    height: 12rem;
+                    width: 22rem;
+                    background-color: $gunmetal;
+                    color: $mauve;
+                    border: 5px solid $mauve;
+                    border-radius: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    .t-btn-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+
+                        .t-btn {
+                            height: 2.5rem;
+                            width: 2.5rem;
+                            background-color: $gunmetal;
+                            color: $mauve;
+                            border: 2px solid $mauve;
+                            border-radius: 100px;
+                            cursor: pointer;
+                            transition: all 0.5s ease;
+
+                            &:hover {
+                                background-color: $mauve;
+                                color: $gunmetal;
+                            }
+                        }
+                    }
+
+                    .progress {
+                        margin-top: -0.5rem;
+
+                        .time {
+                            margin: 0;
+                            font-size: 4rem;
+                        }
+                    }
+
+                    .b-btn-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+
+                        .b-btn {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .long {
+                    height: 12rem;
+                    width: 22rem;
+                    background-color: $gunmetal;
+                    color: $babyBlue;
+                    border: 5px solid $babyBlue;
+                    border-radius: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    .t-btn-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+
+                        .t-btn {
+                            height: 2.5rem;
+                            width: 2.5rem;
+                            background-color: $gunmetal;
+                            color: $babyBlue;
+                            border: 2px solid $babyBlue;
+                            border-radius: 100px;
+                            cursor: pointer;
+                            transition: all 0.5s ease;
+
+                            &:hover {
+                                background-color: $babyBlue;
+                                color: $gunmetal;
+                            }
+                        }
+                    }
+
+                    .progress {
+                        margin-top: -0.5rem;
+
+                        .time {
+                            margin: 0;
+                            font-size: 4rem;
+                        }
+                    }
+
+                    .b-btn-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+
+                        .b-btn {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

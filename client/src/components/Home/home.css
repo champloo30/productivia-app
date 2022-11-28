@@ -13,7 +13,193 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+}
+.home .home-container h1 {
+  font-size: 2.5rem;
+}
+.home .home-container .item-container {
+  height: 50%;
+  width: 80%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+}
+.home .home-container .item-container .tasks-notes {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.home .home-container .item-container .tasks-notes hr {
+  width: 80%;
+}
+.home .home-container .item-container hr {
+  height: 100%;
+}
+.home .home-container .item-container .mini-timer {
+  flex: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .home-container .item-container .mini-timer .pomodoro {
+  height: 12rem;
+  width: 22rem;
+  background-color: #242F40;
+  color: white;
+  border: 5px solid white;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home .home-container .item-container .mini-timer .pomodoro .t-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.home .home-container .item-container .mini-timer .pomodoro .t-btn-group .t-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #242F40;
+  color: white;
+  border: 2px solid white;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.home .home-container .item-container .mini-timer .pomodoro .t-btn-group .t-btn:hover {
+  background-color: white;
+  color: #242F40;
+}
+.home .home-container .item-container .mini-timer .pomodoro .progress {
+  margin-top: -0.5rem;
+}
+.home .home-container .item-container .mini-timer .pomodoro .progress .time {
+  margin: 0;
+  font-size: 4rem;
+}
+.home .home-container .item-container .mini-timer .pomodoro .b-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.home .home-container .item-container .mini-timer .pomodoro .b-btn-group .b-btn {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.home .home-container .item-container .mini-timer .short {
+  height: 12rem;
+  width: 22rem;
+  background-color: #242F40;
+  color: #E0B0FF;
+  border: 5px solid #E0B0FF;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home .home-container .item-container .mini-timer .short .t-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.home .home-container .item-container .mini-timer .short .t-btn-group .t-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #242F40;
+  color: #E0B0FF;
+  border: 2px solid #E0B0FF;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.home .home-container .item-container .mini-timer .short .t-btn-group .t-btn:hover {
+  background-color: #E0B0FF;
+  color: #242F40;
+}
+.home .home-container .item-container .mini-timer .short .progress {
+  margin-top: -0.5rem;
+}
+.home .home-container .item-container .mini-timer .short .progress .time {
+  margin: 0;
+  font-size: 4rem;
+}
+.home .home-container .item-container .mini-timer .short .b-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.home .home-container .item-container .mini-timer .short .b-btn-group .b-btn {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.home .home-container .item-container .mini-timer .long {
+  height: 12rem;
+  width: 22rem;
+  background-color: #242F40;
+  color: #A4BEF3;
+  border: 5px solid #A4BEF3;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home .home-container .item-container .mini-timer .long .t-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.home .home-container .item-container .mini-timer .long .t-btn-group .t-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #242F40;
+  color: #A4BEF3;
+  border: 2px solid #A4BEF3;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.home .home-container .item-container .mini-timer .long .t-btn-group .t-btn:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.home .home-container .item-container .mini-timer .long .progress {
+  margin-top: -0.5rem;
+}
+.home .home-container .item-container .mini-timer .long .progress .time {
+  margin: 0;
+  font-size: 4rem;
+}
+.home .home-container .item-container .mini-timer .long .b-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.home .home-container .item-container .mini-timer .long .b-btn-group .b-btn {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=home.css.map */
