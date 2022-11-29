@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 3rem;
 }
 .home .home-container {
   height: 100%;
@@ -15,8 +16,17 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.home .home-container h1 {
+.home .home-container .h1-pomodoro {
   font-size: 2.5rem;
+  color: white;
+}
+.home .home-container .h1-short {
+  font-size: 2.5rem;
+  color: #E0B0FF;
+}
+.home .home-container .h1-long {
+  font-size: 2.5rem;
+  color: #A4BEF3;
 }
 .home .home-container .item-container {
   height: 50%;
@@ -24,6 +34,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 425px) {
+  .home .home-container .item-container {
+    flex-direction: column;
+  }
 }
 .home .home-container .item-container .tasks-notes {
   flex: 6;
@@ -33,8 +48,18 @@
   justify-content: center;
   gap: 3rem;
 }
+@media (max-width: 425px) {
+  .home .home-container .item-container .tasks-notes {
+    gap: 1rem;
+  }
+}
 .home .home-container .item-container .tasks-notes p {
   font-size: 2rem;
+}
+@media (max-width: 425px) {
+  .home .home-container .item-container .tasks-notes p {
+    font-size: 1.5rem;
+  }
 }
 .home .home-container .item-container .tasks-notes p .num-pomodoro {
   font-size: 3.5rem;
@@ -42,17 +67,32 @@
   margin-right: 1rem;
   color: white;
 }
+@media (max-width: 425px) {
+  .home .home-container .item-container .tasks-notes p .num-pomodoro {
+    font-size: 2.5rem;
+  }
+}
 .home .home-container .item-container .tasks-notes p .num-short {
   font-size: 3.5rem;
   font-weight: 600;
   margin-right: 1rem;
   color: #E0B0FF;
 }
+@media (max-width: 425px) {
+  .home .home-container .item-container .tasks-notes p .num-short {
+    font-size: 2.5rem;
+  }
+}
 .home .home-container .item-container .tasks-notes p .num-long {
   font-size: 3.5rem;
   font-weight: 600;
   margin: 0 1rem 0 0;
   color: #A4BEF3;
+}
+@media (max-width: 425px) {
+  .home .home-container .item-container .tasks-notes p .num-long {
+    font-size: 2.5rem;
+  }
 }
 .home .home-container .item-container .tasks-notes .h-line-pomodoro {
   width: 80%;
@@ -74,15 +114,39 @@
   width: 4px;
   background-color: white;
 }
+@media (max-width: 425px) {
+  .home .home-container .item-container .v-line-pomodoro {
+    height: 4px;
+    width: 75%;
+    margin-bottom: 2rem;
+    margin-top: 0.75rem;
+  }
+}
 .home .home-container .item-container .v-line-short {
   height: 100%;
   width: 4px;
   background-color: #E0B0FF;
 }
+@media (max-width: 425px) {
+  .home .home-container .item-container .v-line-short {
+    height: 4px;
+    width: 75%;
+    margin-bottom: 2rem;
+    margin-top: 0.75rem;
+  }
+}
 .home .home-container .item-container .v-line-long {
   height: 100%;
   width: 4px;
   background-color: #A4BEF3;
+}
+@media (max-width: 425px) {
+  .home .home-container .item-container .v-line-long {
+    height: 4px;
+    width: 75%;
+    margin-bottom: 2rem;
+    margin-top: 0.75rem;
+  }
 }
 .home .home-container .item-container .mini-timer {
   flex: 6;
@@ -101,6 +165,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+@media (max-width: 425px) {
+  .home .home-container .item-container .mini-timer .pomodoro {
+    width: 18rem;
+  }
 }
 .home .home-container .item-container .mini-timer .pomodoro .t-btn-group {
   display: flex;
@@ -147,13 +216,18 @@
   height: 12rem;
   width: 22rem;
   background-color: #242F40;
-  color: #E0B0FF;
+  color: white;
   border: 5px solid #E0B0FF;
   border-radius: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+@media (max-width: 425px) {
+  .home .home-container .item-container .mini-timer .short {
+    width: 18rem;
+  }
 }
 .home .home-container .item-container .mini-timer .short .t-btn-group {
   display: flex;
@@ -199,13 +273,18 @@
   height: 12rem;
   width: 22rem;
   background-color: #242F40;
-  color: #A4BEF3;
+  color: white;
   border: 5px solid #A4BEF3;
   border-radius: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+@media (max-width: 425px) {
+  .home .home-container .item-container .mini-timer .long {
+    width: 18rem;
+  }
 }
 .home .home-container .item-container .mini-timer .long .t-btn-group {
   display: flex;

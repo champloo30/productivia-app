@@ -1,4 +1,14 @@
+// fonts
 $gunmetal: #242F40;
 $babyBlue: #A4BEF3;
 $crimson: #B80F0A;
 $mauve: #E0B0FF;
+
+//media queries
+$mobile-width: 425px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}

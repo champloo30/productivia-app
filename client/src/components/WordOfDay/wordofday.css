@@ -68,6 +68,7 @@
 .wordofday .wordofday-container .word-info .info-container .definition {
   font-size: 1.25rem;
   font-weight: 300;
+  text-align: center;
 }
 .wordofday .wordofday-container .word-info .info-container .no-definition {
   font-size: 1.25rem;
