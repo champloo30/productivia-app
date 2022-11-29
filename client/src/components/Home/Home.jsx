@@ -29,11 +29,11 @@ export default function Home(props) {
             <h1>Productivia</h1>
             <div className="item-container">
               <div className="tasks-notes">
-                <p>{tasks.length} Task Remaining</p>
-                <hr />
-                <p>{notes.length} Notes Remaining</p>
+                <p><span className={`num-${props.mode}`}>{tasks.length}</span> Task Remaining</p>
+                <div className={`h-line-${props.mode}`}></div>
+                <p><span className={`num-${props.mode}`}>{notes.length}</span> Notes Remaining</p>
               </div>
-              <hr />
+              <div className={`v-line-${props.mode}`}></div>
               <div className="mini-timer">
                 <div className={props.mode}>
                   <div className="t-btn-group">

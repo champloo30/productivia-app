@@ -36,13 +36,66 @@
                 justify-content: center;
                 gap: 3rem;
 
-                hr {
+                p {
+                    font-size: 2rem;
+
+                    .num-pomodoro {
+                        font-size: 3.5rem;
+                        font-weight: 600;
+                        margin-right: 1rem;
+                        color: white;
+                    }
+
+                    .num-short {
+                        font-size: 3.5rem;
+                        font-weight: 600;
+                        margin-right: 1rem;
+                        color: $mauve;
+                    }
+
+                    .num-long {
+                        font-size: 3.5rem;
+                        font-weight: 600;
+                        margin: 0 1rem 0 0 ;
+                        color: $babyBlue;
+                    }
+                }
+
+                .h-line-pomodoro {
                     width: 80%;
+                    height: 4px;
+                    background-color: white;
+                }
+
+                .h-line-short {
+                    width: 80%;
+                    height: 4px;
+                    background-color: $mauve;
+                }
+
+                .h-line-long {
+                    width: 80%;
+                    height: 4px;
+                    background-color: $babyBlue;
                 }
             }
 
-            hr {
+            .v-line-pomodoro {
                 height: 100%;
+                width: 4px;
+                background-color: white;
+            }
+
+            .v-line-short {
+                height: 100%;
+                width: 4px;
+                background-color: $mauve;
+            }
+
+            .v-line-long {
+                height: 100%;
+                width: 4px;
+                background-color: $babyBlue;
             }
 
             .mini-timer {
@@ -76,6 +129,7 @@
                             color: white;
                             border: 2px solid white;
                             border-radius: 100px;
+                            font-size: 1.25rem;
                             cursor: pointer;
                             transition: all 0.5s ease;
 
