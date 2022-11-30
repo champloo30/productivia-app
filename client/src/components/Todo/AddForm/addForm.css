@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .form {
+    margin-left: 4rem;
+  }
+}
 .form .form-container {
   height: 100%;
   width: 90%;

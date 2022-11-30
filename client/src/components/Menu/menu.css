@@ -15,6 +15,7 @@
   .pomodoro-menu {
     margin-left: -39.5rem;
     position: fixed;
+    z-index: 5;
   }
 }
 .pomodoro-menu:hover {
@@ -43,6 +44,11 @@
 .pomodoro-menu .menuItem:hover {
   background-color: #A4BEF3;
 }
+@media (max-width: 425px) {
+  .pomodoro-menu .menuItem:hover > p, .pomodoro-menu .menuItem:hover > .menuIcon {
+    background-color: #A4BEF3;
+  }
+}
 .pomodoro-menu .menuItem p {
   font-size: 1.25rem;
 }
@@ -70,6 +76,7 @@
   .short-menu {
     margin-left: -39.5rem;
     position: fixed;
+    z-index: 5;
   }
 }
 .short-menu:hover {
@@ -83,6 +90,11 @@
 .short-menu h1 {
   margin: 1rem 0;
 }
+@media (max-width: 425px) {
+  .short-menu h1 {
+    background-color: #E0B0FF;
+  }
+}
 .short-menu .menuItem {
   height: 3rem;
   width: 100%;
@@ -95,17 +107,37 @@
   color: white;
   text-decoration: none;
 }
+@media (max-width: 425px) {
+  .short-menu .menuItem {
+    background-color: #E0B0FF;
+  }
+}
 .short-menu .menuItem:hover {
   background-color: #242F40;
 }
+@media (max-width: 425px) {
+  .short-menu .menuItem:hover:hover > p, .short-menu .menuItem:hover:hover > .menuIcon {
+    background-color: #242F40;
+  }
+}
 .short-menu .menuItem p {
   font-size: 1.25rem;
+}
+@media (max-width: 425px) {
+  .short-menu .menuItem p {
+    background-color: #E0B0FF;
+  }
 }
 .short-menu .menuItem .menuIcon {
   height: 2rem;
   width: 2rem;
   margin-left: 1rem;
   margin-right: 0.5rem;
+}
+@media (max-width: 425px) {
+  .short-menu .menuItem .menuIcon {
+    background-color: #E0B0FF;
+  }
 }
 
 .long-menu {
@@ -125,6 +157,7 @@
   .long-menu {
     margin-left: -39.5rem;
     position: fixed;
+    z-index: 5;
   }
 }
 .long-menu:hover {
@@ -138,6 +171,11 @@
 .long-menu h1 {
   margin: 1rem 0;
 }
+@media (max-width: 425px) {
+  .long-menu h1 {
+    background-color: #A4BEF3;
+  }
+}
 .long-menu .menuItem {
   height: 3rem;
   width: 100%;
@@ -150,17 +188,29 @@
   color: white;
   text-decoration: none;
 }
+@media (max-width: 425px) {
+  .long-menu .menuItem {
+    background-color: #A4BEF3;
+  }
+}
 .long-menu .menuItem:hover {
   background-color: #242F40;
 }
+@media (max-width: 425px) {
+  .long-menu .menuItem:hover > p, .long-menu .menuItem:hover > .menuIcon {
+    background-color: #242F40;
+  }
+}
 .long-menu .menuItem p {
   font-size: 1.25rem;
+  background-color: #A4BEF3;
 }
 .long-menu .menuItem .menuIcon {
   height: 2rem;
   width: 2rem;
   margin-left: 1rem;
   margin-right: 0.5rem;
+  background-color: #A4BEF3;
 }
 
 /*# sourceMappingURL=menu.css.map */

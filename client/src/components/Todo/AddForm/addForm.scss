@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: center;
 
+    @include mobile {
+        margin-left: 4rem;
+    }
+
     .form-container {
         height: 100%;
         width: 90%;

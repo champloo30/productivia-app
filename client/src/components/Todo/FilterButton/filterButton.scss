@@ -12,6 +12,10 @@
     margin-right: 1rem;
     cursor: pointer;
 
+    @include mobile {
+        height: 4.5rem;
+    }
+
     &:hover {
         border-left: 2px solid $babyBlue;
         border-bottom: 2px solid $babyBlue;

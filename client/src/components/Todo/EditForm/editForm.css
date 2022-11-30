@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .edit-form {
+    margin-left: 4rem;
+  }
+}
 .edit-form .edit-container {
   height: 100%;
   width: 90%;
