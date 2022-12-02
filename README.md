@@ -1,4 +1,4 @@
-# productivity-app
+# productivia-app
 
 This is a productivity app called 'Productivia App' (No copyright infringement intended, just needed a decent name) made using the MERN stack. This is my first fullstack application and is just the beginning of my Front-End journey. There's so much more in store for this app in the near future which includes; Login Authentification, Mobile App using React Native, and more!
 
