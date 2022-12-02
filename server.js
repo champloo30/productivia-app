@@ -14,7 +14,7 @@ const root = path.join(__dirname, 'client', 'public')
 
 app.use(express.static(root))
 
-app.get('/', function(req, res) {
+app.get("*", (req, res) => {
     res.sendFile('index.html', { root })
 })
 
