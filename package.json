@@ -1,0 +1,19 @@
+{
+  "name": "productivia-app",
+  "version": "1.0.0",
+  "description": "Productivity project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/champloo30/productivia-app.git"
+  },
+  "author": "DJLDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/champloo30/productivia-app/issues"
+  },
+  "homepage": "https://github.com/champloo30/productivia-app#readme"
+}
