@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .view {
+    margin-left: 3rem;
+  }
+}
 .view .view-container {
   height: 100%;
   width: 90%;
@@ -28,10 +33,20 @@
   border-radius: 20px;
   padding: 1rem 0 0 1rem;
 }
+@media (max-width: 425px) {
+  .view .view-container p {
+    width: 90%;
+  }
+}
 .view .view-container .btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 425px) {
+  .view .view-container .btn-group {
+    margin-left: -2em;
+  }
 }
 .view .view-container .btn-group .btn {
   height: 2.5rem;
@@ -44,6 +59,11 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+@media (max-width: 425px) {
+  .view .view-container .btn-group .btn {
+    margin-right: -2rem;
+  }
 }
 .view .view-container .btn-group .back {
   border: 2px solid #A4BEF3;

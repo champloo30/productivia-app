@@ -6,7 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 3rem;
+}
+@media (max-width: 425px) {
+  .home {
+    margin-left: 3rem;
+  }
 }
 .home .home-container {
   height: 100%;
@@ -99,15 +103,30 @@
   height: 4px;
   background-color: white;
 }
+@media (max-width: 425px) {
+  .home .home-container .item-container .tasks-notes .h-line-pomodoro {
+    width: 100%;
+  }
+}
 .home .home-container .item-container .tasks-notes .h-line-short {
   width: 80%;
   height: 4px;
   background-color: #E0B0FF;
 }
+@media (max-width: 425px) {
+  .home .home-container .item-container .tasks-notes .h-line-short {
+    width: 100%;
+  }
+}
 .home .home-container .item-container .tasks-notes .h-line-long {
   width: 80%;
   height: 4px;
   background-color: #A4BEF3;
+}
+@media (max-width: 425px) {
+  .home .home-container .item-container .tasks-notes .h-line-long {
+    width: 100%;
+  }
 }
 .home .home-container .item-container .v-line-pomodoro {
   height: 100%;
@@ -117,7 +136,7 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .v-line-pomodoro {
     height: 4px;
-    width: 75%;
+    width: 95%;
     margin-bottom: 2rem;
     margin-top: 0.75rem;
   }
@@ -130,7 +149,7 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .v-line-short {
     height: 4px;
-    width: 75%;
+    width: 95%;
     margin-bottom: 2rem;
     margin-top: 0.75rem;
   }
@@ -143,7 +162,7 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .v-line-long {
     height: 4px;
-    width: 75%;
+    width: 95%;
     margin-bottom: 2rem;
     margin-top: 0.75rem;
   }
@@ -169,6 +188,7 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .mini-timer .pomodoro {
     width: 18rem;
+    margin-left: 0;
   }
 }
 .home .home-container .item-container .mini-timer .pomodoro .t-btn-group {
@@ -227,6 +247,7 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .mini-timer .short {
     width: 18rem;
+    margin-left: 0;
   }
 }
 .home .home-container .item-container .mini-timer .short .t-btn-group {
@@ -284,6 +305,7 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .mini-timer .long {
     width: 18rem;
+    margin-left: 0;
   }
 }
 .home .home-container .item-container .mini-timer .long .t-btn-group {

@@ -77,7 +77,7 @@ export default function Todo(props) {
 
   // delete task
   async function deleteTask(id) {
-    await fetch(`http://localhost:5000/${id}`, {
+    await fetch(`http://localhost:5000/myTasks/${id}`, {
       method: 'DELETE'
     })
 

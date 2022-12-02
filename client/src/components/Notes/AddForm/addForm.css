@@ -4,6 +4,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+@media (max-width: 425px) {
+  .add-form {
+    width: 100vw;
+    margin-left: -0.75rem;
+  }
 }
 .add-form .add-form-container {
   height: 100%;
@@ -60,6 +67,11 @@
   align-items: flex-start;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .add-form .add-form-container .form .form-container .fieldset {
+    align-items: center;
+  }
+}
 .add-form .add-form-container .form .form-container .fieldset input[type=text] {
   height: 4rem;
   width: 50%;
@@ -70,6 +82,11 @@
   padding-left: 1rem;
   font-size: 2rem;
   color: white;
+}
+@media (max-width: 425px) {
+  .add-form .add-form-container .form .form-container .fieldset input[type=text] {
+    width: 90%;
+  }
 }
 .add-form .add-form-container .form .form-container .fieldset input[type=text]::placeholder {
   font-size: 2rem;
@@ -85,6 +102,11 @@
   font-size: 1.125rem;
   color: white;
   font-weight: 300;
+}
+@media (max-width: 425px) {
+  .add-form .add-form-container .form .form-container .fieldset #textarea {
+    width: 90%;
+  }
 }
 .add-form .add-form-container .form .form-container .fieldset #textarea::placeholder {
   font-size: 1.125rem;

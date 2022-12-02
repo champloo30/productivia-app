@@ -6,6 +6,11 @@
   justify-content: center;
   color: white;
 }
+@media (max-width: 425px) {
+  .edit {
+    margin-left: 3rem;
+  }
+}
 .edit .edit-container {
   height: 100%;
   width: 90%;
@@ -31,6 +36,11 @@
   align-items: flex-start;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .edit .edit-container .edit-note .fieldset {
+    align-items: center;
+  }
+}
 .edit .edit-container .edit-note .fieldset input[type=text] {
   height: 4rem;
   width: 50%;
@@ -41,6 +51,11 @@
   padding-left: 1rem;
   font-size: 2rem;
   color: white;
+}
+@media (max-width: 425px) {
+  .edit .edit-container .edit-note .fieldset input[type=text] {
+    width: 90%;
+  }
 }
 .edit .edit-container .edit-note .fieldset input[type=text]::placeholder {
   font-size: 2rem;
@@ -56,6 +71,11 @@
   font-size: 1.125rem;
   color: white;
   font-weight: 300;
+}
+@media (max-width: 425px) {
+  .edit .edit-container .edit-note .fieldset #textarea {
+    width: 90%;
+  }
 }
 .edit .edit-container .edit-note .fieldset #textarea::placeholder {
   font-size: 1.125rem;

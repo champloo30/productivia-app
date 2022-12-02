@@ -9,6 +9,12 @@
     align-items: center;
     justify-content: center;
 
+    @include mobile {
+        height: 100%;
+        width: 100vw;
+        margin-left: 4rem;
+    }
+
     .notes-container {
         height: 100%;
         width: 100%;
@@ -19,12 +25,20 @@
 
         h1 {
             font-size: 2.5rem;
+
+            @include mobile {
+                margin-top: 2rem;
+            }
         }
 
         .btn-group {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include mobile {
+                margin-top: 2rem;
+            }
         }
 
         .bottom-section {
@@ -36,9 +50,14 @@
             align-items: center;
             justify-content: center;
 
+            @include mobile {
+                margin-top: 2rem;
+                margin-left: -1rem;
+            }
+
             .add-form {
                 height: 3rem;
-                width: 3rem;
+                width: 2.75rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -51,6 +70,12 @@
                 transition: all 0.5s ease;
                 text-decoration: none;
 
+                @include mobile {
+                    height: 3rem;
+                    width: 3rem;
+                    margin-top: 2rem;
+                }
+
                 &:hover {
                     background-color: $babyBlue;
                     color: $gunmetal;
@@ -58,6 +83,7 @@
 
                 span {
                     font-size: 2.5rem;
+                    background-color: transparent;
                 }
             }
 
@@ -68,7 +94,11 @@
                 align-items: flex-start;
                 justify-content: flex-start;
                 flex-wrap: wrap;
-                // margin-top: 4rem;
+
+                @include mobile {
+                    align-items: center;
+                    justify-content: center;
+                }
 
                 .hidden-menu {
                     height: 8rem;
@@ -83,6 +113,10 @@
                     padding-left: 1rem;
                     text-decoration: none;
                     transition: all 0.5s ease;
+
+                    @include mobile {
+                        width: 14rem;
+                    }
                 
                     .left {
                         flex: 8;

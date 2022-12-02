@@ -26,7 +26,7 @@ export default function Home(props) {
   return (
     <div className='home'>
         <div className="home-container">
-            <h1 className={`h1-${props.mode}`}>Productivia</h1>
+            <h1 className={`h1-${props.mode}`}>Productivia App</h1>
             <div className="item-container">
               <div className="tasks-notes">
                 <p><span className={`num-${props.mode}`}>{tasks.length}</span> Task Remaining</p>

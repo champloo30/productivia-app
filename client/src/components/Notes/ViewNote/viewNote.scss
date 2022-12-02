@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: center;
 
+    @include mobile {
+        margin-left: 3rem;
+    }
+
     .view-container {
         height: 100%;
         width: 90%;
@@ -31,12 +35,20 @@
             border: 2px solid white;
             border-radius: 20px;
             padding: 1rem 0 0 1rem;
+
+            @include mobile {
+                width: 90%;
+            }
         }
 
         .btn-group {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include mobile {
+                margin-left: -2em;
+            }
 
             .btn {
                 height: 2.5rem;
@@ -49,6 +61,10 @@
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                
+                @include mobile {
+                    margin-right: -2rem;
+                }
             }
 
             .back {

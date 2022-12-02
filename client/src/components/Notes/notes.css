@@ -7,6 +7,13 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .notes {
+    height: 100%;
+    width: 100vw;
+    margin-left: 4rem;
+  }
+}
 .notes .notes-container {
   height: 100%;
   width: 100%;
@@ -18,10 +25,20 @@
 .notes .notes-container h1 {
   font-size: 2.5rem;
 }
+@media (max-width: 425px) {
+  .notes .notes-container h1 {
+    margin-top: 2rem;
+  }
+}
 .notes .notes-container .btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .btn-group {
+    margin-top: 2rem;
+  }
 }
 .notes .notes-container .bottom-section {
   height: 60%;
@@ -32,9 +49,15 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section {
+    margin-top: 2rem;
+    margin-left: -1rem;
+  }
+}
 .notes .notes-container .bottom-section .add-form {
   height: 3rem;
-  width: 3rem;
+  width: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,12 +70,20 @@
   transition: all 0.5s ease;
   text-decoration: none;
 }
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section .add-form {
+    height: 3rem;
+    width: 3rem;
+    margin-top: 2rem;
+  }
+}
 .notes .notes-container .bottom-section .add-form:hover {
   background-color: #A4BEF3;
   color: #242F40;
 }
 .notes .notes-container .bottom-section .add-form span {
   font-size: 2.5rem;
+  background-color: transparent;
 }
 .notes .notes-container .bottom-section .note-list {
   height: 100%;
@@ -61,6 +92,12 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section .note-list {
+    align-items: center;
+    justify-content: center;
+  }
 }
 .notes .notes-container .bottom-section .note-list .hidden-menu {
   height: 8rem;
@@ -75,6 +112,11 @@
   padding-left: 1rem;
   text-decoration: none;
   transition: all 0.5s ease;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section .note-list .hidden-menu {
+    width: 14rem;
+  }
 }
 .notes .notes-container .bottom-section .note-list .hidden-menu .left {
   flex: 8;

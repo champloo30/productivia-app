@@ -7,6 +7,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .wordofday {
+    margin-left: 3rem;
+  }
+}
 .wordofday .wordofday-container {
   height: 100%;
   width: 90%;
@@ -51,6 +56,11 @@
   font-weight: 400;
   text-transform: capitalize;
 }
+@media (max-width: 425px) {
+  .wordofday .wordofday-container .word-info .info-container .word {
+    font-size: 2rem;
+  }
+}
 .wordofday .wordofday-container .word-info .info-container .part-of-speech {
   font-size: 0.875rem;
   font-style: italic;
@@ -65,15 +75,31 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+@media (max-width: 425px) {
+  .wordofday .wordofday-container .word-info .info-container .syllables-list .syllables {
+    font-size: 1.25rem;
+  }
+}
 .wordofday .wordofday-container .word-info .info-container .definition {
   font-size: 1.25rem;
   font-weight: 300;
   text-align: center;
 }
+@media (max-width: 425px) {
+  .wordofday .wordofday-container .word-info .info-container .definition {
+    font-size: 1rem;
+  }
+}
 .wordofday .wordofday-container .word-info .info-container .no-definition {
   font-size: 1.25rem;
   font-weight: 400;
   color: #B80F0A;
+}
+@media (max-width: 425px) {
+  .wordofday .wordofday-container .word-info .info-container .no-definition {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=wordOfDay.css.map */

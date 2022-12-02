@@ -64,6 +64,7 @@
 }
 .todo .todo-container .add-btn span {
   font-size: 2rem;
+  background-color: transparent;
 }
 .todo .todo-container .filter-buttons {
   width: 100%;

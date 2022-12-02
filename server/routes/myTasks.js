@@ -58,7 +58,7 @@ myTasksRoutes.route('/myTasks/edit/:id').post(function (req, response) {
         })
 })
 
-myTasksRoutes.route('/:id').delete((req, response) => {
+myTasksRoutes.route('/myTasks/:id').delete((req, response) => {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     db_connect.collection('myTasks').deleteOne(myquery, function (err, obj) {

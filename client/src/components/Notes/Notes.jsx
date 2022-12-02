@@ -15,7 +15,7 @@ const Note = (props) => (
     <div className="left">
       <h1>{truncateTitle(props)}</h1>
       <p className='content'>{truncateContent(props)}</p>
-      <p className='date'>Date</p>
+      <p className='date'>{props.date}</p>
     </div>
     <div className="right">
       <div id='plus' className="plus" onClick={() => props.toggle(props._id)}>+</div>
@@ -77,7 +77,7 @@ export default function Notes(props) {
 
   // delete note
   async function deleteNote(id) {
-    await fetch(`http://localhost:5000/${id}`, {
+    await fetch(`http://localhost:5000/myNotes/${id}`, {
       method: 'DELETE'
     })
 
@@ -118,6 +118,7 @@ export default function Notes(props) {
         note={note} 
         toggle={() => toggle(note._id)}
         deleteNote={() => deleteNote(note._id)}
+        date={currentDate}
         key={note._id}
       />
     ))
@@ -132,17 +133,8 @@ export default function Notes(props) {
     />
   ))
 
-  // function headingTextNotes() {
-  //   if (notes.category === 'Notes') {
-  //     return "Let's add a new note!"
-  //   } else if (notes.category === 'Journal') {
-  //     return "Let's add a new journal entry!"
-  //   } else {
-  //     return null
-  //   }
-  // }
-
-  // const heading = 
+  const date = new Date()
+  const currentDate = date.getMonth() + '/' + date.getDate()
 
   return (
     <div className='notes'>

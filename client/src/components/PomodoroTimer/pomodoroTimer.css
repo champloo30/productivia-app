@@ -7,6 +7,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .pomodoro {
+    margin-left: 3rem;
+  }
+}
 .pomodoro .container {
   height: 100%;
   width: 90%;
@@ -32,6 +37,13 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
+@media (max-width: 425px) {
+  .pomodoro .container .t-btn-group .t-btn {
+    height: 2.75rem;
+    width: 6.25rem;
+    font-size: 1rem;
+  }
+}
 .pomodoro .container .t-btn-group .t-btn:hover {
   background-color: #A4BEF3;
   color: #242F40;
@@ -45,6 +57,13 @@
   border: 8px solid #A4BEF3;
   border-radius: 100px;
 }
+@media (max-width: 425px) {
+  .pomodoro .container .progress {
+    height: 12rem;
+    width: 20rem;
+    border: 4px solid #A4BEF3;
+  }
+}
 .pomodoro .container .progress h1 {
   font-size: 12rem;
   font-weight: 400;
@@ -53,6 +72,13 @@
   color: transparent;
   -webkit-text-stroke-color: #A4BEF3;
   -webkit-text-stroke-width: 5px;
+}
+@media (max-width: 425px) {
+  .pomodoro .container .progress h1 {
+    font-size: 6.5rem;
+    background-color: transparent;
+    -webkit-text-stroke-width: 3px;
+  }
 }
 .pomodoro .container .b-btn-group {
   display: flex;
@@ -69,6 +95,13 @@
   cursor: pointer;
   transition: all 0.5s ease;
   text-decoration: none;
+}
+@media (max-width: 425px) {
+  .pomodoro .container .b-btn-group .b-btn {
+    height: 2.75rem;
+    width: 6.25rem;
+    font-size: 1rem;
+  }
 }
 .pomodoro .container .b-btn-group .pause {
   border: 2px solid #E0B0FF;
@@ -96,6 +129,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .short {
+    margin-left: 3rem;
+  }
+}
 .short .container {
   height: 100%;
   width: 90%;
@@ -121,6 +159,13 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
+@media (max-width: 425px) {
+  .short .container .t-btn-group .t-btn {
+    height: 2.75rem;
+    width: 6.25rem;
+    font-size: 1rem;
+  }
+}
 .short .container .t-btn-group .t-btn:hover {
   background-color: white;
   color: #E0B0FF;
@@ -134,6 +179,13 @@
   border: 8px solid white;
   border-radius: 100px;
 }
+@media (max-width: 425px) {
+  .short .container .progress {
+    height: 12rem;
+    width: 20rem;
+    border: 4px solid white;
+  }
+}
 .short .container .progress h1 {
   font-size: 12rem;
   font-weight: 400;
@@ -142,6 +194,13 @@
   color: transparent;
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 5px;
+}
+@media (max-width: 425px) {
+  .short .container .progress h1 {
+    font-size: 6.5rem;
+    background-color: transparent;
+    -webkit-text-stroke-width: 3px;
+  }
 }
 .short .container .b-btn-group {
   display: flex;
@@ -158,6 +217,13 @@
   cursor: pointer;
   transition: all 0.5s ease;
   text-decoration: none;
+}
+@media (max-width: 425px) {
+  .short .container .b-btn-group .b-btn {
+    height: 2.75rem;
+    width: 6.25rem;
+    font-size: 1rem;
+  }
 }
 .short .container .b-btn-group .pause {
   border: 2px solid #242F40;
@@ -185,6 +251,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .long {
+    margin-left: 3rem;
+  }
+}
 .long .container {
   height: 100%;
   width: 90%;
@@ -210,6 +281,13 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
+@media (max-width: 425px) {
+  .long .container .t-btn-group .t-btn {
+    height: 2.75rem;
+    width: 6.25rem;
+    font-size: 1rem;
+  }
+}
 .long .container .t-btn-group .t-btn:hover {
   background-color: white;
   color: #A4BEF3;
@@ -223,6 +301,13 @@
   border: 8px solid white;
   border-radius: 100px;
 }
+@media (max-width: 425px) {
+  .long .container .progress {
+    height: 12rem;
+    width: 20rem;
+    border: 4px solid white;
+  }
+}
 .long .container .progress h1 {
   font-size: 12rem;
   font-weight: 400;
@@ -231,6 +316,13 @@
   color: transparent;
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 5px;
+}
+@media (max-width: 425px) {
+  .long .container .progress h1 {
+    font-size: 6.5rem;
+    background-color: transparent;
+    -webkit-text-stroke-width: 3px;
+  }
 }
 .long .container .b-btn-group {
   display: flex;
@@ -247,6 +339,13 @@
   cursor: pointer;
   transition: all 0.5s ease;
   text-decoration: none;
+}
+@media (max-width: 425px) {
+  .long .container .b-btn-group .b-btn {
+    height: 2.75rem;
+    width: 6.25rem;
+    font-size: 1rem;
+  }
 }
 .long .container .b-btn-group .pause {
   border: 2px solid #242F40;

@@ -2,7 +2,7 @@
   width: 300px;
   height: 100vh;
   background-color: #242F40;
-  margin-left: -15rem;
+  margin-left: -14.5rem;
   transition: all 0.5s ease;
   border-right: 2px solid white;
   display: flex;
@@ -44,26 +44,23 @@
 .pomodoro-menu .menuItem:hover {
   background-color: #A4BEF3;
 }
-@media (max-width: 425px) {
-  .pomodoro-menu .menuItem:hover > p, .pomodoro-menu .menuItem:hover > .menuIcon {
-    background-color: #A4BEF3;
-  }
-}
 .pomodoro-menu .menuItem p {
   font-size: 1.25rem;
+  background-color: transparent;
 }
 .pomodoro-menu .menuItem .menuIcon {
   height: 2rem;
   width: 2rem;
   margin-left: 1rem;
   margin-right: 0.5rem;
+  background-color: transparent;
 }
 
 .short-menu {
   width: 300px;
   height: 100vh;
   background-color: #E0B0FF;
-  margin-left: -15rem;
+  margin-left: -14.5rem;
   transition: all 0.5s ease;
   border-right: 2px solid white;
   display: flex;
@@ -89,11 +86,7 @@
 }
 .short-menu h1 {
   margin: 1rem 0;
-}
-@media (max-width: 425px) {
-  .short-menu h1 {
-    background-color: #E0B0FF;
-  }
+  background-color: #E0B0FF;
 }
 .short-menu .menuItem {
   height: 3rem;
@@ -104,6 +97,7 @@
   cursor: pointer;
   margin-bottom: 1rem;
   transition: all 0.5s ease;
+  background-color: #E0B0FF;
   color: white;
   text-decoration: none;
 }
@@ -115,36 +109,23 @@
 .short-menu .menuItem:hover {
   background-color: #242F40;
 }
-@media (max-width: 425px) {
-  .short-menu .menuItem:hover:hover > p, .short-menu .menuItem:hover:hover > .menuIcon {
-    background-color: #242F40;
-  }
-}
 .short-menu .menuItem p {
   font-size: 1.25rem;
-}
-@media (max-width: 425px) {
-  .short-menu .menuItem p {
-    background-color: #E0B0FF;
-  }
+  background-color: transparent;
 }
 .short-menu .menuItem .menuIcon {
   height: 2rem;
   width: 2rem;
   margin-left: 1rem;
   margin-right: 0.5rem;
-}
-@media (max-width: 425px) {
-  .short-menu .menuItem .menuIcon {
-    background-color: #E0B0FF;
-  }
+  background-color: transparent;
 }
 
 .long-menu {
   width: 300px;
   height: 100vh;
   background-color: #A4BEF3;
-  margin-left: -15rem;
+  margin-left: -14.5rem;
   transition: all 0.5s ease;
   border-right: 2px solid white;
   display: flex;
@@ -170,11 +151,7 @@
 }
 .long-menu h1 {
   margin: 1rem 0;
-}
-@media (max-width: 425px) {
-  .long-menu h1 {
-    background-color: #A4BEF3;
-  }
+  background-color: #A4BEF3;
 }
 .long-menu .menuItem {
   height: 3rem;
@@ -185,6 +162,7 @@
   cursor: pointer;
   margin-bottom: 1rem;
   transition: all 0.5s ease;
+  background-color: #A4BEF3;
   color: white;
   text-decoration: none;
 }
@@ -196,21 +174,16 @@
 .long-menu .menuItem:hover {
   background-color: #242F40;
 }
-@media (max-width: 425px) {
-  .long-menu .menuItem:hover > p, .long-menu .menuItem:hover > .menuIcon {
-    background-color: #242F40;
-  }
-}
 .long-menu .menuItem p {
   font-size: 1.25rem;
-  background-color: #A4BEF3;
+  background-color: transparent;
 }
 .long-menu .menuItem .menuIcon {
   height: 2rem;
   width: 2rem;
   margin-left: 1rem;
   margin-right: 0.5rem;
-  background-color: #A4BEF3;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=menu.css.map */

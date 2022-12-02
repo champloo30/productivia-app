@@ -59,7 +59,7 @@ myNotesRoutes.route('/myNotes/edit/:id').post(function (req, response) {
         })
 })
 
-myNotesRoutes.route('/:id').delete((req, response) => {
+myNotesRoutes.route('/myNotes/:id').delete((req, response) => {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     db_connect.collection('myNotes').deleteOne(myquery, function (err, obj) {
