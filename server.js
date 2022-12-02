@@ -5,11 +5,17 @@ require('dotenv').config({ path: './config.env' })
 const port = process.env.PORT || 5000
 
 app.use(cors())
+app.use(express.urlencoded({extended: false}))
+app.use(express.static('public'))
 app.use(express.json())
-app.use(require('./server/routes/myTasks'))
-app.use(require('./server/routes/myNotes'))
+app.use(require('./routes/myTasks'))
+app.use(require('./routes/myNotes'))
 
-const dbo = require('./server/db/conn')
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + 'index.html')
+})
+
+const dbo = require('./db/conn')
 
 app.listen(port, () => {
     dbo.connectToServer(function (err) {
