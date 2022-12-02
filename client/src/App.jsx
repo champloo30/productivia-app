@@ -71,15 +71,15 @@ function App() {
       <Menu mode={mode} />
       <Routes>
         <Route path='/' element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
-        <Route path='/myTasks' element={<Todo />} />
-        <Route path='/myTasks/addTask' element={<AddTask />} />
-        <Route path='/myTasks/edit/:id' element={<EditForm />} />
-        <Route path='/myNotes' element={<Notes />} />
-        <Route path='/myNotes/addNote' element={<AddNote />} />
-        <Route path='/myNotes/:id' element={<ViewNote />} />
-        <Route path='/myNotes/edit/:id' element={<EditNote />} />
-        <Route path='/pomodoroTimer' element={<Pomodoro expiryTimestamp={expiryTimestamp} mode={mode} seconds={seconds} minutes={minutes} isRunning={isRunning} pause={pause} resume={resume} restart={restart} pomodoro={pomodoro} short={short} long={long} />} />
-        <Route path='/wordOfTheDay' element={<WOD />} />
+        <Route path='myTasks' element={<Todo />} />
+        <Route path='myTasks/addTask' element={<AddTask />} />
+        <Route path='myTasks/edit/:id' element={<EditForm />} />
+        <Route path='myNotes' element={<Notes />} />
+        <Route path='myNotes/addNote' element={<AddNote />} />
+        <Route path='myNotes/:id' element={<ViewNote />} />
+        <Route path='myNotes/edit/:id' element={<EditNote />} />
+        <Route path='pomodoroTimer' element={<Pomodoro expiryTimestamp={expiryTimestamp} mode={mode} seconds={seconds} minutes={minutes} isRunning={isRunning} pause={pause} resume={resume} restart={restart} pomodoro={pomodoro} short={short} long={long} />} />
+        <Route path='wordOfTheDay' element={<WOD />} />
       </Routes>
     </div>
   );

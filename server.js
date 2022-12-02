@@ -4,6 +4,8 @@ const cors = require('cors')
 const path =  require('path')
 require('dotenv').config({ path: './config.env' })
 const port = process.env.PORT || 5000
+const myTasksRoutes = require('./routes/myTasks')
+const myNotesRoutes = require('./routes/myNotes')
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
@@ -14,13 +16,13 @@ const root = path.join(__dirname, 'client', 'public')
 
 app.use(express.static(root))
 
-app.get("*", (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile('index.html', { root })
 })
 
 // dynamic
-app.use(require('./routes/myTasks'))
-app.use(require('./routes/myNotes'))
+app.use(myTasksRoutes)
+app.use(myNotesRoutes)
 
 const dbo = require('./db/conn')
 
