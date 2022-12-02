@@ -10,12 +10,12 @@ app.use(express.json())
 app.use(cors())
 
 // static
-const root = path.join(__dirname, 'client', 'src', 'components', 'Home')
+const root = path.join(__dirname, 'client', 'public')
 
 app.use(express.static(root))
 
 app.get('/', function(req, res) {
-    res.sendFile('Home.jsx', { root })
+    res.sendFile('index.html', { root })
 })
 
 // dynamic
