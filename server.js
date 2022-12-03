@@ -12,8 +12,10 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(cors())
 
+console.log(__dirname + '/client/build');
+
 // static
-const root = path.join(__dirname, 'public')
+const root = path.join(__dirname, '/client/build')
 
 app.use('/static', express.static(root))
 
