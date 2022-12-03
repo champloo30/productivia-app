@@ -15,10 +15,10 @@ app.use(cors())
 console.log(__dirname + '/client/build');
 
 // static
-const root = path.join(__dirname, '/client/build')
+// const root = path.join(__dirname, '/client/build')
 
-// app.use(express.static(__dirname + '/client/build'))
-app.use('/static', express.static(root))
+app.use('/static', express.static(__dirname + '/client/build'))
+// app.use('/static', express.static(root))
 
 // app.get('*', (req, res) => {
 //     res.sendFile('index.html', { root })
