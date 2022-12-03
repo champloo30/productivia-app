@@ -19,7 +19,7 @@ const root = path.join(__dirname, '/client/build')
 
 app.use('/static', express.static(root))
 
-app.get("*", (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile('index.html', { root })
 })
 
