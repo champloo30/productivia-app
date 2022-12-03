@@ -13,10 +13,12 @@ app.use(express.json())
 app.use(cors())
 
 // static
-app.use('/static', express.static(path.join(__dirname, 'client/build')))
+const root = path.join(__dirname, 'client/build')
+
+app.use('/static', express.static(root))
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build/', 'index.html'))
+    res.sendFile('index.html', { root })
 })
 
 // dynamic
