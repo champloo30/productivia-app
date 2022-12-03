@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 
 // static
-const root = path.join(__dirname, 'client/build')
+const root = path.join(__dirname, 'public')
 
 app.use('/static', express.static(root))
 
