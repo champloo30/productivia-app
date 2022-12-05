@@ -58,7 +58,7 @@ export default function Todo(props) {
   // get task from db
   useEffect(() => {
     async function getTasks() {
-      const response = await fetch(`https://productivia-app.herokuapp.com//myTasks`)
+      const response = await fetch(`http://localhost:5000/myTasks`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -77,7 +77,7 @@ export default function Todo(props) {
 
   // delete task
   async function deleteTask(id) {
-    await fetch(`https://productivia-app.herokuapp.com/myTasks/${id}`, {
+    await fetch(`http://localhost:5000/myTasks/${id}`, {
       method: 'DELETE'
     })
 
@@ -89,7 +89,7 @@ export default function Todo(props) {
   async function toggleTaskCompleted(id) {
     const currentTask = tasks.find((e) => e._id === id)
     console.log(currentTask);
-    await fetch(`https://productivia-app.herokuapp.com/myTasks/edit/${id}`, {
+    await fetch(`http://localhost:5000/myTasks/edit/${id}`, {
       method: 'POST',
       body: JSON.stringify({name: currentTask.name, completed: !currentTask.completed}),
       headers: {
