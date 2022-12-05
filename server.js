@@ -23,8 +23,8 @@ app.get('*', (req, res) => {
 })
 
 // dynamic
-app.use(myTasksRoutes)
-app.use(myNotesRoutes)
+app.use('/api/', myTasksRoutes)
+app.use('/api/', myNotesRoutes)
 
 const dbo = require('./db/conn')
 

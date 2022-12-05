@@ -88,7 +88,6 @@ export default function Todo(props) {
   // toggle completion of task
   async function toggleTaskCompleted(id) {
     const currentTask = tasks.find((e) => e._id === id)
-    console.log(currentTask);
     await fetch(`https://productivia-app.herokuapp.com/myTasks/edit/${id}`, {
       method: 'POST',
       body: JSON.stringify({name: currentTask.name, completed: !currentTask.completed}),
@@ -98,8 +97,6 @@ export default function Todo(props) {
     })
     const updatedTasks = tasks.map((task) => {
       if (id === task._id) {
-        console.log(task.completed);
-       
         return {...task, completed: !task.completed}
       }
       return task
