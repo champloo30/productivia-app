@@ -12,10 +12,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(cors())
 
-console.log(path.join(__dirname, '/client/build'));
-
 // static
-
 app.use(express.static(path.join(__dirname, '/client/build')))
 
 app.get('*', (req, res) => {
@@ -23,8 +20,8 @@ app.get('*', (req, res) => {
 })
 
 // dynamic
-app.use('/api/', myTasksRoutes)
-app.use('/api/', myNotesRoutes)
+app.use('/routes/myTasks', myTasksRoutes)
+app.use('/routes/myNotes', myNotesRoutes)
 
 const dbo = require('./db/conn')
 
