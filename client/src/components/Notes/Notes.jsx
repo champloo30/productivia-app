@@ -60,7 +60,7 @@ export default function Notes(props) {
   // get note from db
   useEffect(() => {
     async function getNotes() {
-      const response = await fetch(`http://localhost:5000/myNotes`)
+      const response = await fetch(`https://productivia-app.herokuapp.com/myNotes`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -77,7 +77,7 @@ export default function Notes(props) {
 
   // delete note
   async function deleteNote(id) {
-    await fetch(`http://localhost:5000/myNotes/${id}`, {
+    await fetch(`https://productivia-app.herokuapp.com/myNotes/${id}`, {
       method: 'DELETE'
     })
 
