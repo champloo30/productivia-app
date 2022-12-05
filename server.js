@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(cors())
 
-console.log(__dirname + '/client/build');
+console.log(path.join(__dirname, '/client/build'));
 
 // static
 

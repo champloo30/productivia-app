@@ -1,27 +1,51 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './home.scss'
 import restartIcon from '../../assets/restart-svgrepo-com.svg'
 import playIcon from '../../assets/play-svgrepo-com.svg'
 import pauseIcon from '../../assets/pause-svgrepo-com.svg'
 
 export default function Home(props) {
-    const [tasks] = useState(() => {
-        const savedTasks = localStorage.getItem('new-task')
-        if (savedTasks) {
-          return JSON.parse(savedTasks)
-        } else {
-          return props.tasks
-        }
-    })
+  const [tasks, setTasks] = useState([])
+  const [notes, setNotes] = useState([])
 
-    const [notes] = useState(() => {
-      const savedItems = localStorage.getItem('new-item')
-      if (savedItems) {
-        return JSON.parse(savedItems)
-      } else {
-        return props.notes
+  // get task from db
+  useEffect(() => {
+    async function getTasks() {
+      const response = await fetch(`http://localhost:5000/myTasks`)
+
+      if (!response.ok) {
+        const message = `An error has occurred: ${response.statusText}`
+        window.alert(message)
+        return
       }
-  })
+
+      const tasks = await response.json()
+      setTasks(tasks)
+    }
+    getTasks()
+    return
+  }, [tasks.length])
+
+  // get notes from db
+  useEffect(() => {
+    async function getNotes() {
+      const response = await fetch(`http://localhost:5000/myNotes`)
+
+      if (!response.ok) {
+        const message = `An error has occurred: ${response.statusText}`
+        window.alert(message)
+        return
+      }
+
+      const notes = await response.json()
+      setNotes(notes)
+    }
+    getNotes()
+    return
+  }, [notes.length])
+
+  console.log(tasks);
+  console.log(notes);
 
   return (
     <div className='home'>
