@@ -11,7 +11,7 @@ export default function Home(props) {
   // get task from db
   useEffect(() => {
     async function getTasks() {
-      const response = await fetch(`https://productivia-app.herokuapp.com/myTasks`)
+      const response = await fetch(`http://localhost:5000/myTasks`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -53,7 +53,7 @@ export default function Home(props) {
             <h1 className={`h1-${props.mode}`}>Productivia App</h1>
             <div className="item-container">
               <div className="tasks-notes">
-                <p><span className={`num-${props.mode}`}>{tasks.length}</span> Task Remaining</p>
+                <p><span className={`num-${props.mode}`}>{tasks.length}</span> Tasks Remaining</p>
                 <div className={`h-line-${props.mode}`}></div>
                 <p><span className={`num-${props.mode}`}>{notes.length}</span> Notes Remaining</p>
               </div>
