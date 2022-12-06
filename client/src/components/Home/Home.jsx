@@ -29,7 +29,7 @@ export default function Home(props) {
   // get notes from db
   useEffect(() => {
     async function getNotes() {
-      const response = await fetch(`https://productivia-app.herokuapp.com/myNotes`)
+      const response = await fetch(`http://localhost:5000/myNotes`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
