@@ -13,14 +13,14 @@ app.use(express.json())
 app.use(cors())
 
 // static
-app.use('/public', express.static(__dirname + '/client' + '/public'))
+app.use('/static', express.static(__dirname + '/client/build'))
 
 // dynamic
 app.use('/route', myTasksRoutes)
 app.use('/route', myNotesRoutes)
 
 app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/client/public' + '/index.html')
+    res.sendFile(__dirname + '/client/build' + '/index.html')
 })
 
 const dbo = require('./db/conn')
