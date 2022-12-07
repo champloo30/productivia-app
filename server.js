@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 
 // static
-app.use('/public', express.static(__dirname + '/public'))
+app.use('/public', express.static(__dirname + '/client' + '/public'))
 
 // dynamic
 app.use('/route', myTasksRoutes)
