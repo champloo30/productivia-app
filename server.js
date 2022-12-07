@@ -16,8 +16,8 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, '/client/build/')))
 
 // dynamic
-app.use('/route', myTasksRoutes)
-app.use('/route', myNotesRoutes)
+app.use(myTasksRoutes)
+app.use(myNotesRoutes)
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/client/build/'))
