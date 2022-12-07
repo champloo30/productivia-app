@@ -1,19 +1,19 @@
 @import '../../../global.scss';
 
-.btn {
-    height: 4rem;
-    width: 15rem;
+.btn-tasks {
+    height: 3rem;
+    width: 14rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $gunmetal;
     border: none;
     color: $babyBlue;
-    margin-right: 1rem;
     cursor: pointer;
 
     @include mobile {
         height: 4.5rem;
+        width: 15rem;
     }
 
     &:hover {
@@ -23,11 +23,15 @@
     }
 
     span {
-        font-size: 1rem;
+        font-size: 1.125rem;
+
+        @include mobile {
+            font-size: 1rem;
+        }
     }
 }
 
-.btn[aria-pressed=true] {
+.btn-tasks[aria-pressed=true] {
     border-left: 2px solid white;
     border-bottom: 2px solid white;
     color: white;

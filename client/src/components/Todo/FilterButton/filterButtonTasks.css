@@ -1,0 +1,38 @@
+.btn-tasks {
+  height: 3rem;
+  width: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #242F40;
+  border: none;
+  color: #A4BEF3;
+  cursor: pointer;
+}
+@media (max-width: 425px) {
+  .btn-tasks {
+    height: 4.5rem;
+    width: 15rem;
+  }
+}
+.btn-tasks:hover {
+  border-left: 2px solid #A4BEF3;
+  border-bottom: 2px solid #A4BEF3;
+  color: #A4BEF3;
+}
+.btn-tasks span {
+  font-size: 1.125rem;
+}
+@media (max-width: 425px) {
+  .btn-tasks span {
+    font-size: 1rem;
+  }
+}
+
+.btn-tasks[aria-pressed=true] {
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+/*# sourceMappingURL=filterButtonTasks.css.map */

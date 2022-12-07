@@ -1,0 +1,33 @@
+@import '../../../global.scss';
+
+.btn-notes {
+    height: 4rem;
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $gunmetal;
+    border: none;
+    color: $babyBlue;
+    cursor: pointer;
+
+    @include mobile {
+        height: 4.5rem;
+    }
+
+    &:hover {
+        border-left: 2px solid $babyBlue;
+        border-bottom: 2px solid $babyBlue;
+        color: $babyBlue;
+    }
+
+    span {
+        font-size: 1.125rem;
+    }
+}
+
+.btn-notes[aria-pressed=true] {
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    color: white;
+}

@@ -1,17 +1,15 @@
 import React from 'react'
-import './filterButton.scss'
+import './filterButtonNotes.scss'
 
 export default function FilterButton(props) {
   return (
-    <div className='filter-button'>
-        <button 
-            type='button' 
-            className='btn' 
-            aria-pressed={props.isPressed} 
-            onClick={() => props.setFilter(props.name)}
-        >
-            My {props.name}
-        </button>
-    </div>
+    <button 
+      type='button' 
+      className='btn-notes' 
+      aria-pressed={props.isPressed} 
+      onClick={() => props.setFilter(props.name)}
+    >
+      <span>My {props.name}</span>
+    </button>
   )
 }
