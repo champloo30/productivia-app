@@ -71,7 +71,7 @@ function App() {
       <Menu mode={mode} />
       <Routes>
         <Route path='/' element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
-        <Route path='myTasks' element={<Todo />} />
+        <Route path='myTasksFrontend' element={<Todo />} />
         <Route path='myTasks/addTask' element={<AddTask />} />
         <Route path='myTasks/edit/:id' element={<EditForm />} />
         <Route path='myNotes' element={<Notes />} />
