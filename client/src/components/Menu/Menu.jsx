@@ -15,11 +15,11 @@ export default function Menu({ mode }) {
         <p>Home</p>
         <img className='menuIcon' src={home} alt="home" />
       </Link>
-      <Link to='/myTasks' className="menuItem">
+      <Link to='/tasks' className="menuItem">
         <p>My Tasks</p>
         <img className='menuIcon' src={task} alt="my tasks" />
       </Link>
-      <Link to='/myNotes' className="menuItem">
+      <Link to='/notes' className="menuItem">
         <p>My Notes</p>
         <img className='menuIcon' src={notes} alt="my notes" />
       </Link>

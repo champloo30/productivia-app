@@ -33,7 +33,7 @@ export default function Form(props) {
     })
 
     setForm({name: '', completed: false})
-    navigate('/myTasks')
+    navigate('/tasks')
   }
 
   return (

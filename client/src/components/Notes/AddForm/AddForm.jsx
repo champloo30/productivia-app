@@ -21,7 +21,7 @@ export default function Form(props) {
     e.preventDefault()
     const newNote = { ...form, category }
 
-    await fetch(`https://productivia-app.herokuapp.com/notes/addNote`, {
+    await fetch(`https://productivia-app.herokuapp.com/myNotes/addNote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ export default function Form(props) {
     category === 'Notes' ? setCategory('Note') : setCategory('Journal')
     setForm({title: '', content: ''})
     console.log(category, form.title, form.content);
-    navigate('/myNotes')
+    navigate('/notes')
   }
 
   return (
