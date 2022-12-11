@@ -6,7 +6,7 @@ const dbo = require('../db/conn')
 
 const ObjectId = require('mongodb').ObjectId
 
-myNotesRoutes.route('/myNotes').get(function (req, res) {
+myNotesRoutes.route('/notes').get(function (req, res) {
     let db_connect = dbo.getDb('productivia')
     db_connect
         .collection('myNotes')
@@ -17,7 +17,7 @@ myNotesRoutes.route('/myNotes').get(function (req, res) {
         })
 })
 
-myNotesRoutes.route('/myNotes/:id').get(function (req, res) {
+myNotesRoutes.route('/notes/:id').get(function (req, res) {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     db_connect
@@ -28,7 +28,7 @@ myNotesRoutes.route('/myNotes/:id').get(function (req, res) {
         })
 })
 
-myNotesRoutes.route('/myNotes/addNote').post(function (req, response) {
+myNotesRoutes.route('/notes/addNote').post(function (req, response) {
     let db_connect = dbo.getDb()
     let mynote = {
         category: req.body.category,
@@ -41,7 +41,7 @@ myNotesRoutes.route('/myNotes/addNote').post(function (req, response) {
     })
 })
 
-myNotesRoutes.route('/myNotes/edit/:id').post(function (req, response) {
+myNotesRoutes.route('/notes/edit/:id').post(function (req, response) {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     let newvalues = {
@@ -59,7 +59,7 @@ myNotesRoutes.route('/myNotes/edit/:id').post(function (req, response) {
         })
 })
 
-myNotesRoutes.route('/myNotes/:id').delete((req, response) => {
+myNotesRoutes.route('/notes/:id').delete((req, response) => {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     db_connect.collection('myNotes').deleteOne(myquery, function (err, obj) {

@@ -6,7 +6,7 @@ const dbo = require('../db/conn')
 
 const ObjectId = require('mongodb').ObjectId
 
-myTasksRoutes.route('/myTasks').get(function (req, res) {
+myTasksRoutes.route('/tasks').get(function (req, res) {
     let db_connect = dbo.getDb('productivia')
     db_connect
         .collection('myTasks')
@@ -17,7 +17,7 @@ myTasksRoutes.route('/myTasks').get(function (req, res) {
         })
 })
 
-myTasksRoutes.route('/myTasks/:id').get(function (req, res) {
+myTasksRoutes.route('/tasks/:id').get(function (req, res) {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     db_connect
@@ -28,7 +28,7 @@ myTasksRoutes.route('/myTasks/:id').get(function (req, res) {
         })
 })
 
-myTasksRoutes.route('/myTasks/addTask').post(function (req, response) {
+myTasksRoutes.route('/tasks/addTask').post(function (req, response) {
     let db_connect = dbo.getDb()
     let mytodo = {
         name: req.body.name,
@@ -40,7 +40,7 @@ myTasksRoutes.route('/myTasks/addTask').post(function (req, response) {
     })
 })
 
-myTasksRoutes.route('/myTasks/edit/:id').post(function (req, response) {
+myTasksRoutes.route('/tasks/edit/:id').post(function (req, response) {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     let newvalues = {
@@ -58,7 +58,7 @@ myTasksRoutes.route('/myTasks/edit/:id').post(function (req, response) {
         })
 })
 
-myTasksRoutes.route('/myTasks/:id').delete((req, response) => {
+myTasksRoutes.route('/tasks/:id').delete((req, response) => {
     let db_connect = dbo.getDb()
     let myquery = { _id: ObjectId(req.params.id) }
     db_connect.collection('myTasks').deleteOne(myquery, function (err, obj) {
