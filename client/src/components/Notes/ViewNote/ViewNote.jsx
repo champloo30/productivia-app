@@ -15,7 +15,7 @@ export default function ViewNote(props) {
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString()
-      const response = await fetch(`https://productivia-app.herokuapp.com/myNotes/${params.id.toString()}`)
+      const response = await fetch(`https://productivia-app.herokuapp.com/notes/${params.id.toString()}`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`

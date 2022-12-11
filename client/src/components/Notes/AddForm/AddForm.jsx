@@ -21,7 +21,7 @@ export default function Form(props) {
     e.preventDefault()
     const newNote = { ...form, category }
 
-    await fetch(`https://productivia-app.herokuapp.com/myNotes/addNote`, {
+    await fetch(`https://productivia-app.herokuapp.com/notes/addNote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
