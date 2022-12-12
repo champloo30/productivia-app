@@ -83,7 +83,7 @@ export default function EditNote(props) {
             ></textarea>
           </div>
           <div className="btn-group">
-            <Link className='btn cancel' to={`/myNotes/${params.id}`}>Cancel</Link>
+            <Link className='btn cancel' to={`/notes/${params.id}`}>Cancel</Link>
             <button className='btn save' type='submit'>Save</button>
           </div>
         </form>

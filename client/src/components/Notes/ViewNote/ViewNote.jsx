@@ -42,8 +42,8 @@ export default function ViewNote(props) {
         <h2>{note.category + ' - Date'}</h2>
         <p>{note.content}</p>
         <div className="btn-group">
-          <Link className='btn back' to='/myNotes'>Back</Link>
-          <Link className='btn edit' to={`/myNotes/edit/${params.id}`}>Edit</Link>
+          <Link className='btn back' to='/notes'>Back</Link>
+          <Link className='btn edit' to={`/notes/edit/${params.id}`}>Edit</Link>
         </div>
       </div>
     </div>

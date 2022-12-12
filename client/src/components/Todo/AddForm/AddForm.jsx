@@ -52,7 +52,7 @@ export default function Form(props) {
             required 
           />
           <div className="btn-group">
-            <Link className='btn cancel' to='/myTasks'>Close</Link>
+            <Link className='btn cancel' to='/tasks'>Close</Link>
             <button className='btn save'>Save</button>
           </div>
         </form>

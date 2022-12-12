@@ -74,7 +74,7 @@ export default function Form(props) {
               ></textarea>
             </div>
             <div className="bottom-btn-group">
-              <Link className='note-btn close' to='/myNotes'>Close</Link>
+              <Link className='note-btn close' to='/notes'>Close</Link>
               <button className='note-btn save' type='submit'>Save</button>
             </div>
           </div>
