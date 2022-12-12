@@ -60,6 +60,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 @media (max-width: 425px) {
   .view .view-container .btn-group .btn {
@@ -70,7 +71,6 @@
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
   text-decoration: none;
-  transition: all 0.5s ease;
 }
 .view .view-container .btn-group .back:hover {
   background-color: #A4BEF3;
