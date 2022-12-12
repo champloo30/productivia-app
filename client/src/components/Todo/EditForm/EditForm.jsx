@@ -25,7 +25,7 @@ export default function EditForm(props) {
       const task = await response.json()
       if (!task) {
         window.alert(`Record with id ${id} not found`)
-        navigate('/myTasks')
+        navigate('/tasks')
         return
       }
       setEditForm(task)
@@ -54,7 +54,7 @@ export default function EditForm(props) {
         'Content-Type': 'application/json'
       }
     })
-    navigate('/myTasks')
+    navigate('/tasks')
   }
 
   return ( 

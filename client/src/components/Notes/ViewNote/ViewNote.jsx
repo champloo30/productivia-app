@@ -26,7 +26,7 @@ export default function ViewNote(props) {
       const note = await response.json()
       if (!note) {
         window.alert(`Note with id ${id} not found`)
-        navigate('/myNotes')
+        navigate('/notes')
         return
       }
       setNote(note)

@@ -27,7 +27,7 @@ export default function EditNote(props) {
       const note = await response.json()
       if (!note) {
         window.alert(`Note with id ${id} not found`)
-        navigate('/myNotes')
+        navigate('/notes')
         return
       }
       setEditForm(note)
@@ -57,7 +57,7 @@ export default function EditNote(props) {
         'Content-Type': 'application/json'
       }
     })
-    navigate(`/myNotes/${params.id}`)
+    navigate(`/notes/${params.id}`)
   }
 
   return (
