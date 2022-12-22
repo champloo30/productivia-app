@@ -2,7 +2,7 @@ const express = require('express')
 
 const myTasksRoutes = express.Router()
 
-const dbo = require('../db/conn')
+const dbo = require('../models/tasks.model')
 
 const ObjectId = require('mongodb').ObjectId
 

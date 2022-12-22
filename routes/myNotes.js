@@ -2,7 +2,7 @@ const express = require('express')
 
 const myNotesRoutes = express.Router()
 
-const dbo = require('../db/conn')
+const dbo = require('../models/notes.model')
 
 const ObjectId = require('mongodb').ObjectId
 

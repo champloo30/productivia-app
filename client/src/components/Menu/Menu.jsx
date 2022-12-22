@@ -16,12 +16,12 @@ export default function Menu({ mode }) {
         <img className='menuIcon' src={home} alt="home" />
       </Link>
       <Link to='/tasks' className="menuItem">
-        <p>My Tasks</p>
-        <img className='menuIcon' src={task} alt="my tasks" />
+        <p>Tasks</p>
+        <img className='menuIcon' src={task} alt="tasks" />
       </Link>
       <Link to='/notes' className="menuItem">
-        <p>My Notes</p>
-        <img className='menuIcon' src={notes} alt="my notes" />
+        <p>Notes</p>
+        <img className='menuIcon' src={notes} alt="notes" />
       </Link>
       <Link to='/pomodoroTimer' className="menuItem">
         <p>Pomodoro Timer</p>
