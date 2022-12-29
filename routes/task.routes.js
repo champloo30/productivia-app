@@ -20,14 +20,14 @@ taskRouter.get('/', getAllTasks)
  * @description create a new task
  * @access public
  */
-taskRouter.post('/', postCreateTask)
+taskRouter.post('/add', postCreateTask)
 
 /**
  * @route PUT api/task/:id
  * @description update task
  * @access public
  */
-taskRouter.put('/:id', putUpdateTask)
+taskRouter.put('/edit/:id', putUpdateTask)
 
 /**
  * @route DELETE api/task/:id
