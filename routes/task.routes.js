@@ -16,14 +16,14 @@ const {
 taskRouter.get('/', getAllTasks)
 
 /**
- * @route POST api/task
+ * @route POST api/task/add
  * @description create a new task
  * @access public
  */
 taskRouter.post('/add', postCreateTask)
 
 /**
- * @route PUT api/task/:id
+ * @route PUT api/task/edit/:id
  * @description update task
  * @access public
  */

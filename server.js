@@ -14,8 +14,8 @@ const ATLAS_URI = process.env.ATLAS_URI
 app.use(bodyParser.json())
 app.use(cors())
 
-const taskRoutes = require('./routes/task.routes')
-const myNotesRoutes = require('./routes/note.routes')
+const noteRouter = require('./routes/note.routes')
+const taskRouter = require('./routes/task.routes')
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
@@ -24,8 +24,8 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, '/client/build/')))
 
 // dynamic
-app.use('/api/task', taskRoutes)
-app.use(myNotesRoutes)
+app.use('/api/task', taskRouter)
+app.use('/api/note', noteRouter)
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/client/build/'))
