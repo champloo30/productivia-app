@@ -14,8 +14,8 @@ const ATLAS_URI = process.env.ATLAS_URI
 app.use(bodyParser.json())
 app.use(cors())
 
-const myTasksRoutes = require('./routes/myTasks')
-const myNotesRoutes = require('./routes/myNotes')
+const taskRoutes = require('./routes/task.routes')
+const myNotesRoutes = require('./routes/note.routes')
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
@@ -24,12 +24,14 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, '/client/build/')))
 
 // dynamic
-app.use(myTasksRoutes)
+app.use('/api/task', taskRoutes)
 app.use(myNotesRoutes)
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/client/build/'))
 })
+
+mongoose.set('strictQuery', false);
 
 mongoose.connect(ATLAS_URI, {
     useNewUrlParser: true,
