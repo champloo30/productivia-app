@@ -6,7 +6,7 @@ const {
     postCreateTask,
     putUpdateTask,
     deleteTask
-} = required('../controllers/task.controllers')
+} = require('../controllers/task.controllers')
 
 /**
  * @route GET api/task
@@ -36,4 +36,4 @@ taskRouter.put('/edit/:id', putUpdateTask)
  */
 taskRouter.delete('/:id', deleteTask)
 
-module.exports = tasksRouter
+module.exports = taskRouter

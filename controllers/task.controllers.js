@@ -2,7 +2,7 @@ const Task = require('../models/tasks.model')
 
 exports.getAllTasks = (req, res) => {
     Task.find()
-        .then((task) => res.JSON(task))
+        .then((task) => res.json(task))
         .catch((err) => 
             res.status(404)
                .json({ message: 'Task not found', error: err.message }) 
