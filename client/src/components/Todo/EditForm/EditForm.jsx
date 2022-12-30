@@ -14,7 +14,7 @@ export default function EditForm(props) {
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString()
-      const response = await fetch(`https://productivia-app.herokuapp.com/api/task/${params.id.toString()}`)
+      const response = await fetch(`http://localhost:5000/api/task/${params.id.toString()}`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -29,6 +29,7 @@ export default function EditForm(props) {
         return
       }
       setEditForm(task)
+      console.log(task);
     }
     fetchData()
     return
@@ -46,9 +47,10 @@ export default function EditForm(props) {
     const editedTask = {
       name: editForm.name,
     }
+    console.log(editForm.name);
 
-    await fetch(`https://productivia-app.herokuapp.com/api/task/edit/${params.id}`, {
-      method: 'POST',
+    await fetch(`http://localhost:5000/api/task/edit/${params.id}`, {
+      method: 'PUT',
       body: JSON.stringify(editedTask),
       headers: {
         'Content-Type': 'application/json'

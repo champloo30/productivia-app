@@ -1,4 +1,4 @@
-const Note = require('../models/note.model')
+const Note = require('../models/notes.model')
 
 exports.getAllNotes = (req, res) => {
     Note.find()

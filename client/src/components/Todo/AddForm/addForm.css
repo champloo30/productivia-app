@@ -53,6 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 .form .form-container .create-todo .btn-group .btn {
   height: 2.5rem;

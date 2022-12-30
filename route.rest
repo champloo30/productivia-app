@@ -1,5 +1,25 @@
-GET http://localhost:5000/myTasks
+GET http://localhost:5000/api/task
 
 ###
 
-GET http://localhost:5000/myNotes
+POST http://localhost:5000/api/task/add
+Content-Type: application/json
+
+{
+    "name": "New Task 2",
+    "completed": false
+}
+
+###
+
+PUT  http://localhost:5000/api/task/edit/63ae1e0af9ea4f9b9b961d0e
+Content-Type: application/json
+
+{
+    "name": "task 4.1",
+    "completed": true
+}
+
+###
+
+GET http://localhost:5000/api/note
