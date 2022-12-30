@@ -11,7 +11,7 @@ export default function Home(props) {
   // get task from db
   useEffect(() => {
     async function getTasks() {
-      const response = await fetch(`https://productivia-app.herokuapp.com/myTasks`)
+      const response = await fetch(`http://localhost:5000/api/task`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -29,7 +29,7 @@ export default function Home(props) {
   // get notes from db
   useEffect(() => {
     async function getNotes() {
-      const response = await fetch(`https://productivia-app.herokuapp.com/myNotes`)
+      const response = await fetch(`http://localhost:5000/api/note`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
