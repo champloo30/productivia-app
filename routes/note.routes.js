@@ -52,10 +52,10 @@ noteRouter.post('/add', async (req, res) => {
  * @access public
  */
 noteRouter.put('/edit/:id', getNote, async (req, res) => {
-    if (req.body.title == null) {
+    if (req.body.title != null) {
         res.note.title = req.body.title
     }
-    if (req.body.content == null) {
+    if (req.body.content != null) {
         res.note.content = req.body.content
     }
     try {

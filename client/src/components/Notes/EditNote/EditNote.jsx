@@ -16,7 +16,7 @@ export default function EditNote(props) {
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString()
-      const response = await fetch(`https://productivia-app.herokuapp.com/api/note/${params.id.toString()}`)
+      const response = await fetch(`http://localhost:5000/api/note/${params.id.toString()}`)
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -50,8 +50,8 @@ export default function EditNote(props) {
       content: editForm.content
     }
 
-    await fetch(`https://productivia-app.herokuapp.com/api/note/edit/${params.id}`, {
-      method: 'POST',
+    await fetch(`http://localhost:5000/api/note/edit/${params.id}`, {
+      method: 'PUT',
       body: JSON.stringify(editedNote),
       headers: {
         'Content-Type': 'application/json'
