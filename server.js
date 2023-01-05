@@ -1,31 +1,33 @@
 const express = require('express')
-const mongoose = require('mongoose')
 const cors = require('cors')
+const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const bcrypt = require('bcrypt')
 const path =  require('path')
 require('dotenv').config({ path: './config.env' })
+
+// import routes middlewares
+const noteRouter = require('./routes/note.routes')
+const taskRouter = require('./routes/task.routes')
+const userRouter = require('./routes/user.routes')
 
 const app = express()
 
 const PORT = process.env.PORT || 5000
 const ATLAS_URI = process.env.ATLAS_URI
 
+// middlewares
 app.use(bodyParser.json())
 app.use(cors())
-
-const noteRouter = require('./routes/note.routes')
-const taskRouter = require('./routes/task.routes')
-
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
 // static
 app.use(express.static(path.join(__dirname, '/client/build/')))
 
-// dynamic
+// routes middlewares
 app.use('/api/task', taskRouter)
 app.use('/api/note', noteRouter)
+app.use('/api/user', userRouter)
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/client/build/'))

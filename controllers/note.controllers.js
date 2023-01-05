@@ -1,8 +1,8 @@
-const Note = require('../models/notes.model')
+const Note = require('../models/note.model')
 
 exports.getAllNotes = (req, res) => {
     Note.find()
-        .then((note) => res.json(task))
+        .then((note) => res.json(note))
         .catch((err) => 
             res
                 .status(404)
@@ -10,13 +10,23 @@ exports.getAllNotes = (req, res) => {
         )
 }
 
-exports.postCreateTask = (req, res) => {
+exports.postCreateNote = (req, res) => {
     Note.create(req.body)
         .then((data) => res.json({ message: 'Note added successfully', data }))
         .catch((err) => 
             res
                 .status(400)
                 .json({ message: 'Failed to add note', error: err.message })
+        )
+}
+
+exports.getOneNote = (req, res) => {
+    Note.findById(req.params.id)
+        .then((note) => res.json(note))
+        .catch((err) => 
+            res
+                .status(404)
+                .json({ message : 'Note not found', error: err.message })
         )
 }
 

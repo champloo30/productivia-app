@@ -1,25 +1,32 @@
-GET http://localhost:5000/api/task
+GET http://localhost:5000/api/user
 
 ###
 
-POST http://localhost:5000/api/task/add
+POST http://localhost:5000/api/user/signup
 Content-Type: application/json
 
 {
-    "name": "New Task 2",
-    "completed": false
+    "first": "Test",
+    "last": "Tester",
+    "email": "testT@gmail.com",
+    "password": "testB3",
+    "password_confirmation": "testB3"
 }
 
 ###
 
-PUT  http://localhost:5000/api/task/edit/63ae1e0af9ea4f9b9b961d0e
+GET http://localhost:5000/api/user/63af26cc5674efd42f25fefe
+
+###
+
+POST  http://localhost:5000/api/user/login
 Content-Type: application/json
 
 {
-    "name": "task 4.1",
-    "completed": true
+    "email": "testerTA@gmail.com",
+    "password": "testaA1"
 }
 
 ###
 
-GET http://localhost:5000/api/note
+DELETE http://localhost:5000/api/user/63af3fff7e6d501eb189ca1b

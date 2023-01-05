@@ -1,0 +1,149 @@
+@import '../../global.scss';
+
+.signup {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .left {
+        height: 100vh;
+        width: 90%;
+        flex: 8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        color: white;
+
+        .a-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-left: -37.5rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .main {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            h1 {
+                font-size: 4rem;
+            }
+
+            .outside-btn-group {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+
+                .outside-btn {
+                    height: 3rem;
+                    width: 3rem;
+                    border: 2px solid $mauve;
+                    border-radius: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.5s ease;
+
+                    &:hover {
+                        background-color: $mauve;
+                    }
+
+                    .icon {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                    }
+
+                    .google {
+                        height: 1.75rem;
+                        width: 1.75rem;
+                    }
+                }
+            }
+
+            p {
+                font-size: 1.25rem;
+                font-weight: 300;
+            }
+
+            .signup-form {
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                color: $babyBlue;
+
+                .name {
+                    display: flex;
+                    gap: 1rem;
+
+                    .name-text {
+                        height: 2.5rem;
+                        width: 15rem;
+                        border-radius: 20px;
+                        border: 2px solid $babyBlue;
+                        background-color: $gunmetal;
+                        padding: 0 1rem;
+                        color: $babyBlue;
+                        font-size: 1.25rem;
+
+                        &::placeholder {
+                            color: $babyBlue;
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+
+                .form-text {
+                    height: 2.5rem;
+                    width: 33.25rem;
+                    border-radius: 20px;
+                    border: 2px solid $babyBlue;
+                    background-color: $gunmetal;
+                    padding: 0 1rem;
+                    color: $babyBlue;
+                    font-size: 1.25rem;
+
+                    &::placeholder {
+                        color: $babyBlue;
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .submit {
+                    height: 3rem;
+                    width: 6rem;
+                    background-color: $gunmetal;
+                    color: $mauve;
+                    border: 2px solid $mauve;
+                    border-radius: 50px;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: all 0.5s ease;
+
+                    &:hover {
+                        background-color: $mauve;
+                        color: $gunmetal;
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        height: 100vh;
+        flex: 5;
+        background-color: $babyBlue;
+    }
+}

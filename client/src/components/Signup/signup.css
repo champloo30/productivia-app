@@ -1,0 +1,130 @@
+.signup {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup .left {
+  height: 100vh;
+  width: 90%;
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+.signup .left .a-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-left: -37.5rem;
+  color: white;
+  text-decoration: none;
+}
+.signup .left .main {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.signup .left .main h1 {
+  font-size: 4rem;
+}
+.signup .left .main .outside-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.signup .left .main .outside-btn-group .outside-btn {
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid #E0B0FF;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.signup .left .main .outside-btn-group .outside-btn:hover {
+  background-color: #E0B0FF;
+}
+.signup .left .main .outside-btn-group .outside-btn .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.signup .left .main .outside-btn-group .outside-btn .google {
+  height: 1.75rem;
+  width: 1.75rem;
+}
+.signup .left .main p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+.signup .left .main .signup-form {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #A4BEF3;
+}
+.signup .left .main .signup-form .name {
+  display: flex;
+  gap: 1rem;
+}
+.signup .left .main .signup-form .name .name-text {
+  height: 2.5rem;
+  width: 15rem;
+  border-radius: 20px;
+  border: 2px solid #A4BEF3;
+  background-color: #242F40;
+  padding: 0 1rem;
+  color: #A4BEF3;
+  font-size: 1.25rem;
+}
+.signup .left .main .signup-form .name .name-text::placeholder {
+  color: #A4BEF3;
+  font-size: 1.25rem;
+}
+.signup .left .main .signup-form .form-text {
+  height: 2.5rem;
+  width: 33.25rem;
+  border-radius: 20px;
+  border: 2px solid #A4BEF3;
+  background-color: #242F40;
+  padding: 0 1rem;
+  color: #A4BEF3;
+  font-size: 1.25rem;
+}
+.signup .left .main .signup-form .form-text::placeholder {
+  color: #A4BEF3;
+  font-size: 1.25rem;
+}
+.signup .left .main .signup-form .submit {
+  height: 3rem;
+  width: 6rem;
+  background-color: #242F40;
+  color: #E0B0FF;
+  border: 2px solid #E0B0FF;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.signup .left .main .signup-form .submit:hover {
+  background-color: #E0B0FF;
+  color: #242F40;
+}
+.signup .right {
+  height: 100vh;
+  flex: 5;
+  background-color: #A4BEF3;
+}
+
+/*# sourceMappingURL=signup.css.map */
