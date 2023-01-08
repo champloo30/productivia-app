@@ -1,7 +1,7 @@
 import './app.scss';
 import { useState } from 'react';
 import { useTimer } from 'react-timer-hook'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
@@ -17,12 +17,13 @@ import EditNote from './components/Notes/EditNote/EditNote';
 import Pomodoro from './components/PomodoroTimer/PomodoroTimer'
 import WOD from './components/WordOfDay/WordOfDay'
 
-
-
 function App() {
   const [mode, setMode] = useState('pomodoro') // session mode
   const [session, setSession] = useState(0) // session counter
-  const [isLoggedIn, setIsLoggedIn] = useState(false) // login checker
+  const [token, setToken] = useState() // web token
+  const [isLoggedIn, setIsLoggedIn] = useState(true) // login checker
+
+  const navigate = useNavigate()
 
   const expiryTimestamp = new Date()
   expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 1500)
@@ -72,10 +73,20 @@ function App() {
     pause()
   }
 
+  // handle token
+  if (!token) {
+    return <div className='app'>
+      <Routes>
+        <Route path='/' element={<Landing />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login setToken={setToken} />} />
+      </Routes>
+    </div>
+    
+  }
+
   return (
     <div className="app">
-      {isLoggedIn ? 
-      <>
         <Menu mode={mode} />
         <Routes>
           <Route path='/' element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
@@ -88,16 +99,7 @@ function App() {
           <Route path='notes/edit/:id' element={<EditNote />} />
           <Route path='pomodoroTimer' element={<Pomodoro expiryTimestamp={expiryTimestamp} mode={mode} seconds={seconds} minutes={minutes} isRunning={isRunning} pause={pause} resume={resume} restart={restart} pomodoro={pomodoro} short={short} long={long} />} />
           <Route path='wordOfTheDay' element={<WOD />} />
-        </Routes> 
-      </>
-      : 
-      <Routes>
-        <Route path='/' element={<Landing />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/login' element={<Login />} />
-      </Routes>
-      
-      }
+        </Routes>
     </div>
   );
 }

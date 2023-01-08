@@ -1,3 +1,167 @@
-
+.login {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login .left {
+  height: 100vh;
+  width: 90%;
+  flex: 5;
+  background-color: #E0B0FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.login .left .title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-left: -16.75rem;
+  margin-top: -8.75rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.login .left .left-container {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.login .left .left-container h2 {
+  font-size: 3rem;
+  color: white;
+}
+.login .left .left-container p {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 300;
+  width: 70%;
+  color: #242F40;
+  line-height: 35px;
+}
+.login .left .left-container p span {
+  color: white;
+  font-size: 1.5rem;
+}
+.login .left .left-container .signup-a {
+  text-decoration: none;
+}
+.login .left .left-container .signup-a .signup-btn {
+  height: 3rem;
+  width: 7rem;
+  background-color: #E0B0FF;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.login .left .left-container .signup-a .signup-btn:hover {
+  background-color: white;
+  color: #E0B0FF;
+}
+.login .right {
+  height: 100vh;
+  flex: 8;
+  background-color: #242F40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.login .right .right-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.login .right .right-container h1 {
+  font-size: 4rem;
+}
+.login .right .right-container .outside-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.login .right .right-container .outside-btn-group .outside-btn {
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid #A4BEF3;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.login .right .right-container .outside-btn-group .outside-btn:hover {
+  background-color: #A4BEF3;
+}
+.login .right .right-container .outside-btn-group .outside-btn .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.login .right .right-container .outside-btn-group .outside-btn .google {
+  height: 1.75rem;
+  width: 1.75rem;
+}
+.login .right .right-container p {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.login .right .right-container .login-form {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #E0B0FF;
+}
+.login .right .right-container .login-form .form-text {
+  height: 2.5rem;
+  width: 33.25rem;
+  border-radius: 20px;
+  border: 2px solid #E0B0FF;
+  background-color: #242F40;
+  padding: 0 1rem;
+  color: #E0B0FF;
+  font-size: 1.25rem;
+}
+.login .right .right-container .login-form .form-text::placeholder {
+  color: #E0B0FF;
+  font-size: 1.25rem;
+}
+.login .right .right-container .login-form .login-btn {
+  height: 3rem;
+  width: 5.5rem;
+  background-color: #242F40;
+  color: #A4BEF3;
+  border: 2px solid #A4BEF3;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.login .right .right-container .login-form .login-btn:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
 
 /*# sourceMappingURL=login.css.map */

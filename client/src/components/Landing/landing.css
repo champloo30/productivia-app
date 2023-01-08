@@ -5,13 +5,128 @@
   align-items: center;
   justify-content: center;
 }
-.landing .landing-container {
+.landing .left {
   height: 100%;
   width: 90%;
+  flex: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing .left .left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.landing .left .left-container h2 {
+  font-size: 2.5rem;
+  color: white;
+}
+.landing .left .left-container h1 {
+  font-size: 5rem;
+  color: white;
+}
+.landing .left .left-container .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.landing .left .left-container .links .btn {
+  height: 2.5rem;
+  width: 6rem;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+.landing .left .left-container .links .signup-link {
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+}
+.landing .left .left-container .links .signup-link:hover {
+  background-color: #A4BEF3;
+  color: #242F40;
+}
+.landing .left .left-container .links .login-link {
+  border: 2px solid #E0B0FF;
+  color: #E0B0FF;
+}
+.landing .left .left-container .links .login-link:hover {
+  background-color: #E0B0FF;
+  color: #242F40;
+}
+.landing .left .left-container p {
+  width: 32.5rem;
+  margin-top: 2rem;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: white;
+}
+.landing .left .left-container p span {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #A4BEF3;
+}
+.landing .right {
+  height: 100vh;
+  width: 90%;
+  flex: 8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
+}
+.landing .right .box {
+  height: 35rem;
+  width: 45rem;
+  background-color: #A4BEF3;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing .right .box .box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.landing .right .box .box-container .video {
+  width: 35rem;
+  border-radius: 15px;
+}
+.landing .right .box .box-container .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.landing .right .box .box-container .text h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+.landing .right .box .box-container .arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.landing .right .box .box-container .arrows img {
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+}
+.landing .right .box .box-container .arrows .right {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=landing.css.map */

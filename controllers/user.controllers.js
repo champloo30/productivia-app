@@ -170,8 +170,10 @@ exports.userLogin = (req, res) => {
                                         token: access_token,
                                         message: user
                                     })
+                                    
                             }
                         })
+                        console.log(access_token);
                     })
                     .catch(err => {
                         res

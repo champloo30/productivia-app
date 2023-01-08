@@ -3,10 +3,40 @@ import './home.scss'
 import restartIcon from '../../assets/restart-svgrepo-com.svg'
 import playIcon from '../../assets/play-svgrepo-com.svg'
 import pauseIcon from '../../assets/pause-svgrepo-com.svg'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function Home(props) {
   const [tasks, setTasks] = useState([])
   const [notes, setNotes] = useState([])
+  const [user, setUser] = useState([])
+
+  const params = useParams()
+  const navigate = useNavigate()
+
+  // get user from db
+  useEffect(() => {
+    async function getUser() {
+      const id = params.id.toString()
+      const response = await fetch(`http://localhost:5000/api/user/${params.id.toString()}`)
+
+      if (!response.ok) {
+        const message = `An error has occured: ${response.statusText}`
+        window.alert(message)
+        return
+      }
+
+      const user = await response.json()
+      if (!user) {
+        window.alert(`User with id ${id} not found`)
+        navigate('/login')
+        return
+      }
+      setUser(user)
+    }
+    getUser()
+    return
+  }, [params.id, navigate])
+  console.log(user);
 
   // get task from db
   useEffect(() => {
@@ -50,7 +80,7 @@ export default function Home(props) {
   return (
     <div className='home'>
         <div className="home-container">
-            <h1 className={`h1-${props.mode}`}>Home</h1>
+            <h1 className={`h1-${props.mode}`}>Dashboard</h1>
             <div className="item-container">
               <div className="tasks-notes">
                 <p><span className={`num-${props.mode}`}>{tasks.length}</span> Tasks Remaining</p>
