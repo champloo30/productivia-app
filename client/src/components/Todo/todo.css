@@ -1,7 +1,7 @@
 .todo {
   width: 100%;
   height: 100vh;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: white;
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@
   justify-content: center;
   border-radius: 100%;
   margin-top: 1rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
   text-decoration: none;
@@ -60,7 +60,7 @@
 }
 .todo .todo-container .add-btn:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .todo .todo-container .add-btn span {
   font-size: 2rem;
@@ -171,7 +171,7 @@
   content: attr(data-title);
   position: absolute;
   z-index: 2;
-  background-color: #242F40;
+  background-color: #1c232e;
   cursor: pointer;
 }
 @media (max-width: 425px) {
@@ -189,7 +189,7 @@
   height: 2.5rem;
   width: 5rem;
   margin: 0 0.25rem 0.5rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 700;
@@ -200,13 +200,14 @@
   cursor: pointer;
 }
 .todo .todo-container .todo-list .todo-item .viewing .btn-group .link {
+  height: 2.25rem;
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
   transition: all 0.5s ease;
 }
 .todo .todo-container .todo-list .todo-item .viewing .btn-group .link:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .todo .todo-container .todo-list .todo-item .viewing .btn-group .delete {
   border: 2px solid #B80F0A;
@@ -216,7 +217,7 @@
 }
 .todo .todo-container .todo-list .todo-item .viewing .btn-group .delete:hover {
   background-color: #B80F0A;
-  color: #242F40;
+  color: #1c232e;
 }
 .todo .todo-container .todo-list .todo-item .viewing .btn-group .save {
   border: 2px solid #E0B0FF;
@@ -226,7 +227,7 @@
 }
 .todo .todo-container .todo-list .todo-item .viewing .btn-group .save:hover {
   background-color: #E0B0FF;
-  color: #242F40;
+  color: #1c232e;
 }
 
 /*# sourceMappingURL=todo.css.map */

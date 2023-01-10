@@ -44,7 +44,7 @@
 .edit .edit-container .edit-note .fieldset input[type=text] {
   height: 4rem;
   width: 50%;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: none;
   border-bottom: 2px solid white;
   margin-bottom: 2rem;
@@ -64,7 +64,7 @@
 .edit .edit-container .edit-note .fieldset #textarea {
   height: 15rem;
   width: 100%;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: 2px solid white;
   border-radius: 20px;
   padding: 1rem 0 0 1rem;
@@ -91,7 +91,7 @@
   height: 2.5rem;
   width: 5rem;
   border-radius: 50px;
-  background-color: #242F40;
+  background-color: #1c232e;
   font-size: 1rem;
   display: flex;
   align-items: center;
@@ -106,7 +106,7 @@
 }
 .edit .edit-container .edit-note .btn-group .cancel:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .edit .edit-container .edit-note .btn-group .save {
   border: 2px solid #E0B0FF;
@@ -114,7 +114,7 @@
 }
 .edit .edit-container .edit-note .btn-group .save:hover {
   background-color: #E0B0FF;
-  color: #242F40;
+  color: #1c232e;
 }
 
 .note-modal {
@@ -122,7 +122,7 @@
   z-index: 6;
   height: 37.5rem;
   width: 60rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: 2px solid white;
   border-radius: 20px;
   display: flex;
@@ -150,7 +150,7 @@
 .note-modal .note-container .fieldset input[type=text] {
   height: 4rem;
   width: 50%;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: none;
   border-bottom: 2px solid white;
   margin-bottom: 2rem;
@@ -165,7 +165,7 @@
 .note-modal .note-container .fieldset #textarea {
   height: 15rem;
   width: 98%;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: 2px solid white;
   border-radius: 20px;
   padding: 1rem 0 0 1rem;
@@ -185,7 +185,7 @@
   height: 2.5rem;
   width: 5rem;
   border-radius: 50px;
-  background-color: #242F40;
+  background-color: #1c232e;
   font-size: 1rem;
   margin-right: 1rem;
   cursor: pointer;
@@ -197,7 +197,7 @@
 }
 .note-modal .note-container .bottom-btn-group .close:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .note-modal .note-container .bottom-btn-group .save {
   border: 2px solid #E0B0FF;
@@ -205,7 +205,7 @@
 }
 .note-modal .note-container .bottom-btn-group .save:hover {
   background-color: #E0B0FF;
-  color: #242F40;
+  color: #1c232e;
 }
 
 /*# sourceMappingURL=editNote.css.map */

@@ -70,66 +70,47 @@
         }
     }
 
-    // .menu-bottom {
-    //     width: 95%;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;
-    //     margin-bottom: 2rem;
+    .menu-bottom {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        gap: 0.5rem;
 
-    //     .menu-signup {
-    //         text-align: center;
-    //         margin-bottom: 0.25rem;
-    //     }
+        .user-name {
+            font-size: 1.25rem;
+        }
 
-    //     .menu-login {
-    //         text-align: center;
-    //         color: $babyBlue;
-    //         margin-top: 0.25rem;
-    //     }
+        .user-email {
+            font-size: 1rem;
+            color: $mauve;
+        }
 
-    //     .btn-group {
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //         gap: 0.5rem;
+        .btn {
+            height: 2.5rem;
+            width: 5rem;
+            background-color: $gunmetal;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-    //         .btn {
-    //             height: 2.5rem;
-    //             width: 5rem;
-    //             border-radius: 50px;
-    //             background-color: $gunmetal;
-    //             font-size: 1rem;
-    //             cursor: pointer;
-    //             transition: all 0.5s ease;
-    //             text-decoration: none;
-    //             display: flex;
-    //             align-items: center;
-    //             justify-content: center;
-    //         }
+        .logout {
+            border: 2px solid $babyBlue;
+            color: $babyBlue;
+            transition: all 0.5s ease;
 
-    //         .s-btn {
-    //             border: 2px solid white;
-    //             color: white;
-        
-    //             &:hover {
-    //                 background-color: white;
-    //                 color: $gunmetal;
-    //             }
-    //         }
-
-    //         .l-btn {
-    //             border: 2px solid $babyBlue;
-    //             color: $babyBlue;
-        
-    //             &:hover {
-    //                 background-color: $babyBlue;
-    //                 color: $gunmetal;
-    //             }
-    //         }
-    //     }
-    // }
+            &:hover {
+                background-color: $babyBlue;
+                color: $gunmetal;
+            }
+        }
+    }
 }
 
 .short-menu {
@@ -208,66 +189,47 @@
         }
     }
 
-    // .menu-bottom {
-    //     width: 95%;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;
-    //     margin-bottom: 2rem;
+    .menu-bottom {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        gap: 0.5rem;
+        color: $gunmetal;
 
-    //     .menu-signup {
-    //         text-align: center;
-    //         margin-bottom: 0.25rem;
-    //     }
+        .user-name {
+            font-size: 1.25rem;
+        }
 
-    //     .menu-login {
-    //         text-align: center;
-    //         color: $gunmetal;
-    //         margin-top: 0.25rem;
-    //     }
+        .user-email {
+            font-size: 1rem;
+        }
 
-    //     .btn-group {
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //         gap: 0.5rem;
+        .btn {
+            height: 2.5rem;
+            width: 5rem;
+            background-color: $mauve;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-    //         .btn {
-    //             height: 2.5rem;
-    //             width: 5rem;
-    //             border-radius: 50px;
-    //             background-color: $mauve;
-    //             font-size: 1rem;
-    //             cursor: pointer;
-    //             transition: all 0.5s ease;
-    //             text-decoration: none;
-    //             display: flex;
-    //             align-items: center;
-    //             justify-content: center;
-    //         }
+        .logout {
+            border: 2px solid white;
+            color: white;
+            transition: all 0.5s ease;
 
-    //         .s-btn {
-    //             border: 2px solid white;
-    //             color: white;
-        
-    //             &:hover {
-    //                 background-color: white;
-    //                 color: $mauve;
-    //             }
-    //         }
-
-    //         .l-btn {
-    //             border: 2px solid $gunmetal;
-    //             color: $gunmetal;
-        
-    //             &:hover {
-    //                 background-color: $gunmetal;
-    //                 color: $mauve;
-    //             }
-    //         }
-    //     }
-    // }
+            &:hover {
+                background-color: white;
+                color: $mauve;
+            }
+        }
+    }
 }
 
 .long-menu {
@@ -346,64 +308,45 @@
         }
     }
 
-    // .menu-bottom {
-    //     width: 95%;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;
-    //     margin-bottom: 2rem;
+    .menu-bottom {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        gap: 0.5rem;
+        color: $gunmetal;
 
-    //     .menu-signup {
-    //         text-align: center;
-    //         margin-bottom: 0.25rem;
-    //     }
+        .user-name {
+            font-size: 1.25rem;
+        }
 
-    //     .menu-login {
-    //         text-align: center;
-    //         color: $gunmetal;
-    //         margin-top: 0.25rem;
-    //     }
+        .user-email {
+            font-size: 1rem;
+        }
 
-    //     .btn-group {
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //         gap: 0.5rem;
+        .btn {
+            height: 2.5rem;
+            width: 5rem;
+            background-color: $babyBlue;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-    //         .btn {
-    //             height: 2.5rem;
-    //             width: 5rem;
-    //             border-radius: 50px;
-    //             background-color: $babyBlue;
-    //             font-size: 1rem;
-    //             cursor: pointer;
-    //             transition: all 0.5s ease;
-    //             text-decoration: none;
-    //             display: flex;
-    //             align-items: center;
-    //             justify-content: center;
-    //         }
+        .logout {
+            border: 2px solid white;
+            color: white;
+            transition: all 0.5s ease;
 
-    //         .s-btn {
-    //             border: 2px solid white;
-    //             color: white;
-        
-    //             &:hover {
-    //                 background-color: white;
-    //                 color: $babyBlue;
-    //             }
-    //         }
-
-    //         .l-btn {
-    //             border: 2px solid $gunmetal;
-    //             color: $gunmetal;
-        
-    //             &:hover {
-    //                 background-color: $gunmetal;
-    //                 color: $babyBlue;
-    //             }
-    //         }
-    //     }
-    // }
+            &:hover {
+                background-color: white;
+                color: $babyBlue;
+            }
+        }
+    }
 }

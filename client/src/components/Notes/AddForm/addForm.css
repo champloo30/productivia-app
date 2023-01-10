@@ -75,7 +75,7 @@
 .add-form .add-form-container .form .form-container .fieldset input[type=text] {
   height: 4rem;
   width: 50%;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: none;
   border-bottom: 2px solid white;
   margin-bottom: 2rem;
@@ -95,7 +95,7 @@
 .add-form .add-form-container .form .form-container .fieldset #textarea {
   height: 15rem;
   width: 100%;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: 2px solid white;
   border-radius: 20px;
   padding: 1rem 0 0 1rem;
@@ -121,7 +121,7 @@
   height: 2.5rem;
   width: 5rem;
   border-radius: 50px;
-  background-color: #242F40;
+  background-color: #1c232e;
   font-size: 1rem;
   margin-right: 1rem;
   cursor: pointer;
@@ -137,7 +137,7 @@
 }
 .add-form .add-form-container .form .form-container .bottom-btn-group .close:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .add-form .add-form-container .form .form-container .bottom-btn-group .save {
   height: 2.75rem;
@@ -146,7 +146,7 @@
 }
 .add-form .add-form-container .form .form-container .bottom-btn-group .save:hover {
   background-color: #E0B0FF;
-  color: #242F40;
+  color: #1c232e;
 }
 
 /*# sourceMappingURL=addForm.css.map */

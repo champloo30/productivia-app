@@ -28,7 +28,7 @@ userRouter.post('/signup', userSignup)
  * @description get a users
  * @access public
  */
- userRouter.get('/:id', getOneUser)
+//  userRouter.get('/:id', getOneUser)
 
 /**
  * @route api/user/login

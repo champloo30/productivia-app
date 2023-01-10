@@ -40,7 +40,7 @@
   font-size: 1.25rem;
   font-weight: 300;
   width: 70%;
-  color: #242F40;
+  color: #1c232e;
   line-height: 35px;
 }
 .login .left .left-container p span {
@@ -74,7 +74,7 @@
 .login .right {
   height: 100vh;
   flex: 8;
-  background-color: #242F40;
+  background-color: #1c232e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,7 +137,7 @@
   width: 33.25rem;
   border-radius: 20px;
   border: 2px solid #E0B0FF;
-  background-color: #242F40;
+  background-color: #1c232e;
   padding: 0 1rem;
   color: #E0B0FF;
   font-size: 1.25rem;
@@ -149,7 +149,7 @@
 .login .right .right-container .login-form .login-btn {
   height: 3rem;
   width: 5.5rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: #A4BEF3;
   border: 2px solid #A4BEF3;
   border-radius: 50px;
@@ -161,7 +161,10 @@
 }
 .login .right .right-container .login-form .login-btn:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
+}
+.login .right .right-container .login-form .error {
+  background-color: #B80F0A;
 }
 
 /*# sourceMappingURL=login.css.map */

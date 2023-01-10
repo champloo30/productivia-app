@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useAuthContext } from '../../hooks/useAuthContext'
 import './todo.scss'
 import FilterButton from './FilterButton/FilterButton'
 
@@ -54,11 +55,16 @@ function truncate(props) {
 export default function Todo(props) {
   const [tasks, setTasks] = useState([])
   const [filter, setFilter] = useState('All')
+  const {user} = useAuthContext()
 
   // get task from db
   useEffect(() => {
     async function getTasks() {
-      const response = await fetch(`http://localhost:5000/api/task`)
+      const response = await fetch(`http://localhost:5000/api/task`, {
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      })
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -69,17 +75,23 @@ export default function Todo(props) {
       const tasks = await response.json()
       setTasks(tasks)
     }
-    getTasks()
+    if (user) {
+      getTasks()
+    }
     return
-  }, [tasks.length])
+  }, [tasks.length, user])
 
   const today = new Date()
 
   // delete task
   async function deleteTask(id) {
     await fetch(`http://localhost:5000/api/task/${id}`, {
-      method: 'DELETE'
-    })
+      method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      }
+    )
 
     const remainingTasks = tasks.filter((task) => task._id !== id)
     setTasks(remainingTasks)
@@ -92,7 +104,8 @@ export default function Todo(props) {
       method: 'PUT',
       body: JSON.stringify({name: currentTask.name, completed: !currentTask.completed}),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${user.token}`
       }
     })
     const updatedTasks = tasks.map((task) => {
@@ -139,7 +152,7 @@ export default function Todo(props) {
   return (
     <div className='todo'>
       <div className="todo-container">
-        <h1>My Tasks: <span>{today.toDateString()}</span></h1>
+        <h1>{user.user.first}'s Tasks: <span>{today.toDateString()}</span></h1>
         <Link to='addTask' className='add-btn'>
           <span>+</span>
         </Link>

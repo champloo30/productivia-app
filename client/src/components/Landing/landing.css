@@ -51,7 +51,7 @@
 }
 .landing .left .left-container .links .signup-link:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .landing .left .left-container .links .login-link {
   border: 2px solid #E0B0FF;
@@ -59,7 +59,7 @@
 }
 .landing .left .left-container .links .login-link:hover {
   background-color: #E0B0FF;
-  color: #242F40;
+  color: #1c232e;
 }
 .landing .left .left-container p {
   width: 32.5rem;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useAuthContext } from '../../../hooks/useAuthContext'
 import './editForm.scss'
 
 export default function EditForm(props) {
@@ -8,13 +9,18 @@ export default function EditForm(props) {
     tasks: []
   })
 
+  const {user} = useAuthContext()
   const params = useParams()
   const navigate = useNavigate()
   
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString()
-      const response = await fetch(`http://localhost:5000/api/task/${params.id.toString()}`)
+      const response = await fetch(`http://localhost:5000/api/task/${params.id.toString()}`, {
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      })
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -31,9 +37,11 @@ export default function EditForm(props) {
       setEditForm(task)
       console.log(task);
     }
-    fetchData()
+    if (user) {
+      fetchData()
+    }
     return
-  }, [params.id, navigate])
+  }, [params.id, navigate, user])
 
   function handleEditChange(value) {
     return setEditForm((prev) => {
@@ -47,13 +55,13 @@ export default function EditForm(props) {
     const editedTask = {
       name: editForm.name,
     }
-    console.log(editForm.name);
 
     await fetch(`http://localhost:5000/api/task/edit/${params.id}`, {
       method: 'PUT',
       body: JSON.stringify(editedTask),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${user.token}`
       }
     })
     navigate('/tasks')
@@ -76,7 +84,7 @@ export default function EditForm(props) {
           />
           <div className="btn-group">
             <Link className='btn cancel' to='/tasks'>Close</Link>
-            <button className='btn save'>Save</button>
+            <button type='submit' className='btn save'>Save</button>
           </div>
         </form>
       </div>

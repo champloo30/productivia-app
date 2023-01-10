@@ -52,7 +52,7 @@
 .view .view-container .btn-group .btn {
   height: 2.5rem;
   width: 5rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 700;
@@ -74,7 +74,7 @@
 }
 .view .view-container .btn-group .back:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .view .view-container .btn-group .edit {
   border: 2px solid #E0B0FF;
@@ -84,7 +84,7 @@
 }
 .view .view-container .btn-group .edit:hover {
   background-color: #E0B0FF;
-  color: #242F40;
+  color: #1c232e;
 }
 
 /*# sourceMappingURL=viewNote.css.map */

@@ -1,23 +1,22 @@
 const Task = require('../models/task.model')
 
-exports.getAllTasks = (req, res) => {
-    Task.find()
-        .then((task) => res.json(task))
-        .catch((err) => 
-            res
-                .status(404)
-                .json({ message: 'Tasks not found', error: err.message }) 
-        )
+exports.getAllTasks = async (req, res) => {
+    const user_id = req.user._id
+    const tasks = await Task.find({user_id})
+
+    res.status(200).json(tasks)
 }
 
-exports.postCreateTask = (req, res) => {
-    Task.create(req.body)
-        .then((data) => res.json({ message: 'Task added successfully', data }))
-        .catch((err) => 
-            res
-                .status(400)
-                .json({ message: 'Failed to add task', error: err.message })
-        )
+exports.postCreateTask = async (req, res) => {
+    const {name, completed} = req.body
+
+    try {
+        const user_id = req.user._id
+        const task = await Task.create({name, completed, user_id})
+        res.status(201).json(task)
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
 }
 
 exports.putUpdateTask = (req, res) => {

@@ -51,8 +51,8 @@ export default function Landing() {
             <h2>Welcome to</h2>
             <h1>Productivia</h1>
             <div className="links">
-              <a href="/signup" className='btn signup-link'>Signup</a>
-              <a href="/login" className='btn login-link'>Login</a>
+              <a href="/signup" className='btn signup-link'>Sign Up</a>
+              <a href="/login" className='btn login-link'>Log In</a>
             </div>
             <p>The only application that will meet your productivity needs. Sign up for four amazing features that will boost your productivity <span>110%</span>!</p>
           </div>

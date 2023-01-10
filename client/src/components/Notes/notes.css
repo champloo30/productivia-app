@@ -1,7 +1,7 @@
 .notes {
   width: 100%;
   height: 100vh;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: white;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@
   justify-content: center;
   border-radius: 100%;
   margin-top: 1rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
   cursor: pointer;
@@ -81,7 +81,7 @@
 }
 .notes .notes-container .bottom-section .add-form:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .notes .notes-container .bottom-section .add-form span {
   font-size: 2.5rem;
@@ -232,7 +232,7 @@
   height: 2.5rem;
   width: 5rem;
   border-radius: 50px;
-  background-color: #242F40;
+  background-color: #1c232e;
   font-size: 1rem;
   margin-right: 1rem;
   cursor: pointer;
@@ -249,7 +249,7 @@
 }
 .notes .notes-container .bottom-section .note-list .active-menu .right .active .view:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .notes .notes-container .bottom-section .note-list .active-menu .right .active .delete {
   border: 2px solid #B80F0A;
@@ -257,7 +257,7 @@
 }
 .notes .notes-container .bottom-section .note-list .active-menu .right .active .delete:hover {
   background-color: #B80F0A;
-  color: #242F40;
+  color: #1c232e;
 }
 
 /*# sourceMappingURL=notes.css.map */

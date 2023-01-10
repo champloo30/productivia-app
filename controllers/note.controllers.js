@@ -1,23 +1,22 @@
 const Note = require('../models/note.model')
 
-exports.getAllNotes = (req, res) => {
-    Note.find()
-        .then((note) => res.json(note))
-        .catch((err) => 
-            res
-                .status(404)
-                .json({ message : 'Notes not found', error: err.message })
-        )
+exports.getAllNotes = async (req, res) => {
+    const user_id = req.user._id
+    const notes = await Note.find({user_id})
+
+    res.status(200).json(notes)
 }
 
-exports.postCreateNote = (req, res) => {
-    Note.create(req.body)
-        .then((data) => res.json({ message: 'Note added successfully', data }))
-        .catch((err) => 
-            res
-                .status(400)
-                .json({ message: 'Failed to add note', error: err.message })
-        )
+exports.postCreateNote = async (req, res) => {
+    const {category, title, content} = req.body
+
+    try {
+        const user_id = req.user._id
+        const note = await Note.create({category, title, content, user_id})
+        res.status(201).json(note)
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
 }
 
 exports.getOneNote = (req, res) => {

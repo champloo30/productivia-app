@@ -8,6 +8,11 @@ const {
     deleteTask
 } = require('../controllers/task.controllers')
 
+// require auth for all task routes
+const requireAuth = require('../middleware/requireAuth')
+
+taskRouter.use(requireAuth)
+
 /**
  * @route GET api/task
  * @description get all tasks

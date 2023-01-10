@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useSignup } from '../../hooks/useSignup'
 import './signup.scss'
 import facebook from '../../assets/facebook-alt-svgrepo-com.svg'
 import google from '../../assets/google-plus-svgrepo-com.svg'
 import linkedIn from '../../assets/linkedin-svgrepo-com.svg'
 
 export default function Signup() {
+    const [first, setFirst] = useState('')
+    const [last, setLast] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const {signup, isLoading, error} = useSignup()
+
+    const navigate = useNavigate()
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        
+        await signup(first, last, email, password)
+        console.log(error);
+
+        navigate('/dashboard')
+    }
+
   return (
     <div className='signup'>
         <div className="left">
@@ -23,15 +42,56 @@ export default function Signup() {
                     </div>
                 </div>
                 <p>- or use your email for registration -</p>
-                <form className='signup-form' method="post">
+                <form className='signup-form' onSubmit={handleSubmit}>
                     <div className="name">
-                        <input className='name-text' type="text" name="name" id="first" placeholder='First Name' required />
-                        <input className='name-text' type="text" name="name" id="last" placeholder='Last Name' required />
+                        <input 
+                            className='name-text' 
+                            type="text" 
+                            id="first" 
+                            placeholder='First Name' 
+                            onChange={e => setFirst(e.target.value)}
+                            value={first}
+                            required 
+                        />
+                        <input 
+                            className='name-text' 
+                            type="text" 
+                            id="last" 
+                            placeholder='Last Name'
+                            onChange={e => setLast(e.target.value)} 
+                            value={last}
+                            required 
+                        />
                     </div>
-                    <input className='form-text' type="text" name="email" id="email" placeholder='Email' required />
-                    <input className='form-text' type="text" name="password" id="password" placeholder='Password' required />
-                    <input className='form-text' type="text" name="password_confirmation" id="password_confirmation" placeholder='Password Confirmation' required />
-                    <button className='signup-btn' type="submit">Sign Up</button>
+                    <input 
+                        className='form-text' 
+                        type="text" 
+                        id="email" 
+                        placeholder='Email'
+                        onChange={e => setEmail(e.target.value)} 
+                        value={email}
+                        required 
+                    />
+                    <input 
+                        className='form-text' 
+                        type="password" 
+                        id="password" 
+                        placeholder='Password' 
+                        onChange={e => setPassword(e.target.value)}
+                        value={password}
+                        required 
+                    />
+                    {/* <input 
+                        className='form-text' 
+                        type="password" 
+                        id="password_confirmation" 
+                        placeholder='Password Confirmation' 
+                        onChange={e => setPasswordConfirmation(e.target.value)}
+                        value={password_confirmation}
+                        required 
+                    /> */}
+                    <button className='signup-btn' type="submit" disabled={isLoading}>Sign Up</button>
+                    {error && <div className='error'>{error}</div>}
                 </form>
             </div>
         </div>

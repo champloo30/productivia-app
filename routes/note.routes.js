@@ -9,6 +9,11 @@ const {
     deleteNote
 } = require('../controllers/note.controllers')
 
+// require auth for all note routes
+const requireAuth = require('../middleware/requireAuth')
+
+noteRouter.use(requireAuth)
+
 /**
  * @route GET api/note
  * @description get all notes

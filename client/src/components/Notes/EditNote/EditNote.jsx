@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
+import { useAuthContext } from '../../../hooks/useAuthContext'
 import './editNote.scss'
 
 export default function EditNote(props) {
@@ -10,13 +11,18 @@ export default function EditNote(props) {
     notes: []
   })
 
+  const {user} = useAuthContext()
   const params = useParams()
   const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString()
-      const response = await fetch(`http://localhost:5000/api/note/${params.id.toString()}`)
+      const response = await fetch(`http://localhost:5000/api/note/${params.id.toString()}`, {
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      })
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -32,9 +38,11 @@ export default function EditNote(props) {
       }
       setEditForm(note)
     }
-    fetchData()
+    if (user) {
+      fetchData()
+    }
     return
-  }, [params.id, navigate])
+  }, [params.id, navigate, user])
 
   function handleEditChange(value) {
     return setEditForm((prev) => {
@@ -54,7 +62,8 @@ export default function EditNote(props) {
       method: 'PUT',
       body: JSON.stringify(editedNote),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${user.token}`
       }
     })
     navigate(`/notes/${params.id}`)

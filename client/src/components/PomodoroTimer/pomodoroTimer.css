@@ -1,7 +1,7 @@
 .pomodoro {
   width: 100%;
   height: 100vh;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: white;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
 .pomodoro .container .t-btn-group .t-btn {
   height: 3.5rem;
   width: 11rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   border: 2px solid #A4BEF3;
   border-radius: 50px;
   font-size: 1.75rem;
@@ -46,7 +46,7 @@
 }
 .pomodoro .container .t-btn-group .t-btn:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .pomodoro .container .progress {
   height: 20rem;
@@ -90,7 +90,7 @@
   height: 3.5rem;
   width: 7.5rem;
   border-radius: 100px;
-  background-color: #242F40;
+  background-color: #1c232e;
   font-size: 1.75rem;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -109,7 +109,7 @@
 }
 .pomodoro .container .b-btn-group .pause:hover {
   background-color: #E0B0FF;
-  color: #242F40;
+  color: #1c232e;
 }
 .pomodoro .container .b-btn-group .start {
   border: 2px solid #A4BEF3;
@@ -117,7 +117,7 @@
 }
 .pomodoro .container .b-btn-group .start:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 
 .short {
@@ -226,11 +226,11 @@
   }
 }
 .short .container .b-btn-group .pause {
-  border: 2px solid #242F40;
-  color: #242F40;
+  border: 2px solid #1c232e;
+  color: #1c232e;
 }
 .short .container .b-btn-group .pause:hover {
-  background-color: #242F40;
+  background-color: #1c232e;
   color: #E0B0FF;
 }
 .short .container .b-btn-group .start {
@@ -348,11 +348,11 @@
   }
 }
 .long .container .b-btn-group .pause {
-  border: 2px solid #242F40;
-  color: #242F40;
+  border: 2px solid #1c232e;
+  color: #1c232e;
 }
 .long .container .b-btn-group .pause:hover {
-  background-color: #242F40;
+  background-color: #1c232e;
   color: #A4BEF3;
 }
 .long .container .b-btn-group .start {

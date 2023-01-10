@@ -1,7 +1,7 @@
 .home {
   width: 100%;
   height: 100vh;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: white;
   display: flex;
   align-items: center;
@@ -176,7 +176,7 @@
 .home .home-container .item-container .mini-timer .pomodoro {
   height: 12rem;
   width: 22rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: white;
   border: 5px solid white;
   border-radius: 100px;
@@ -200,7 +200,7 @@
 .home .home-container .item-container .mini-timer .pomodoro .t-btn-group .t-btn {
   height: 2.5rem;
   width: 2.5rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: white;
   border: 2px solid white;
   border-radius: 100px;
@@ -210,7 +210,7 @@
 }
 .home .home-container .item-container .mini-timer .pomodoro .t-btn-group .t-btn:hover {
   background-color: white;
-  color: #242F40;
+  color: #1c232e;
 }
 .home .home-container .item-container .mini-timer .pomodoro .progress {
   margin-top: -0.5rem;
@@ -235,7 +235,7 @@
 .home .home-container .item-container .mini-timer .short {
   height: 12rem;
   width: 22rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: white;
   border: 5px solid #E0B0FF;
   border-radius: 100px;
@@ -259,7 +259,7 @@
 .home .home-container .item-container .mini-timer .short .t-btn-group .t-btn {
   height: 2.5rem;
   width: 2.5rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: #E0B0FF;
   border: 2px solid #E0B0FF;
   border-radius: 100px;
@@ -269,7 +269,7 @@
 }
 .home .home-container .item-container .mini-timer .short .t-btn-group .t-btn:hover {
   background-color: #E0B0FF;
-  color: #242F40;
+  color: #1c232e;
 }
 .home .home-container .item-container .mini-timer .short .progress {
   margin-top: -0.5rem;
@@ -294,7 +294,7 @@
 .home .home-container .item-container .mini-timer .long {
   height: 12rem;
   width: 22rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: white;
   border: 5px solid #A4BEF3;
   border-radius: 100px;
@@ -318,7 +318,7 @@
 .home .home-container .item-container .mini-timer .long .t-btn-group .t-btn {
   height: 2.5rem;
   width: 2.5rem;
-  background-color: #242F40;
+  background-color: #1c232e;
   color: #A4BEF3;
   border: 2px solid #A4BEF3;
   border-radius: 100px;
@@ -328,7 +328,7 @@
 }
 .home .home-container .item-container .mini-timer .long .t-btn-group .t-btn:hover {
   background-color: #A4BEF3;
-  color: #242F40;
+  color: #1c232e;
 }
 .home .home-container .item-container .mini-timer .long .progress {
   margin-top: -0.5rem;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuthContext } from '../../../hooks/useAuthContext'
 import './addForm.scss'
 
 export default function Form(props) {
@@ -9,6 +10,7 @@ export default function Form(props) {
   })
   const [category, setCategory] = useState('')
 
+  const {user} = useAuthContext()
   const navigate = useNavigate()
 
   function handleChange(value) {
@@ -24,7 +26,8 @@ export default function Form(props) {
     await fetch(`http://localhost:5000/api/note/add`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${user.token}`
       },
       body: JSON.stringify(newNote)
     })

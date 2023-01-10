@@ -1,4 +1,4 @@
-GET http://localhost:5000/api/user
+GET http://localhost:5000/api/localhost:5000/api/task
 
 ###
 
@@ -6,11 +6,11 @@ POST http://localhost:5000/api/user/signup
 Content-Type: application/json
 
 {
-    "first": "Test",
+    "first": "Testo",
     "last": "Tester",
-    "email": "testT@gmail.com",
-    "password": "testB3",
-    "password_confirmation": "testB3"
+    "email": "testot@gmail.com",
+    "password": "myTest1!",
+    "password_confirmation": "myTest1!"
 }
 
 ###
@@ -23,10 +23,22 @@ POST  http://localhost:5000/api/user/login
 Content-Type: application/json
 
 {
-    "email": "testt@gmail.com",
-    "password": "testB3"
+    "email": "testet@gmail.com",
+    "password": "myTest1!"
 }
 
 ###
 
-DELETE http://localhost:5000/api/user/63af3fff7e6d501eb189ca1b
+POST http://localhost:5000/api/task/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2JjNzQ1YTk2ZTM3N2U4ZjFkNDdiNGIiLCJpYXQiOjE2NzMzMzI1MDksImV4cCI6MTY3MzMzNjEwOX0.PDe-7wqDrIWPhOgLTmCNgKiynpJyrhAWXX2inlAEqwU
+
+{
+    "name": "new task w/ id 3",
+    "completed": "true",
+    "user_id": "63bc745a96e377e8f1d47b4b"
+}
+
+###
+
+DELETE http://localhost:5000/api/user/63bb8a8a38a29eb3087f6e22

@@ -1,37 +1,25 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
+import { useLogin } from '../../hooks/useLogin'
 import './login.scss'
 import facebook from '../../assets/facebook-alt-svgrepo-com.svg'
 import google from '../../assets/google-plus-svgrepo-com.svg'
 import linkedIn from '../../assets/linkedin-svgrepo-com.svg'
 
-async function loginUser(credintials) {
-  return fetch('http://localhost:5000/api/user/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credintials)
-  })
-  .then(data => data.json())
-}
-
 export default function Login({ setToken }) {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const {login, isLoading, error} = useLogin()
 
   const navigate = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
-    const token = await loginUser({
-      email,
-      password
-    })
-    setToken(token)
-    console.log(token.token);
-    navigate('/')
+    
+    await login(email, password)
+    console.log(error);
+
+    navigate('/dashboard')
   }
 
   return (
@@ -70,25 +58,24 @@ export default function Login({ setToken }) {
             id="email" 
             placeholder='Email' 
             onChange={e => setEmail(e.target.value)} 
+            value={email}
             required 
           />
           <input 
             className='form-text' 
-            type="text" 
+            type="password" 
             name="password" 
             id="password" 
             placeholder='Password' 
             onChange={e => setPassword(e.target.value)} 
+            value={password}
             required 
           />
-          <button className='login-btn' type="submit">Log In</button>
+          <button className='login-btn' type="submit" disabled={isLoading}>Log In</button>
+          {error ? <div className='error'>{error}</div> : null}
         </form>
         </div>
       </div>
     </div>
   )
-}
-
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
 }

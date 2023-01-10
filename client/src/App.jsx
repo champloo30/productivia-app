@@ -1,7 +1,8 @@
 import './app.scss';
-import { useState } from 'react';
+import { useState } from 'react'
+import { useAuthContext } from './hooks/useAuthContext';
 import { useTimer } from 'react-timer-hook'
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
@@ -20,10 +21,8 @@ import WOD from './components/WordOfDay/WordOfDay'
 function App() {
   const [mode, setMode] = useState('pomodoro') // session mode
   const [session, setSession] = useState(0) // session counter
-  const [token, setToken] = useState() // web token
-  const [isLoggedIn, setIsLoggedIn] = useState(true) // login checker
 
-  const navigate = useNavigate()
+  const { user } = useAuthContext() // web token
 
   const expiryTimestamp = new Date()
   expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 1500)
@@ -72,34 +71,33 @@ function App() {
     restart(expiryTimestamp)
     pause()
   }
-
-  // handle token
-  if (!token) {
-    return <div className='app'>
-      <Routes>
-        <Route path='/' element={<Landing />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/login' element={<Login setToken={setToken} />} />
-      </Routes>
-    </div>
-    
-  }
-
+  
   return (
     <div className="app">
-        <Menu mode={mode} />
-        <Routes>
-          <Route path='/' element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
-          <Route path='tasks' element={<Todo />} />
-          <Route path='tasks/addTask' element={<AddTask />} />
-          <Route path='tasks/edit/:id' element={<EditForm />} />
-          <Route path='notes' element={<Notes />} />
-          <Route path='notes/addNote' element={<AddNote />} />
-          <Route path='notes/:id' element={<ViewNote />} />
-          <Route path='notes/edit/:id' element={<EditNote />} />
-          <Route path='pomodoroTimer' element={<Pomodoro expiryTimestamp={expiryTimestamp} mode={mode} seconds={seconds} minutes={minutes} isRunning={isRunning} pause={pause} resume={resume} restart={restart} pomodoro={pomodoro} short={short} long={long} />} />
-          <Route path='wordOfTheDay' element={<WOD />} />
-        </Routes>
+      {user ?
+        (<>
+          <Menu mode={mode} />
+          <Routes>
+            <Route path='/dashboard' element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
+            <Route path='tasks' element={<Todo />} />
+            <Route path='tasks/addTask' element={<AddTask />} />
+            <Route path='tasks/edit/:id' element={<EditForm />} />
+            <Route path='notes' element={<Notes />} />
+            <Route path='notes/addNote' element={<AddNote />} />
+            <Route path='notes/:id' element={<ViewNote />} />
+            <Route path='notes/edit/:id' element={<EditNote />} />
+            <Route path='pomodoroTimer' element={<Pomodoro expiryTimestamp={expiryTimestamp} mode={mode} seconds={seconds} minutes={minutes} isRunning={isRunning} pause={pause} resume={resume} restart={restart} pomodoro={pomodoro} short={short} long={long} />} />
+            <Route path='wordOfTheDay' element={<WOD />} />
+          </Routes>
+        </>)
+      : null}
+      {!user ?
+        (<Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>)
+      : null} 
     </div>
   );
 }

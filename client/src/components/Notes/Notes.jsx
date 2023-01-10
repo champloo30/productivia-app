@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useAuthContext } from '../../hooks/useAuthContext'
 import FilterButton from './FilterButton/FilterButton'
 import './notes.scss'
 import { Link } from 'react-router-dom'
@@ -56,11 +57,16 @@ export default function Notes(props) {
   const [notes, setNotes] = useState([])
   const [filter, setFilter] = useState('Notes')
   const [show, setShow] = useState(false)
+  const {user} = useAuthContext()
 
   // get note from db
   useEffect(() => {
     async function getNotes() {
-      const response = await fetch(`http://localhost:5000/api/note`)
+      const response = await fetch(`http://localhost:5000/api/note`, {
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      })
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`
@@ -71,14 +77,19 @@ export default function Notes(props) {
       const notes = await response.json()
       setNotes(notes)
     }
-    getNotes()
+    if (user) {
+      getNotes()
+    }
     return
-  }, [notes.length])
+  }, [notes.length, user])
 
   // delete note
   async function deleteNote(id) {
     await fetch(`http://localhost:5000/api/note/${id}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+      }
     })
 
     const remainingNotes = notes.filter((note) => note._id !== id)
@@ -139,7 +150,7 @@ export default function Notes(props) {
   return (
     <div className='notes'>
       <div className="notes-container">
-        <h1>My Notes</h1>
+        <h1>{user.user.first}'s Notes</h1>
         <div className="btn-group">
           {filterList}
         </div>
