@@ -116,8 +116,7 @@
 .short-menu {
     width: 300px;
     height: 100vh;
-    background-color: $mauve;
-    // left: -10rem;
+    background: $mauve-gl;
     margin-left: -14.5rem;
     transition: all 0.5s ease;
     border-right: 2px solid white;
@@ -150,7 +149,6 @@
 
         h1 {
             margin: 1rem 0;
-            background-color: $mauve;
         }
 
         .menuItem {
@@ -162,7 +160,6 @@
             cursor: pointer;
             margin-bottom: 1rem;
             transition: all 0.5s ease;
-            background-color: $mauve;
             color: white;
             text-decoration: none;
 
@@ -211,7 +208,7 @@
         .btn {
             height: 2.5rem;
             width: 5rem;
-            background-color: $mauve;
+            background-color: transparent;
             border-radius: 50px;
             font-size: 1rem;
             font-weight: 700;
@@ -235,8 +232,7 @@
 .long-menu {
     width: 300px;
     height: 100vh;
-    background-color: $babyBlue;
-    // left: -10rem;
+    background: $babyBlue-gl;
     margin-left: -14.5rem;
     transition: all 0.5s ease;
     border-right: 2px solid white;
@@ -269,7 +265,6 @@
 
         h1 {
             margin: 1rem 0;
-            background-color: $babyBlue;
         }
 
         .menuItem {
@@ -281,7 +276,6 @@
             cursor: pointer;
             margin-bottom: 1rem;
             transition: all 0.5s ease;
-            background-color: $babyBlue;
             color: white;
             text-decoration: none;
 
@@ -330,7 +324,7 @@
         .btn {
             height: 2.5rem;
             width: 5rem;
-            background-color: $babyBlue;
+            background-color: transparent;
             border-radius: 50px;
             font-size: 1rem;
             font-weight: 700;

@@ -129,7 +129,9 @@ export default function Notes(props) {
         note={note} 
         toggle={() => toggle(note._id)}
         deleteNote={() => deleteNote(note._id)}
-        date={currentDate}
+        date={
+          (note.updatedAt[5] + note.updatedAt[6] + '/' + note.updatedAt[8] + note.updatedAt[9])
+        }
         key={note._id}
       />
     ))
@@ -144,17 +146,14 @@ export default function Notes(props) {
     />
   ))
 
-  const date = new Date()
-  const currentDate = date.getMonth() + '/' + date.getDate()
-
   return (
     <div className='notes'>
       <div className="notes-container">
-        <h1>{user.user.first}'s Notes</h1>
+        <h1 className={`h1-${props.mode}`}>{user.user.first}'s Notes</h1>
         <div className="btn-group">
           {filterList}
         </div>
-        <div className="bottom-section">
+        <div className={`bottom-section-${props.mode}`}>
           <Link to='addNote' className='add-form'>
             <span>+</span>
           </Link>

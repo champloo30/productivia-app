@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './wordOfDay.scss'
 import axios from 'axios'
 
-export default function WordOfDay() {
+export default function WordOfDay(props) {
   const [response, setResponse] = useState(null)
 
   const fetchWords = async function words() {
@@ -20,14 +20,12 @@ export default function WordOfDay() {
     }
   }
 
-  console.log(response);
-
   const noDefiniton = "This didn't come with a definition. Please try again!"
   
   return (
     <div className='wordofday'>
       <div className="wordofday-container">
-        <h1>Word of the Day</h1>
+        <h1 className={`h1-${props.mode}`}>Word of the Day</h1>
         <button className='btn' onClick={() => fetchWords()}>Get Random Word</button>
         <div className="word-info">
           {response ? 

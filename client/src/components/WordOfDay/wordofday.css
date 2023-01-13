@@ -20,9 +20,23 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.wordofday .wordofday-container h1 {
+.wordofday .wordofday-container .h1-pomdoro {
   font-size: 2.5rem;
   font-weight: 600;
+}
+.wordofday .wordofday-container .h1-short {
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
+  background-clip: text;
+  color: transparent;
+}
+.wordofday .wordofday-container .h1-long {
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgb(164, 190, 243) 50%, rgb(224, 176, 255) 100%);
+  background-clip: text;
+  color: transparent;
 }
 .wordofday .wordofday-container .btn {
   height: 3rem;

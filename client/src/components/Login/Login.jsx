@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLogin } from '../../hooks/useLogin'
+import { motion } from 'framer-motion'
 import './login.scss'
 import facebook from '../../assets/facebook-alt-svgrepo-com.svg'
 import google from '../../assets/google-plus-svgrepo-com.svg'
 import linkedIn from '../../assets/linkedin-svgrepo-com.svg'
 
-export default function Login({ setToken }) {
+export default function Login() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   const {login, isLoading, error} = useLogin()
-
+  
   const navigate = useNavigate()
 
   async function handleSubmit(e) {
@@ -24,7 +25,16 @@ export default function Login({ setToken }) {
 
   return (
     <div className='login'>
-      <div className="left">
+      <motion.div 
+        className="left"
+        animate={{
+          y: ['-100vh', '0vh']
+        }}
+        transition={{
+          delay: 0.125,
+          duration: 1
+        }}
+      >
         <a href='/' className='title'>Productivia</a>
         <div className="left-container">
           <h2>New Here?</h2>
@@ -33,8 +43,17 @@ export default function Login({ setToken }) {
             <button className='signup-btn'>Sign Up</button>
           </a>
         </div>
-      </div>
-      <div className="right">
+      </motion.div>
+      <motion.div 
+        className="right"
+        animate={{
+          opacity: [0, 1]
+        }}
+        transition={{
+          duration: 1,
+          delay: 0.125
+        }}
+      >
         <div className="right-container">
         <h1>Login to Your Account</h1>
         <p>Login using social networks</p>
@@ -75,7 +94,7 @@ export default function Login({ setToken }) {
           {error ? <div className='error'>{error}</div> : null}
         </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

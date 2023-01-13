@@ -28,12 +28,16 @@
 
         .h1-short {
             font-size: 2.5rem;
-            color: $mauve;
+            background: $mauve-gr;
+            background-clip: text;
+            color: transparent;
         }
 
         .h1-long {
             font-size: 2.5rem;
-            color: $babyBlue;
+            background: $babyBlue-gr;
+            background-clip: text;
+            color: transparent;
         }
 
         .item-container {
@@ -176,12 +180,10 @@
                 align-items: center;
                 justify-content: center;
 
-                .pomodoro {
+                .home-pomodoro {
                     height: 12rem;
                     width: 22rem;
-                    background-color: $gunmetal;
-                    color: white;
-                    border: 5px solid white;
+                    background-color: white;
                     border-radius: 100px;
                     display: flex;
                     flex-direction: column;
@@ -193,61 +195,72 @@
                         margin-left: 0;
                     }
 
-                    .t-btn-group {
+                    .pomodoro-container {
+                        height: 96%;
+                        width: 97.5%;
+                        background-color: $gunmetal;
+                        border-radius: 100px;
+                        color: white;
                         display: flex;
+                        flex-direction: column;
                         align-items: center;
-                        justify-content: center;
-                        gap: 1rem;
+                        justify-content: space-evenly;
 
-                        .t-btn {
-                            height: 2.5rem;
-                            width: 2.5rem;
-                            background-color: $gunmetal;
-                            color: white;
-                            border: 2px solid white;
-                            border-radius: 100px;
-                            font-size: 1.25rem;
-                            cursor: pointer;
-                            transition: all 0.5s ease;
-
-                            &:hover {
-                                background-color: white;
-                                color: $gunmetal;
+                        .t-btn-group {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+    
+                            .t-btn {
+                                height: 2.5rem;
+                                width: 2.5rem;
+                                background-color: $gunmetal;
+                                color: white;
+                                border: 2px solid white;
+                                border-radius: 100px;
+                                font-size: 1.25rem;
+                                cursor: pointer;
+                                transition: all 0.5s ease;
+    
+                                &:hover {
+                                    background-color: white;
+                                    color: $gunmetal;
+                                }
                             }
                         }
-                    }
-
-                    .progress {
-                        margin-top: -0.5rem;
-
-                        .time {
-                            margin: 0;
-                            font-size: 4rem;
+    
+                        .progress {
+                            margin-top: -0.5rem;
+    
+                            .time {
+                                margin: 0;
+                                font-size: 4rem;
+                            }
                         }
-                    }
-
-                    .b-btn-group {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 1rem;
-
-                        .b-btn {
-                            height: 1.5rem;
-                            width: 1.5rem;
-                            background-color: transparent;
-                            border: none;
-                            cursor: pointer;
+    
+                        .b-btn-group {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+    
+                            .b-btn {
+                                height: 1.5rem;
+                                width: 1.5rem;
+                                background-color: transparent;
+                                border: none;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
 
-                .short {
+                .home-short {
                     height: 12rem;
                     width: 22rem;
-                    background-color: $gunmetal;
+                    background: $mauve-gr;
                     color: white;
-                    border: 5px solid $mauve;
                     border-radius: 100px;
                     display: flex;
                     flex-direction: column;
@@ -259,61 +272,72 @@
                         margin-left: 0;
                     }
 
-                    .t-btn-group {
+                    .short-container {
+                        height: 96%;
+                        width: 97.5%;
+                        background-color: $gunmetal;
+                        border-radius: 100px;
+                        color: white;
                         display: flex;
+                        flex-direction: column;
                         align-items: center;
-                        justify-content: center;
-                        gap: 1rem;
+                        justify-content: space-evenly;
 
-                        .t-btn {
-                            height: 2.5rem;
-                            width: 2.5rem;
-                            background-color: $gunmetal;
-                            color: $mauve;
-                            border: 2px solid $mauve;
-                            border-radius: 100px;
-                            font-size: 1.25rem;
-                            cursor: pointer;
-                            transition: all 0.5s ease;
-
-                            &:hover {
-                                background-color: $mauve;
-                                color: $gunmetal;
+                        .t-btn-group {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+    
+                            .t-btn {
+                                height: 2.5rem;
+                                width: 2.5rem;
+                                background-color: transparent;
+                                color: $mauve;
+                                border: 2px solid $mauve;
+                                border-radius: 100px;
+                                font-size: 1.25rem;
+                                cursor: pointer;
+                                transition: all 0.5s ease;
+    
+                                &:hover {
+                                    background-color: $mauve;
+                                    color: $gunmetal;
+                                }
                             }
                         }
-                    }
-
-                    .progress {
-                        margin-top: -0.5rem;
-
-                        .time {
-                            margin: 0;
-                            font-size: 4rem;
+    
+                        .progress {
+                            margin-top: -0.5rem;
+    
+                            .time {
+                                margin: 0;
+                                font-size: 4rem;
+                            }
                         }
-                    }
-
-                    .b-btn-group {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 1rem;
-
-                        .b-btn {
-                            height: 1.5rem;
-                            width: 1.5rem;
-                            background-color: transparent;
-                            border: none;
-                            cursor: pointer;
+    
+                        .b-btn-group {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+    
+                            .b-btn {
+                                height: 1.5rem;
+                                width: 1.5rem;
+                                background-color: transparent;
+                                border: none;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
 
-                .long {
+                .home-long {
                     height: 12rem;
                     width: 22rem;
-                    background-color: $gunmetal;
+                    background: $babyBlue-gr;
                     color: white;
-                    border: 5px solid $babyBlue;
                     border-radius: 100px;
                     display: flex;
                     flex-direction: column;
@@ -325,51 +349,64 @@
                         margin-left: 0;
                     }
 
-                    .t-btn-group {
+                    .long-container {
+                        height: 96%;
+                        width: 97.5%;
+                        background-color: $gunmetal;
+                        border-radius: 100px;
+                        color: white;
                         display: flex;
+                        flex-direction: column;
                         align-items: center;
-                        justify-content: center;
-                        gap: 1rem;
+                        justify-content: space-evenly;
 
-                        .t-btn {
-                            height: 2.5rem;
-                            width: 2.5rem;
-                            background-color: $gunmetal;
-                            color: $babyBlue;
-                            border: 2px solid $babyBlue;
-                            border-radius: 100px;
-                            font-size: 1.25rem;
-                            cursor: pointer;
-                            transition: all 0.5s ease;
 
-                            &:hover {
-                                background-color: $babyBlue;
-                                color: $gunmetal;
+                        .t-btn-group {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+    
+                            .t-btn {
+                                height: 2.5rem;
+                                width: 2.5rem;
+                                background-color: $gunmetal;
+                                color: $babyBlue;
+                                border: 2px solid $babyBlue;
+                                border-radius: 100px;
+                                font-size: 1.25rem;
+                                cursor: pointer;
+                                transition: all 0.5s ease;
+    
+                                &:hover {
+                                    background-color: $babyBlue;
+                                    color: $gunmetal;
+                                }
                             }
                         }
-                    }
-
-                    .progress {
-                        margin-top: -0.5rem;
-
-                        .time {
-                            margin: 0;
-                            font-size: 4rem;
+    
+                        .progress {
+                            margin-top: -0.5rem;
+    
+                            .time {
+                                margin: 0;
+                                font-size: 4rem;
+                            }
                         }
-                    }
-
-                    .b-btn-group {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 1rem;
-
-                        .b-btn {
-                            height: 1.5rem;
-                            width: 1.5rem;
-                            background-color: transparent;
-                            border: none;
-                            cursor: pointer;
+    
+                        .b-btn-group {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+    
+                            .b-btn {
+                                height: 1.5rem;
+                                width: 1.5rem;
+                                background-color: transparent;
+                                border: none;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }

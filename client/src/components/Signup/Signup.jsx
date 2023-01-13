@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSignup } from '../../hooks/useSignup'
+import { motion } from 'framer-motion'
 import './signup.scss'
 import facebook from '../../assets/facebook-alt-svgrepo-com.svg'
 import google from '../../assets/google-plus-svgrepo-com.svg'
@@ -26,7 +27,16 @@ export default function Signup() {
 
   return (
     <div className='signup'>
-        <div className="left">
+        <motion.div 
+            className="left"
+            animate={{
+                opacity: [0, 1]
+            }}
+            transition={{
+                duration: 1,
+                delay: 0.125
+            }}
+        >
             <a href='/' className='title'>Productivia</a>
             <div className="left-container">
                 <h1>Create Account</h1>
@@ -81,21 +91,21 @@ export default function Signup() {
                         value={password}
                         required 
                     />
-                    {/* <input 
-                        className='form-text' 
-                        type="password" 
-                        id="password_confirmation" 
-                        placeholder='Password Confirmation' 
-                        onChange={e => setPasswordConfirmation(e.target.value)}
-                        value={password_confirmation}
-                        required 
-                    /> */}
                     <button className='signup-btn' type="submit" disabled={isLoading}>Sign Up</button>
                     {error && <div className='error'>{error}</div>}
                 </form>
             </div>
-        </div>
-        <div className="right">
+        </motion.div>
+        <motion.div 
+            className="right"
+            animate={{
+                y: ['-100vh', '0vh']
+            }}
+            transition={{
+                delay: 0.125,
+                duration: 1
+            }}
+        >
             <div className="right-container">
                 <h2>Welcome Back!</h2>
                 <p>Please login with your personal info to stay connected with <span>Productivia</span></p>
@@ -103,7 +113,7 @@ export default function Signup() {
                     <button className='login-btn'>log in</button>
                 </a>
             </div>
-        </div>
+        </motion.div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ export function useLogout() {
 
   function logout() {
     // remove user from storage
-    sessionStorage.removeItem('user')
+    localStorage.removeItem('user')
 
     // dispatch logout action
     dispatch({type: 'LOGOUT'})

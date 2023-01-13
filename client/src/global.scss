@@ -4,6 +4,12 @@ $babyBlue: #A4BEF3;
 $crimson: #B80F0A;
 $mauve: #E0B0FF;
 
+$mauve-gr: linear-gradient(135deg, rgba(224,176,255,1) 45%, rgba(164,190,243,1) 100%);
+$babyBlue-gr: linear-gradient(135deg, rgba(164,190,243,1) 50%, rgba(224,176,255,1) 100%);
+
+$mauve-gl: linear-gradient(110deg, rgba(164,190,243,1) 0%, rgba(224,176,255,1) 50%);
+$babyBlue-gl: linear-gradient(110deg, rgba(224,176,255,1) 0%, rgba(164,190,243,1) 50%);
+
 //media queries
 $mobile-width: 425px;
 

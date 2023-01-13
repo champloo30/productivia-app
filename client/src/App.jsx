@@ -71,23 +71,23 @@ function App() {
     restart(expiryTimestamp)
     pause()
   }
-  
+
   return (
     <div className="app">
       {user ?
         (<>
           <Menu mode={mode} />
           <Routes>
-            <Route path='/dashboard' element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
-            <Route path='tasks' element={<Todo />} />
+            <Route path={'/dashboard'} element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
+            <Route path='tasks' element={<Todo mode={mode} />} />
             <Route path='tasks/addTask' element={<AddTask />} />
             <Route path='tasks/edit/:id' element={<EditForm />} />
-            <Route path='notes' element={<Notes />} />
+            <Route path='notes' element={<Notes mode={mode} />} />
             <Route path='notes/addNote' element={<AddNote />} />
             <Route path='notes/:id' element={<ViewNote />} />
             <Route path='notes/edit/:id' element={<EditNote />} />
             <Route path='pomodoroTimer' element={<Pomodoro expiryTimestamp={expiryTimestamp} mode={mode} seconds={seconds} minutes={minutes} isRunning={isRunning} pause={pause} resume={resume} restart={restart} pomodoro={pomodoro} short={short} long={long} />} />
-            <Route path='wordOfTheDay' element={<WOD />} />
+            <Route path='wordOfTheDay' element={<WOD mode={mode} />} />
           </Routes>
         </>)
       : null}

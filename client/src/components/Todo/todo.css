@@ -22,17 +22,50 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  gap: 1rem;
 }
-.todo .todo-container h1 {
+.todo .todo-container .h1-pomodoro {
   font-size: 2.5rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 @media (max-width: 425px) {
-  .todo .todo-container h1 {
+  .todo .todo-container .h1-pomodoro {
     text-align: center;
   }
 }
-.todo .todo-container h1 span {
+.todo .todo-container .h1-pomodoro span {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.todo .todo-container .h1-short {
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 425px) {
+  .todo .todo-container .h1-short {
+    text-align: center;
+  }
+}
+.todo .todo-container .h1-short span {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.todo .todo-container .h1-long {
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, rgb(164, 190, 243) 50%, rgb(224, 176, 255) 100%);
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 425px) {
+  .todo .todo-container .h1-long {
+    text-align: center;
+  }
+}
+.todo .todo-container .h1-long span {
   font-size: 2rem;
   font-weight: 300;
 }
@@ -43,7 +76,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  margin-top: 1rem;
   background-color: #1c232e;
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
@@ -55,7 +87,6 @@
   .todo .todo-container .add-btn {
     height: 3rem;
     width: 3rem;
-    margin-top: 1.5rem;
   }
 }
 .todo .todo-container .add-btn:hover {
@@ -71,7 +102,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
   gap: 2rem;
 }
 @media (max-width: 425px) {
@@ -79,13 +109,36 @@
     gap: 1rem;
   }
 }
-.todo .todo-container #list-heading {
+.todo .todo-container #list-heading-pomodoro {
   font-size: 1.75rem;
-  margin-top: 1rem;
   font-weight: 400;
 }
 @media (max-width: 425px) {
-  .todo .todo-container #list-heading {
+  .todo .todo-container #list-heading-pomodoro {
+    margin-top: 2rem;
+  }
+}
+.todo .todo-container #list-heading-short {
+  font-size: 1.75rem;
+  font-weight: 400;
+  background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 425px) {
+  .todo .todo-container #list-heading-short {
+    margin-top: 2rem;
+  }
+}
+.todo .todo-container #list-heading-long {
+  font-size: 1.75rem;
+  font-weight: 400;
+  background: linear-gradient(135deg, rgb(164, 190, 243) 50%, rgb(224, 176, 255) 100%);
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 425px) {
+  .todo .todo-container #list-heading-long {
     margin-top: 2rem;
   }
 }
@@ -98,7 +151,6 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   overflow: hidden;
-  margin-top: 2rem;
 }
 @media (max-width: 425px) {
   .todo .todo-container .todo-list {

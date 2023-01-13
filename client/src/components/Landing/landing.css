@@ -1,14 +1,20 @@
 .landing {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.landing h1 {
+  font-size: 5rem;
+  color: white;
+  position: absolute;
+  z-index: 5;
+}
 .landing .left {
-  height: 100%;
-  width: 90%;
   flex: 6;
+  height: 100%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,16 +29,16 @@
   font-size: 2.5rem;
   color: white;
 }
-.landing .left .left-container h1 {
+.landing .left .left-container h3 {
   font-size: 5rem;
   color: white;
+  opacity: 0;
 }
 .landing .left .left-container .links {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
 }
 .landing .left .left-container .links .btn {
   height: 2.5rem;
@@ -62,71 +68,82 @@
   color: #1c232e;
 }
 .landing .left .left-container p {
-  width: 32.5rem;
+  width: 35rem;
   margin-top: 2rem;
   font-size: 1.125rem;
   font-weight: 300;
   color: white;
 }
-.landing .left .left-container p span {
+.landing .left .left-container p .percent {
   font-size: 1.25rem;
   font-weight: 500;
   color: #A4BEF3;
 }
 .landing .right {
+  flex: 7;
   height: 100vh;
-  width: 90%;
-  flex: 8;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
 }
-.landing .right .box {
-  height: 35rem;
-  width: 45rem;
-  background-color: #A4BEF3;
+.landing .right .carousel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  margin-left: 110rem;
+  cursor: grab;
+}
+.landing .right .carousel .inner-carousel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.landing .right .carousel .inner-carousel .odd {
+  margin-top: -5rem;
+}
+.landing .right .carousel .inner-carousel .even {
+  margin-top: 5rem;
+}
+.landing .right .carousel .inner-carousel .box {
+  height: 25rem;
+  width: 30rem;
+  background: linear-gradient(135deg, rgb(164, 190, 243) 50%, rgb(224, 176, 255) 100%);
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.landing .right .box .box-container {
+.landing .right .carousel .inner-carousel .box .box-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   gap: 1rem;
 }
-.landing .right .box .box-container .video {
-  width: 35rem;
+.landing .right .carousel .inner-carousel .box .box-container .video {
+  width: 25rem;
   border-radius: 15px;
 }
-.landing .right .box .box-container .text {
+.landing .right .carousel .inner-carousel .box .box-container .text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
-.landing .right .box .box-container .text h3 {
+.landing .right .carousel .inner-carousel .box .box-container .text h3 {
   font-size: 2rem;
   color: white;
   margin-bottom: 0.25rem;
 }
-.landing .right .box .box-container .arrows {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-.landing .right .box .box-container .arrows img {
-  height: 3rem;
-  width: 3rem;
-  cursor: pointer;
-}
-.landing .right .box .box-container .arrows .right {
-  transform: rotate(180deg);
+.landing .right .carousel .inner-carousel .in-view {
+  background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
 }
 
 /*# sourceMappingURL=landing.css.map */

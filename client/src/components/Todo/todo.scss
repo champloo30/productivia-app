@@ -23,10 +23,45 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
+        gap: 1rem;
 
-        h1 {
+        .h1-pomodoro {
             font-size: 2.5rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
+
+            @include mobile {
+                text-align: center;
+            }
+
+            span {
+                font-size: 2rem;
+                font-weight: 300;
+            }
+        }
+
+        .h1-short {
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
+            background: $mauve-gr;
+            background-clip: text;
+            color: transparent;
+
+            @include mobile {
+                text-align: center;
+            }
+
+            span {
+                font-size: 2rem;
+                font-weight: 300;
+            }
+        }
+
+        .h1-long {
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
+            background: $babyBlue-gr;
+            background-clip: text;
+            color: transparent;
 
             @include mobile {
                 text-align: center;
@@ -45,7 +80,6 @@
             align-items: center;
             justify-content: center;
             border-radius: 100%;
-            margin-top: 1rem;
             background-color: $gunmetal;
             border: 2px solid $babyBlue;
             color: $babyBlue;
@@ -56,7 +90,6 @@
             @include mobile {
                 height: 3rem;
                 width: 3rem;
-                margin-top: 1.5rem;
             }
 
             &:hover {
@@ -75,7 +108,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1rem;
             gap: 2rem;
 
             @include mobile {
@@ -83,10 +115,33 @@
             }
         }
 
-        #list-heading {
+        #list-heading-pomodoro {
             font-size: 1.75rem;
-            margin-top: 1rem;
             font-weight: 400;
+
+            @include mobile {
+                margin-top: 2rem;
+            }
+        }
+
+        #list-heading-short {
+            font-size: 1.75rem;
+            font-weight: 400;
+            background: $mauve-gr;
+            background-clip: text;
+            color: transparent;
+
+            @include mobile {
+                margin-top: 2rem;
+            }
+        }
+
+        #list-heading-long {
+            font-size: 1.75rem;
+            font-weight: 400;
+            background: $babyBlue-gr;
+            background-clip: text;
+            color: transparent;
 
             @include mobile {
                 margin-top: 2rem;
@@ -102,7 +157,6 @@
             justify-content: flex-start;
             flex-wrap: wrap;
             overflow: hidden;
-            margin-top: 2rem;
 
             @include mobile {
                 flex-wrap: nowrap;

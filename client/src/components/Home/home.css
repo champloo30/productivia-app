@@ -26,11 +26,15 @@
 }
 .home .home-container .h1-short {
   font-size: 2.5rem;
-  color: #E0B0FF;
+  background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
+  background-clip: text;
+  color: transparent;
 }
 .home .home-container .h1-long {
   font-size: 2.5rem;
-  color: #A4BEF3;
+  background: linear-gradient(135deg, rgb(164, 190, 243) 50%, rgb(224, 176, 255) 100%);
+  background-clip: text;
+  color: transparent;
 }
 .home .home-container .item-container {
   height: 50%;
@@ -173,12 +177,10 @@
   align-items: center;
   justify-content: center;
 }
-.home .home-container .item-container .mini-timer .pomodoro {
+.home .home-container .item-container .mini-timer .home-pomodoro {
   height: 12rem;
   width: 22rem;
-  background-color: #1c232e;
-  color: white;
-  border: 5px solid white;
+  background-color: white;
   border-radius: 100px;
   display: flex;
   flex-direction: column;
@@ -186,18 +188,29 @@
   justify-content: space-evenly;
 }
 @media (max-width: 425px) {
-  .home .home-container .item-container .mini-timer .pomodoro {
+  .home .home-container .item-container .mini-timer .home-pomodoro {
     width: 18rem;
     margin-left: 0;
   }
 }
-.home .home-container .item-container .mini-timer .pomodoro .t-btn-group {
+.home .home-container .item-container .mini-timer .home-pomodoro .pomodoro-container {
+  height: 96%;
+  width: 97.5%;
+  background-color: #1c232e;
+  border-radius: 100px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home .home-container .item-container .mini-timer .home-pomodoro .pomodoro-container .t-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.home .home-container .item-container .mini-timer .pomodoro .t-btn-group .t-btn {
+.home .home-container .item-container .mini-timer .home-pomodoro .pomodoro-container .t-btn-group .t-btn {
   height: 2.5rem;
   width: 2.5rem;
   background-color: #1c232e;
@@ -208,36 +221,35 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.home .home-container .item-container .mini-timer .pomodoro .t-btn-group .t-btn:hover {
+.home .home-container .item-container .mini-timer .home-pomodoro .pomodoro-container .t-btn-group .t-btn:hover {
   background-color: white;
   color: #1c232e;
 }
-.home .home-container .item-container .mini-timer .pomodoro .progress {
+.home .home-container .item-container .mini-timer .home-pomodoro .pomodoro-container .progress {
   margin-top: -0.5rem;
 }
-.home .home-container .item-container .mini-timer .pomodoro .progress .time {
+.home .home-container .item-container .mini-timer .home-pomodoro .pomodoro-container .progress .time {
   margin: 0;
   font-size: 4rem;
 }
-.home .home-container .item-container .mini-timer .pomodoro .b-btn-group {
+.home .home-container .item-container .mini-timer .home-pomodoro .pomodoro-container .b-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.home .home-container .item-container .mini-timer .pomodoro .b-btn-group .b-btn {
+.home .home-container .item-container .mini-timer .home-pomodoro .pomodoro-container .b-btn-group .b-btn {
   height: 1.5rem;
   width: 1.5rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-.home .home-container .item-container .mini-timer .short {
+.home .home-container .item-container .mini-timer .home-short {
   height: 12rem;
   width: 22rem;
-  background-color: #1c232e;
+  background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
   color: white;
-  border: 5px solid #E0B0FF;
   border-radius: 100px;
   display: flex;
   flex-direction: column;
@@ -245,21 +257,32 @@
   justify-content: space-evenly;
 }
 @media (max-width: 425px) {
-  .home .home-container .item-container .mini-timer .short {
+  .home .home-container .item-container .mini-timer .home-short {
     width: 18rem;
     margin-left: 0;
   }
 }
-.home .home-container .item-container .mini-timer .short .t-btn-group {
+.home .home-container .item-container .mini-timer .home-short .short-container {
+  height: 96%;
+  width: 97.5%;
+  background-color: #1c232e;
+  border-radius: 100px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home .home-container .item-container .mini-timer .home-short .short-container .t-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.home .home-container .item-container .mini-timer .short .t-btn-group .t-btn {
+.home .home-container .item-container .mini-timer .home-short .short-container .t-btn-group .t-btn {
   height: 2.5rem;
   width: 2.5rem;
-  background-color: #1c232e;
+  background-color: transparent;
   color: #E0B0FF;
   border: 2px solid #E0B0FF;
   border-radius: 100px;
@@ -267,36 +290,35 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.home .home-container .item-container .mini-timer .short .t-btn-group .t-btn:hover {
+.home .home-container .item-container .mini-timer .home-short .short-container .t-btn-group .t-btn:hover {
   background-color: #E0B0FF;
   color: #1c232e;
 }
-.home .home-container .item-container .mini-timer .short .progress {
+.home .home-container .item-container .mini-timer .home-short .short-container .progress {
   margin-top: -0.5rem;
 }
-.home .home-container .item-container .mini-timer .short .progress .time {
+.home .home-container .item-container .mini-timer .home-short .short-container .progress .time {
   margin: 0;
   font-size: 4rem;
 }
-.home .home-container .item-container .mini-timer .short .b-btn-group {
+.home .home-container .item-container .mini-timer .home-short .short-container .b-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.home .home-container .item-container .mini-timer .short .b-btn-group .b-btn {
+.home .home-container .item-container .mini-timer .home-short .short-container .b-btn-group .b-btn {
   height: 1.5rem;
   width: 1.5rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-.home .home-container .item-container .mini-timer .long {
+.home .home-container .item-container .mini-timer .home-long {
   height: 12rem;
   width: 22rem;
-  background-color: #1c232e;
+  background: linear-gradient(135deg, rgb(164, 190, 243) 50%, rgb(224, 176, 255) 100%);
   color: white;
-  border: 5px solid #A4BEF3;
   border-radius: 100px;
   display: flex;
   flex-direction: column;
@@ -304,18 +326,29 @@
   justify-content: space-evenly;
 }
 @media (max-width: 425px) {
-  .home .home-container .item-container .mini-timer .long {
+  .home .home-container .item-container .mini-timer .home-long {
     width: 18rem;
     margin-left: 0;
   }
 }
-.home .home-container .item-container .mini-timer .long .t-btn-group {
+.home .home-container .item-container .mini-timer .home-long .long-container {
+  height: 96%;
+  width: 97.5%;
+  background-color: #1c232e;
+  border-radius: 100px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home .home-container .item-container .mini-timer .home-long .long-container .t-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.home .home-container .item-container .mini-timer .long .t-btn-group .t-btn {
+.home .home-container .item-container .mini-timer .home-long .long-container .t-btn-group .t-btn {
   height: 2.5rem;
   width: 2.5rem;
   background-color: #1c232e;
@@ -326,24 +359,24 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.home .home-container .item-container .mini-timer .long .t-btn-group .t-btn:hover {
+.home .home-container .item-container .mini-timer .home-long .long-container .t-btn-group .t-btn:hover {
   background-color: #A4BEF3;
   color: #1c232e;
 }
-.home .home-container .item-container .mini-timer .long .progress {
+.home .home-container .item-container .mini-timer .home-long .long-container .progress {
   margin-top: -0.5rem;
 }
-.home .home-container .item-container .mini-timer .long .progress .time {
+.home .home-container .item-container .mini-timer .home-long .long-container .progress .time {
   margin: 0;
   font-size: 4rem;
 }
-.home .home-container .item-container .mini-timer .long .b-btn-group {
+.home .home-container .item-container .mini-timer .home-long .long-container .b-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.home .home-container .item-container .mini-timer .long .b-btn-group .b-btn {
+.home .home-container .item-container .mini-timer .home-long .long-container .b-btn-group .b-btn {
   height: 1.5rem;
   width: 1.5rem;
   background-color: transparent;

@@ -43,11 +43,16 @@ export default function ViewNote(props) {
     return
   }, [params.id, navigate, user])
 
+  const dateUpdated = new Date(note.updatedAt)
+  const date = (dateUpdated.getMonth() + 1) + '/' + dateUpdated.getDate()
+
+  console.log(date);
+
   return (
     <div className="view">
       <div className="view-container">
         <h1>{note.title}</h1>
-        <h2>{note.category + ' - Date'}</h2>
+        <h2>{note.category + ' - ' + date}</h2>
         <p>{note.content}</p>
         <div className="btn-group">
           <Link className='btn back' to='/notes'>Back</Link>

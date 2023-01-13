@@ -22,11 +22,33 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.notes .notes-container h1 {
+.notes .notes-container .h1-pomodoro {
   font-size: 2.5rem;
 }
 @media (max-width: 425px) {
-  .notes .notes-container h1 {
+  .notes .notes-container .h1-pomodoro {
+    margin-top: 2rem;
+  }
+}
+.notes .notes-container .h1-short {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .h1-short {
+    margin-top: 2rem;
+  }
+}
+.notes .notes-container .h1-long {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, rgb(164, 190, 243) 50%, rgb(224, 176, 255) 100%);
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .h1-long {
     margin-top: 2rem;
   }
 }
@@ -42,7 +64,7 @@
     gap: 1rem;
   }
 }
-.notes .notes-container .bottom-section {
+.notes .notes-container .bottom-section-pomodoro {
   height: 60%;
   width: 100%;
   border-top: 2px solid white;
@@ -52,12 +74,12 @@
   justify-content: center;
 }
 @media (max-width: 425px) {
-  .notes .notes-container .bottom-section {
+  .notes .notes-container .bottom-section-pomodoro {
     margin-top: 2rem;
     margin-left: -1rem;
   }
 }
-.notes .notes-container .bottom-section .add-form {
+.notes .notes-container .bottom-section-pomodoro .add-form {
   height: 3rem;
   width: 2.75rem;
   display: flex;
@@ -73,21 +95,21 @@
   text-decoration: none;
 }
 @media (max-width: 425px) {
-  .notes .notes-container .bottom-section .add-form {
+  .notes .notes-container .bottom-section-pomodoro .add-form {
     height: 3rem;
     width: 3rem;
     margin-top: 2rem;
   }
 }
-.notes .notes-container .bottom-section .add-form:hover {
+.notes .notes-container .bottom-section-pomodoro .add-form:hover {
   background-color: #A4BEF3;
   color: #1c232e;
 }
-.notes .notes-container .bottom-section .add-form span {
+.notes .notes-container .bottom-section-pomodoro .add-form span {
   font-size: 2.5rem;
   background-color: transparent;
 }
-.notes .notes-container .bottom-section .note-list {
+.notes .notes-container .bottom-section-pomodoro .note-list {
   height: 100%;
   width: 95%;
   display: flex;
@@ -96,12 +118,12 @@
   flex-wrap: wrap;
 }
 @media (max-width: 425px) {
-  .notes .notes-container .bottom-section .note-list {
+  .notes .notes-container .bottom-section-pomodoro .note-list {
     align-items: center;
     justify-content: center;
   }
 }
-.notes .notes-container .bottom-section .note-list .hidden-menu {
+.notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu {
   height: 8rem;
   width: 12rem;
   border: 2px solid white;
@@ -116,11 +138,11 @@
   transition: all 0.5s ease;
 }
 @media (max-width: 425px) {
-  .notes .notes-container .bottom-section .note-list .hidden-menu {
+  .notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu {
     width: 14rem;
   }
 }
-.notes .notes-container .bottom-section .note-list .hidden-menu .left {
+.notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu .left {
   flex: 8;
   height: 100%;
   display: flex;
@@ -128,41 +150,41 @@
   align-items: flex-start;
   justify-content: space-evenly;
 }
-.notes .notes-container .bottom-section .note-list .hidden-menu .left h1 {
+.notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu .left h1 {
   height: 1rem;
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
   margin-top: -0.5rem;
 }
-.notes .notes-container .bottom-section .note-list .hidden-menu .left .content {
+.notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu .left .content {
   height: 1.5rem;
   font-size: 0.9rem;
   font-weight: 300;
   margin-top: 0.25rem;
 }
-.notes .notes-container .bottom-section .note-list .hidden-menu .left .date {
+.notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu .left .date {
   height: 1rem;
   font-size: 0.9rem;
   font-weight: 300;
   color: #A4BEF3;
 }
-.notes .notes-container .bottom-section .note-list .hidden-menu .right {
+.notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu .right {
   flex: 4;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.notes .notes-container .bottom-section .note-list .hidden-menu .right .plus {
+.notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu .right .plus {
   font-size: 2rem;
   margin-top: -5rem;
   cursor: pointer;
 }
-.notes .notes-container .bottom-section .note-list .hidden-menu .right .hidden {
+.notes .notes-container .bottom-section-pomodoro .note-list .hidden-menu .right .hidden {
   display: none;
   height: 100%;
 }
-.notes .notes-container .bottom-section .note-list .active-menu {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu {
   height: 8rem;
   width: 18rem;
   border: 2px solid white;
@@ -176,13 +198,13 @@
   text-decoration: none;
   transition: all 0.5s ease;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .modal {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .modal {
   position: fixed;
   top: 5%;
   left: 18.3%;
   transform: translate(-50%, -50%);
 }
-.notes .notes-container .bottom-section .note-list .active-menu .left {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .left {
   flex: 5.5;
   height: 100%;
   display: flex;
@@ -190,37 +212,37 @@
   align-items: flex-start;
   justify-content: space-evenly;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .left h1 {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .left h1 {
   height: 1rem;
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
   margin-top: -0.5rem;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .left .content {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .left .content {
   height: 1.5rem;
   font-size: 0.9rem;
   font-weight: 300;
   margin-top: 0.25rem;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .left .date {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .left .date {
   height: 1rem;
   font-size: 0.9rem;
   font-weight: 300;
   color: #A4BEF3;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .right {
   flex: 6.5;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .plus {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .right .plus {
   font-size: 2rem;
   margin-top: -5rem;
   cursor: pointer;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .active {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .right .active {
   height: 100%;
   width: 6rem;
   display: flex;
@@ -228,7 +250,7 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .active .note-btn {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .right .active .note-btn {
   height: 2.5rem;
   width: 5rem;
   border-radius: 50px;
@@ -243,19 +265,453 @@
   justify-content: center;
   margin-left: 2rem;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .active .view {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .right .active .view {
   border: 2px solid #A4BEF3;
   color: #A4BEF3;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .active .view:hover {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .right .active .view:hover {
   background-color: #A4BEF3;
   color: #1c232e;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .active .delete {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .right .active .delete {
   border: 2px solid #B80F0A;
   color: #B80F0A;
 }
-.notes .notes-container .bottom-section .note-list .active-menu .right .active .delete:hover {
+.notes .notes-container .bottom-section-pomodoro .note-list .active-menu .right .active .delete:hover {
+  background-color: #B80F0A;
+  color: #1c232e;
+}
+.notes .notes-container .bottom-section-short {
+  height: 60%;
+  width: 100%;
+  border-top: 2px solid #E0B0FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section-short {
+    margin-top: 2rem;
+    margin-left: -1rem;
+  }
+}
+.notes .notes-container .bottom-section-short .add-form {
+  height: 3rem;
+  width: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-top: 1rem;
+  background-color: #1c232e;
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section-short .add-form {
+    height: 3rem;
+    width: 3rem;
+    margin-top: 2rem;
+  }
+}
+.notes .notes-container .bottom-section-short .add-form:hover {
+  background-color: #A4BEF3;
+  color: #1c232e;
+}
+.notes .notes-container .bottom-section-short .add-form span {
+  font-size: 2.5rem;
+  background-color: transparent;
+}
+.notes .notes-container .bottom-section-short .note-list {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section-short .note-list {
+    align-items: center;
+    justify-content: center;
+  }
+}
+.notes .notes-container .bottom-section-short .note-list .hidden-menu {
+  height: 8rem;
+  width: 12rem;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section-short .note-list .hidden-menu {
+    width: 14rem;
+  }
+}
+.notes .notes-container .bottom-section-short .note-list .hidden-menu .left {
+  flex: 8;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.notes .notes-container .bottom-section-short .note-list .hidden-menu .left h1 {
+  height: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  margin-top: -0.5rem;
+}
+.notes .notes-container .bottom-section-short .note-list .hidden-menu .left .content {
+  height: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 0.25rem;
+}
+.notes .notes-container .bottom-section-short .note-list .hidden-menu .left .date {
+  height: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #A4BEF3;
+}
+.notes .notes-container .bottom-section-short .note-list .hidden-menu .right {
+  flex: 4;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notes .notes-container .bottom-section-short .note-list .hidden-menu .right .plus {
+  font-size: 2rem;
+  margin-top: -5rem;
+  cursor: pointer;
+}
+.notes .notes-container .bottom-section-short .note-list .hidden-menu .right .hidden {
+  display: none;
+  height: 100%;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu {
+  height: 8rem;
+  width: 18rem;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .modal {
+  position: fixed;
+  top: 5%;
+  left: 18.3%;
+  transform: translate(-50%, -50%);
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .left {
+  flex: 5.5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .left h1 {
+  height: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  margin-top: -0.5rem;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .left .content {
+  height: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 0.25rem;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .left .date {
+  height: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #A4BEF3;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .right {
+  flex: 6.5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .right .plus {
+  font-size: 2rem;
+  margin-top: -5rem;
+  cursor: pointer;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .right .active {
+  height: 100%;
+  width: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .right .active .note-btn {
+  height: 2.5rem;
+  width: 5rem;
+  border-radius: 50px;
+  background-color: #1c232e;
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .right .active .view {
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .right .active .view:hover {
+  background-color: #A4BEF3;
+  color: #1c232e;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .right .active .delete {
+  border: 2px solid #B80F0A;
+  color: #B80F0A;
+}
+.notes .notes-container .bottom-section-short .note-list .active-menu .right .active .delete:hover {
+  background-color: #B80F0A;
+  color: #1c232e;
+}
+.notes .notes-container .bottom-section-long {
+  height: 60%;
+  width: 100%;
+  border-top: 2px solid #A4BEF3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section-long {
+    margin-top: 2rem;
+    margin-left: -1rem;
+  }
+}
+.notes .notes-container .bottom-section-long .add-form {
+  height: 3rem;
+  width: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-top: 1rem;
+  background-color: #1c232e;
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section-long .add-form {
+    height: 3rem;
+    width: 3rem;
+    margin-top: 2rem;
+  }
+}
+.notes .notes-container .bottom-section-long .add-form:hover {
+  background-color: #A4BEF3;
+  color: #1c232e;
+}
+.notes .notes-container .bottom-section-long .add-form span {
+  font-size: 2.5rem;
+  background-color: transparent;
+}
+.notes .notes-container .bottom-section-long .note-list {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section-long .note-list {
+    align-items: center;
+    justify-content: center;
+  }
+}
+.notes .notes-container .bottom-section-long .note-list .hidden-menu {
+  height: 8rem;
+  width: 12rem;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+@media (max-width: 425px) {
+  .notes .notes-container .bottom-section-long .note-list .hidden-menu {
+    width: 14rem;
+  }
+}
+.notes .notes-container .bottom-section-long .note-list .hidden-menu .left {
+  flex: 8;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.notes .notes-container .bottom-section-long .note-list .hidden-menu .left h1 {
+  height: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  margin-top: -0.5rem;
+}
+.notes .notes-container .bottom-section-long .note-list .hidden-menu .left .content {
+  height: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 0.25rem;
+}
+.notes .notes-container .bottom-section-long .note-list .hidden-menu .left .date {
+  height: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #A4BEF3;
+}
+.notes .notes-container .bottom-section-long .note-list .hidden-menu .right {
+  flex: 4;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notes .notes-container .bottom-section-long .note-list .hidden-menu .right .plus {
+  font-size: 2rem;
+  margin-top: -5rem;
+  cursor: pointer;
+}
+.notes .notes-container .bottom-section-long .note-list .hidden-menu .right .hidden {
+  display: none;
+  height: 100%;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu {
+  height: 8rem;
+  width: 18rem;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .modal {
+  position: fixed;
+  top: 5%;
+  left: 18.3%;
+  transform: translate(-50%, -50%);
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .left {
+  flex: 5.5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .left h1 {
+  height: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  margin-top: -0.5rem;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .left .content {
+  height: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 0.25rem;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .left .date {
+  height: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #A4BEF3;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .right {
+  flex: 6.5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .right .plus {
+  font-size: 2rem;
+  margin-top: -5rem;
+  cursor: pointer;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .right .active {
+  height: 100%;
+  width: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .right .active .note-btn {
+  height: 2.5rem;
+  width: 5rem;
+  border-radius: 50px;
+  background-color: #1c232e;
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .right .active .view {
+  border: 2px solid #A4BEF3;
+  color: #A4BEF3;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .right .active .view:hover {
+  background-color: #A4BEF3;
+  color: #1c232e;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .right .active .delete {
+  border: 2px solid #B80F0A;
+  color: #B80F0A;
+}
+.notes .notes-container .bottom-section-long .note-list .active-menu .right .active .delete:hover {
   background-color: #B80F0A;
   color: #1c232e;
 }

@@ -152,14 +152,14 @@ export default function Todo(props) {
   return (
     <div className='todo'>
       <div className="todo-container">
-        <h1>{user.user.first}'s Tasks: <span>{today.toDateString()}</span></h1>
+        <h1 className={`h1-${props.mode}`}>{user.user.first}'s Tasks: <span>{today.toDateString()}</span></h1>
         <Link to='addTask' className='add-btn'>
           <span>+</span>
         </Link>
         <div className="filter-buttons">
           {filterList}
         </div>
-        <h2 id='list-heading'>{headingText}</h2>
+        <h2 id={`list-heading-${props.mode}`}>{headingText}</h2>
         <ul className='todo-list' aria-labelledby='list-heading'>
           {taskList()}
         </ul>

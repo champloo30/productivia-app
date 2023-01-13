@@ -25,7 +25,7 @@ export function useLogin(email, password) {
     }
     if (response.ok) {
       // save user to local storage
-      sessionStorage.setItem('user', JSON.stringify(json))
+      localStorage.setItem('user', JSON.stringify(json))
 
       // update authContext
       dispatch({type: 'LOGIN', payload: json})

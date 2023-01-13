@@ -21,9 +21,25 @@
         align-items: center;
         justify-content: space-evenly;
 
-        h1 {
+        .h1-pomdoro {
             font-size: 2.5rem;
             font-weight: 600;
+        }
+
+        .h1-short {
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: $mauve-gr;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .h1-long {
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: $babyBlue-gr;
+            background-clip: text;
+            color: transparent;
         }
 
         .btn {
