@@ -7,6 +7,10 @@
     align-items: center;
     justify-content: center;
 
+    @include mobile {
+        flex-direction: column;
+    }
+
     .left {
         height: 100vh;
         width: 90%;
@@ -24,6 +28,11 @@
             color: white;
             text-decoration: none;
             text-transform: uppercase;
+
+            @include mobile {
+                margin-left: -12rem;
+                margin-top: 2rem;
+            }
         }
 
         .left-container {
@@ -33,8 +42,16 @@
             align-items: center;
             justify-content: space-evenly;
 
+            @include mobile {
+                height: 60vh;
+            }
+
             h1 {
                 font-size: 4rem;
+
+                @include mobile {
+                    font-size: 3rem;
+                }
             }
 
             .outside-btn-group {
@@ -99,6 +116,10 @@
                         color: $babyBlue;
                         font-size: 1.25rem;
 
+                        @include mobile {
+                            width: 9rem;
+                        }
+
                         &::placeholder {
                             color: $babyBlue;
                             font-size: 1.25rem;
@@ -115,6 +136,10 @@
                     padding: 0 1rem;
                     color: $babyBlue;
                     font-size: 1.25rem;
+
+                    @include mobile {
+                        width: 21.5rem;
+                    }
 
                     &::placeholder {
                         color: $babyBlue;
@@ -153,6 +178,10 @@
         align-items: center;
         justify-content: center;
 
+        @include mobile {
+            width: 100%;
+        }
+
         .right-container {
             height: 40%;
             display: flex;
@@ -160,9 +189,17 @@
             align-items: center;
             justify-content: space-evenly;
 
+            @include mobile {
+                gap: 1rem;
+            }
+
             h2 {
                 font-size: 3rem;
                 color: white;
+
+                @include mobile {
+                    font-size: 2.5rem;
+                }
             }
 
             p {
@@ -172,6 +209,10 @@
                 width: 70%;
                 color: $gunmetal;
                 line-height: 35px;
+
+                @include mobile {
+                    width: 90%;
+                }
 
                 span {
                     color: white;
@@ -185,7 +226,7 @@
                 .login-btn {
                     height: 3rem;
                     width: 6rem;
-                    background-color: $babyBlue;
+                    background-color: transparent;
                     color: white;
                     border: 2px solid white;
                     border-radius: 50px;

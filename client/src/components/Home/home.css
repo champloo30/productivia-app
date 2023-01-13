@@ -9,7 +9,7 @@
 }
 @media (max-width: 425px) {
   .home {
-    margin-left: 3rem;
+    margin-left: 3.5rem;
   }
 }
 .home .home-container {
@@ -24,17 +24,32 @@
   font-size: 2.5rem;
   color: white;
 }
+@media (max-width: 425px) {
+  .home .home-container .h1-pomodoro {
+    text-align: center;
+  }
+}
 .home .home-container .h1-short {
   font-size: 2.5rem;
   background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
   background-clip: text;
   color: transparent;
 }
+@media (max-width: 425px) {
+  .home .home-container .h1-short {
+    text-align: center;
+  }
+}
 .home .home-container .h1-long {
   font-size: 2.5rem;
   background: linear-gradient(135deg, rgb(164, 190, 243) 50%, rgb(224, 176, 255) 100%);
   background-clip: text;
   color: transparent;
+}
+@media (max-width: 425px) {
+  .home .home-container .h1-long {
+    text-align: center;
+  }
 }
 .home .home-container .item-container {
   height: 50%;
@@ -140,9 +155,9 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .v-line-pomodoro {
     height: 4px;
-    width: 95%;
+    width: 98%;
     margin-bottom: 2rem;
-    margin-top: 0.75rem;
+    margin-top: -1.5rem;
   }
 }
 .home .home-container .item-container .v-line-short {
@@ -153,9 +168,9 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .v-line-short {
     height: 4px;
-    width: 95%;
+    width: 98%;
     margin-bottom: 2rem;
-    margin-top: 0.75rem;
+    margin-top: -1.5rem;
   }
 }
 .home .home-container .item-container .v-line-long {
@@ -166,9 +181,9 @@
 @media (max-width: 425px) {
   .home .home-container .item-container .v-line-long {
     height: 4px;
-    width: 95%;
+    width: 98%;
     margin-bottom: 2rem;
-    margin-top: 0.75rem;
+    margin-top: -1.5rem;
   }
 }
 .home .home-container .item-container .mini-timer {

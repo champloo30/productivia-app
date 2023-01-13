@@ -10,7 +10,7 @@
     justify-content: center;
 
     @include mobile {
-        margin-left: 3rem;
+        margin-left: 3.5rem;
     }
 
     .home-container {
@@ -24,6 +24,10 @@
         .h1-pomodoro {
             font-size: 2.5rem;
             color: white;
+
+            @include mobile {
+                text-align: center;
+            }
         }
 
         .h1-short {
@@ -31,6 +35,10 @@
             background: $mauve-gr;
             background-clip: text;
             color: transparent;
+
+            @include mobile {
+                text-align: center;
+            }
         }
 
         .h1-long {
@@ -38,6 +46,10 @@
             background: $babyBlue-gr;
             background-clip: text;
             color: transparent;
+
+            @include mobile {
+                text-align: center;
+            }
         }
 
         .item-container {
@@ -142,9 +154,9 @@
 
                 @include mobile {
                     height: 4px;
-                    width: 95%;
+                    width: 98%;
                     margin-bottom: 2rem;
-                    margin-top: 0.75rem;
+                    margin-top: -1.5rem;
                 }
             }
 
@@ -155,9 +167,9 @@
 
                 @include mobile {
                     height: 4px;
-                    width: 95%;
+                    width: 98%;
                     margin-bottom: 2rem;
-                    margin-top: 0.75rem;
+                    margin-top: -1.5rem;
                 }
             }
 
@@ -168,9 +180,9 @@
 
                 @include mobile {
                     height: 4px;
-                    width: 95%;
+                    width: 98%;
                     margin-bottom: 2rem;
-                    margin-top: 0.75rem;
+                    margin-top: -1.5rem;
                 }
             }
 

@@ -4,7 +4,6 @@
     width: 300px;
     height: 100vh;
     background-color: $gunmetal;
-    // left: -10rem;
     margin-left: -14.5rem;
     transition: all 0.5s ease;
     border-right: 2px solid white;
@@ -15,7 +14,7 @@
     color: white;
 
     @include mobile {
-        margin-left: -39.5rem;
+        margin-left: -37.5rem;
         position: fixed;
         z-index: 5;
     }
@@ -24,7 +23,7 @@
         margin-left: 0;
 
         @include mobile {
-            margin-left: -16rem;
+            margin-left: -8rem;
         }
     }
 
@@ -127,7 +126,7 @@
     color: white;
 
     @include mobile {
-        margin-left: -39.5rem;
+        margin-left: -37.5rem;
         position: fixed;
         z-index: 5;
     }
@@ -136,7 +135,7 @@
         margin-left: 0;
 
         @include mobile {
-            margin-left: -16rem;
+            margin-left: -8rem;
         }
     }
 
@@ -162,10 +161,6 @@
             transition: all 0.5s ease;
             color: white;
             text-decoration: none;
-
-            @include mobile {
-                background-color: $mauve;
-            }
 
             &:hover {
                 background-color: $gunmetal;
@@ -243,7 +238,7 @@
     color: white;
 
     @include mobile {
-        margin-left: -39.5rem;
+        margin-left: -37.5rem;
         position: fixed;
         z-index: 5;
     }
@@ -252,7 +247,7 @@
         margin-left: 0;
 
         @include mobile {
-            margin-left: -16rem;
+            margin-left: -8rem;
         }
     }
 
@@ -278,10 +273,6 @@
             transition: all 0.5s ease;
             color: white;
             text-decoration: none;
-
-            @include mobile {
-                background-color: $babyBlue;
-            }
 
             &:hover {
                 background-color: $gunmetal;

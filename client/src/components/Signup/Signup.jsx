@@ -25,6 +25,25 @@ export default function Signup() {
         navigate('/dashboard')
     }
 
+    const mobileSize = window.innerWidth <= 450
+
+    const right = {
+        regular: {
+            y: ['-100vh', '0vh'],
+            transition: {
+                delay: 0.125,
+                duration: 1
+            }
+        },
+        small: {
+            x: ['-100vw', '0vw'],
+            transition: {
+                delay: 0.125,
+                duration: 1
+            }
+        }
+    }
+
   return (
     <div className='signup'>
         <motion.div 
@@ -98,13 +117,8 @@ export default function Signup() {
         </motion.div>
         <motion.div 
             className="right"
-            animate={{
-                y: ['-100vh', '0vh']
-            }}
-            transition={{
-                delay: 0.125,
-                duration: 1
-            }}
+            variants={right}
+            animate={mobileSize ? 'small' : 'regular'}
         >
             <div className="right-container">
                 <h2>Welcome Back!</h2>

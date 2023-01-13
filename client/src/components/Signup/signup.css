@@ -5,6 +5,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .signup {
+    flex-direction: column;
+  }
+}
 .signup .left {
   height: 100vh;
   width: 90%;
@@ -23,6 +28,12 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+@media (max-width: 425px) {
+  .signup .left .title {
+    margin-left: -12rem;
+    margin-top: 2rem;
+  }
+}
 .signup .left .left-container {
   height: 80vh;
   display: flex;
@@ -30,8 +41,18 @@
   align-items: center;
   justify-content: space-evenly;
 }
+@media (max-width: 425px) {
+  .signup .left .left-container {
+    height: 60vh;
+  }
+}
 .signup .left .left-container h1 {
   font-size: 4rem;
+}
+@media (max-width: 425px) {
+  .signup .left .left-container h1 {
+    font-size: 3rem;
+  }
 }
 .signup .left .left-container .outside-btn-group {
   display: flex;
@@ -89,6 +110,11 @@
   color: #A4BEF3;
   font-size: 1.25rem;
 }
+@media (max-width: 425px) {
+  .signup .left .left-container .signup-form .name .name-text {
+    width: 9rem;
+  }
+}
 .signup .left .left-container .signup-form .name .name-text::placeholder {
   color: #A4BEF3;
   font-size: 1.25rem;
@@ -102,6 +128,11 @@
   padding: 0 1rem;
   color: #A4BEF3;
   font-size: 1.25rem;
+}
+@media (max-width: 425px) {
+  .signup .left .left-container .signup-form .form-text {
+    width: 21.5rem;
+  }
 }
 .signup .left .left-container .signup-form .form-text::placeholder {
   color: #A4BEF3;
@@ -133,6 +164,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .signup .right {
+    width: 100%;
+  }
+}
 .signup .right .right-container {
   height: 40%;
   display: flex;
@@ -140,9 +176,19 @@
   align-items: center;
   justify-content: space-evenly;
 }
+@media (max-width: 425px) {
+  .signup .right .right-container {
+    gap: 1rem;
+  }
+}
 .signup .right .right-container h2 {
   font-size: 3rem;
   color: white;
+}
+@media (max-width: 425px) {
+  .signup .right .right-container h2 {
+    font-size: 2.5rem;
+  }
 }
 .signup .right .right-container p {
   text-align: center;
@@ -151,6 +197,11 @@
   width: 70%;
   color: #1c232e;
   line-height: 35px;
+}
+@media (max-width: 425px) {
+  .signup .right .right-container p {
+    width: 90%;
+  }
 }
 .signup .right .right-container p span {
   color: white;
@@ -162,7 +213,7 @@
 .signup .right .right-container .login-a .login-btn {
   height: 3rem;
   width: 6rem;
-  background-color: #A4BEF3;
+  background-color: transparent;
   color: white;
   border: 2px solid white;
   border-radius: 50px;

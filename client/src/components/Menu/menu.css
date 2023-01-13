@@ -13,7 +13,7 @@
 }
 @media (max-width: 425px) {
   .pomodoro-menu {
-    margin-left: -39.5rem;
+    margin-left: -37.5rem;
     position: fixed;
     z-index: 5;
   }
@@ -23,7 +23,7 @@
 }
 @media (max-width: 425px) {
   .pomodoro-menu:hover {
-    margin-left: -16rem;
+    margin-left: -8rem;
   }
 }
 .pomodoro-menu .menu-top {
@@ -114,7 +114,7 @@
 }
 @media (max-width: 425px) {
   .short-menu {
-    margin-left: -39.5rem;
+    margin-left: -37.5rem;
     position: fixed;
     z-index: 5;
   }
@@ -124,7 +124,7 @@
 }
 @media (max-width: 425px) {
   .short-menu:hover {
-    margin-left: -16rem;
+    margin-left: -8rem;
   }
 }
 .short-menu .menu-top {
@@ -148,11 +148,6 @@
   transition: all 0.5s ease;
   color: white;
   text-decoration: none;
-}
-@media (max-width: 425px) {
-  .short-menu .menu-top .menuItem {
-    background-color: #E0B0FF;
-  }
 }
 .short-menu .menu-top .menuItem:hover {
   background-color: #1c232e;
@@ -220,7 +215,7 @@
 }
 @media (max-width: 425px) {
   .long-menu {
-    margin-left: -39.5rem;
+    margin-left: -37.5rem;
     position: fixed;
     z-index: 5;
   }
@@ -230,7 +225,7 @@
 }
 @media (max-width: 425px) {
   .long-menu:hover {
-    margin-left: -16rem;
+    margin-left: -8rem;
   }
 }
 .long-menu .menu-top {
@@ -254,11 +249,6 @@
   transition: all 0.5s ease;
   color: white;
   text-decoration: none;
-}
-@media (max-width: 425px) {
-  .long-menu .menu-top .menuItem {
-    background-color: #A4BEF3;
-  }
 }
 .long-menu .menu-top .menuItem:hover {
   background-color: #1c232e;

@@ -7,6 +7,10 @@
     align-items: center;
     justify-content: center;
 
+    @include mobile {
+        flex-direction: column;
+    }
+
     .left {
         height: 100vh;
         width: 90%;
@@ -17,6 +21,10 @@
         align-items: center;
         justify-content: space-evenly;
 
+        @include mobile {
+            width: 100%;
+        }
+
         .title {
             font-size: 1.5rem;
             font-weight: 300;
@@ -25,6 +33,11 @@
             color: white;
             text-decoration: none;
             text-transform: uppercase;
+
+            @include mobile {
+                margin-left: -12rem;
+                margin-top: -2rem;
+            }
         }
 
         .left-container {
@@ -33,6 +46,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
+
+            @include mobile {
+                gap: 1rem;
+            }
 
             h2 {
                 font-size: 3rem;
@@ -47,6 +64,10 @@
                 color: $gunmetal;
                 line-height: 35px;
 
+                @include mobile {
+                    width: 90%;
+                }
+
                 span {
                     color: white;
                     font-size: 1.5rem;
@@ -59,7 +80,7 @@
                 .signup-btn {
                     height: 3rem;
                     width: 7rem;
-                    background-color: $mauve;
+                    background-color: transparent;
                     color: white;
                     border: 2px solid white;
                     border-radius: 50px;
@@ -98,8 +119,18 @@
             align-items: center;
             justify-content: space-evenly;
 
+            @include mobile {
+                height: 65vh;
+            }
+
             h1 {
                 font-size: 4rem;
+
+                @include mobile {
+                    font-size: 3rem;
+                    width: 80%;
+                    text-align: center;
+                }
             }
 
             .outside-btn-group {
@@ -159,6 +190,10 @@
                     padding: 0 1rem;
                     color: $mauve;
                     font-size: 1.25rem;
+
+                    @include mobile {
+                        width: 21.5rem;
+                    }
 
                     &::placeholder {
                         color: $mauve;

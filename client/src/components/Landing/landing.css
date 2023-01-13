@@ -5,11 +5,21 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .landing {
+    flex-direction: column;
+  }
+}
 .landing h1 {
   font-size: 5rem;
   color: white;
   position: absolute;
   z-index: 5;
+}
+@media (max-width: 425px) {
+  .landing h1 {
+    font-size: 3.5rem;
+  }
 }
 .landing .left {
   flex: 6;
@@ -25,14 +35,32 @@
   align-items: flex-start;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .landing .left .left-container {
+    width: 22.5rem;
+    margin-left: -2.5rem;
+  }
+}
 .landing .left .left-container h2 {
   font-size: 2.5rem;
   color: white;
+}
+@media (max-width: 425px) {
+  .landing .left .left-container h2 {
+    font-size: 2rem;
+  }
 }
 .landing .left .left-container h3 {
   font-size: 5rem;
   color: white;
   opacity: 0;
+}
+@media (max-width: 425px) {
+  .landing .left .left-container h3 {
+    opacity: 0;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
 }
 .landing .left .left-container .links {
   display: flex;
@@ -74,6 +102,12 @@
   font-weight: 300;
   color: white;
 }
+@media (max-width: 425px) {
+  .landing .left .left-container p {
+    width: 20rem;
+    font-size: 1rem;
+  }
+}
 .landing .left .left-container p .percent {
   font-size: 1.25rem;
   font-weight: 500;
@@ -98,6 +132,12 @@
   margin-left: 110rem;
   cursor: grab;
 }
+@media (max-width: 425px) {
+  .landing .right .carousel {
+    margin-left: 98rem;
+    margin-top: -7.5rem;
+  }
+}
 .landing .right .carousel .inner-carousel {
   height: 100%;
   display: flex;
@@ -120,6 +160,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .landing .right .carousel .inner-carousel .box {
+    width: 22.5rem;
+  }
+}
 .landing .right .carousel .inner-carousel .box .box-container {
   display: flex;
   flex-direction: column;
@@ -127,9 +172,19 @@
   justify-content: center;
   gap: 1rem;
 }
+@media (max-width: 425px) {
+  .landing .right .carousel .inner-carousel .box .box-container {
+    width: 90%;
+  }
+}
 .landing .right .carousel .inner-carousel .box .box-container .video {
   width: 25rem;
   border-radius: 15px;
+}
+@media (max-width: 425px) {
+  .landing .right .carousel .inner-carousel .box .box-container .video {
+    width: 20rem;
+  }
 }
 .landing .right .carousel .inner-carousel .box .box-container .text {
   display: flex;
@@ -142,8 +197,11 @@
   color: white;
   margin-bottom: 0.25rem;
 }
-.landing .right .carousel .inner-carousel .in-view {
-  background: linear-gradient(135deg, rgb(224, 176, 255) 45%, rgb(164, 190, 243) 100%);
+.landing .right .swipe {
+  position: absolute;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 26.5rem;
 }
 
 /*# sourceMappingURL=landing.css.map */

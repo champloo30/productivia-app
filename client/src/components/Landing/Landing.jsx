@@ -9,6 +9,8 @@ import dashboardVideo from '../../assets/dashboard.mp4'
 
 export default function Landing() {
 
+  
+
   const data = [
     {
       video: tasksVideo,
@@ -52,21 +54,40 @@ export default function Landing() {
     }
   ]
 
+  const mobileSize = window.innerWidth <= 450
+
+  const h1 = {
+    regular: {
+      opacity: [0, 1, 1, 1, 1, 1],
+      scale: [0, 2, 1, 1, 1, 1],
+      x: [0, 0, 0, 0, -440, -440],
+      y: [0, 0, 0, 0, -50, -50],
+      color: ['#fff', '#fff', '#A4BEF3', '#E0B0FF', '#fff', '#fff'],
+      transition: {
+        duration: 4,
+        times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        delay: 0.3
+      }
+    },
+    small: {
+      opacity: [0, 1, 1, 1, 1, 1],
+      scale: [0, 2, 1, 1, 1, 1],
+      x: [0, 0, 0, 0, -21, -21],
+      y: [0, 0, 0, 0, -311, -311],
+      color: ['#fff', '#fff', '#A4BEF3', '#E0B0FF', '#fff', '#fff'],
+      transition: {
+        duration: 4,
+        times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        delay: 0.1
+      }
+    }
+  }
+
   return (
     <div className='landing'>
       <motion.h1  
-        animate={{
-          opacity: [0, 1, 1, 1, 1, 1],
-          scale: [0, 2, 1, 1, 1, 1],
-          x: [0, 0, 0, 0, -440, -440],
-          y: [0, 0, 0, 0, -50, -50],
-          color: ['#fff', '#fff', '#A4BEF3', '#E0B0FF', '#fff', '#fff']
-        }}
-        transition={{
-          duration: 4,
-          times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-          delay: 0.5
-        }}
+      variants={h1}
+        animate={mobileSize ? 'small' : 'regular'}
       >Productivia</motion.h1>
       <motion.div 
         className="left"
@@ -104,7 +125,7 @@ export default function Landing() {
         >
           <motion.div 
             drag='x' 
-            dragConstraints={{ right: 0, left: -1800 }} 
+            dragConstraints={mobileSize ? { right: 0, left: -1570 } : { right: 0, left: -1800 }} 
             className='inner-carousel'
           >
             <div className='box odd'>
@@ -194,6 +215,19 @@ export default function Landing() {
             </div>
           </motion.div>
         </motion.div>
+        <motion.span 
+          animate={{
+            opacity: [0, 0.5, 1, 0.5, 0],
+            y: [10, -10, 10]
+          }} 
+          transition={{
+            duration: 2,
+            repeat: Infinity
+          }}
+          className='swipe'
+        >
+          {'Swipe >>'}
+        </motion.span>
       </motion.div>
     </div>
   )

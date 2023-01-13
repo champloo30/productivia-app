@@ -23,17 +23,31 @@ export default function Login() {
     navigate('/dashboard')
   }
 
+  const mobileSize = window.innerWidth <= 450
+
+    const left = {
+        regular: {
+            y: ['-100vh', '0vh'],
+            transition: {
+                delay: 0.125,
+                duration: 1
+            }
+        },
+        small: {
+            x: ['-100vw', '0vw'],
+            transition: {
+                delay: 0.125,
+                duration: 1
+            }
+        }
+    }
+
   return (
     <div className='login'>
       <motion.div 
         className="left"
-        animate={{
-          y: ['-100vh', '0vh']
-        }}
-        transition={{
-          delay: 0.125,
-          duration: 1
-        }}
+        variants={left}
+        animate={mobileSize ? 'small' : 'regular'}
       >
         <a href='/' className='title'>Productivia</a>
         <div className="left-container">

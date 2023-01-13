@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useAuthContext } from '../../hooks/useAuthContext'
-import { motion } from 'framer-motion'
 import './home.scss'
 import restartIcon from '../../assets/restart-svgrepo-com.svg'
 import playIcon from '../../assets/play-svgrepo-com.svg'

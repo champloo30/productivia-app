@@ -5,6 +5,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 425px) {
+  .login {
+    flex-direction: column;
+  }
+}
 .login .left {
   height: 100vh;
   width: 90%;
@@ -15,6 +20,11 @@
   align-items: center;
   justify-content: space-evenly;
 }
+@media (max-width: 425px) {
+  .login .left {
+    width: 100%;
+  }
+}
 .login .left .title {
   font-size: 1.5rem;
   font-weight: 300;
@@ -24,12 +34,23 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+@media (max-width: 425px) {
+  .login .left .title {
+    margin-left: -12rem;
+    margin-top: -2rem;
+  }
+}
 .login .left .left-container {
   height: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+@media (max-width: 425px) {
+  .login .left .left-container {
+    gap: 1rem;
+  }
 }
 .login .left .left-container h2 {
   font-size: 3rem;
@@ -43,6 +64,11 @@
   color: #1c232e;
   line-height: 35px;
 }
+@media (max-width: 425px) {
+  .login .left .left-container p {
+    width: 90%;
+  }
+}
 .login .left .left-container p span {
   color: white;
   font-size: 1.5rem;
@@ -53,7 +79,7 @@
 .login .left .left-container .signup-a .signup-btn {
   height: 3rem;
   width: 7rem;
-  background-color: #E0B0FF;
+  background-color: transparent;
   color: white;
   border: 2px solid white;
   border-radius: 50px;
@@ -87,8 +113,20 @@
   align-items: center;
   justify-content: space-evenly;
 }
+@media (max-width: 425px) {
+  .login .right .right-container {
+    height: 65vh;
+  }
+}
 .login .right .right-container h1 {
   font-size: 4rem;
+}
+@media (max-width: 425px) {
+  .login .right .right-container h1 {
+    font-size: 3rem;
+    width: 80%;
+    text-align: center;
+  }
 }
 .login .right .right-container .outside-btn-group {
   display: flex;
@@ -141,6 +179,11 @@
   padding: 0 1rem;
   color: #E0B0FF;
   font-size: 1.25rem;
+}
+@media (max-width: 425px) {
+  .login .right .right-container .login-form .form-text {
+    width: 21.5rem;
+  }
 }
 .login .right .right-container .login-form .form-text::placeholder {
   color: #E0B0FF;
