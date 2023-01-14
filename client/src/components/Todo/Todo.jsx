@@ -60,7 +60,7 @@ export default function Todo(props) {
   // get task from db
   useEffect(() => {
     async function getTasks() {
-      const response = await fetch(`http://localhost:5000/api/task`, {
+      const response = await fetch(`https://productivia-app.herokuapp.com/api/task`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
@@ -85,7 +85,7 @@ export default function Todo(props) {
 
   // delete task
   async function deleteTask(id) {
-    await fetch(`http://localhost:5000/api/task/${id}`, {
+    await fetch(`https://productivia-app.herokuapp.com/api/task/${id}`, {
       method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`
@@ -100,7 +100,7 @@ export default function Todo(props) {
   // toggle completion of task
   async function toggleTaskCompleted(id) {
     const currentTask = tasks.find((e) => e._id === id)
-    await fetch(`http://localhost:5000/api/task/edit/${id}`, {
+    await fetch(`https://productivia-app.herokuapp.com/api/task/edit/${id}`, {
       method: 'PUT',
       body: JSON.stringify({name: currentTask.name, completed: !currentTask.completed}),
       headers: {

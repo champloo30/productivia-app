@@ -17,7 +17,7 @@ export default function ViewNote(props) {
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString()
-      const response = await fetch(`http://localhost:5000/api/note/${params.id.toString()}`, {
+      const response = await fetch(`https://productivia-app.herokuapp.com/${params.id.toString()}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
