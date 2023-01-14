@@ -3,7 +3,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const path =  require('path')
-require('dotenv').config({ path: './config.env' })
+require('dotenv').config({ path: './.env' })
 
 // import routes middlewares
 const noteRouter = require('./routes/note.routes')
