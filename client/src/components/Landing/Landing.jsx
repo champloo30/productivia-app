@@ -16,40 +16,40 @@ export default function Landing() {
       video: tasksVideo,
       name: 'Tasks',
       list: {
-        one: 'CREATE, UPDATE and DELETE tasks',
-        two: 'Categorize tasks by their active or completed status'
+        one: '• CREATE, UPDATE and DELETE tasks',
+        two: '• Categorize tasks by their active or completed status'
       }
     },
     {
       video: notesVideo,
       name: 'Notes',
       list: {
-        one: 'CREATE, READ, UPDATE and DELETE notes',
-        two: 'Make your note into a journal entry'
+        one: '• CREATE, READ, UPDATE and DELETE notes',
+        two: '• Make your note into a journal entry'
       }
     },
     {
       video: pomodoroVideo,
       name: 'Pomodoro Timer',
       list: {
-        one: 'Timer youself on important task to stay productive',
-        two: 'A three setting timing structure to keep you on task'
+        one: '• Keep yourself on task to stay productive',
+        two: '• A three setting timing structure to keep your mind focused'
       }
     },
     {
       video: wotdVideo,
       name: 'Word of the Day',
       list: {
-        one: 'Learn a new word each day',
-        two: 'Even small details about the word you are learning'
+        one: '• Learn a new word each day',
+        two: '• Even small details about the word you are learning'
       }
     },
     {
       video: dashboardVideo,
       name: 'Dashboard',
       list: {
-        one: 'Your productivity residence',
-        two: 'Over look all the important details in one location'
+        one: '• Your productivity residence',
+        two: '• Over look all the important details in one location'
       }
     }
   ]
@@ -72,8 +72,8 @@ export default function Landing() {
     small: {
       opacity: [0, 1, 1, 1, 1, 1],
       scale: [0, 2, 1, 1, 1, 1],
-      x: [0, 0, 0, 0, -21, -21],
-      y: [0, 0, 0, 0, -311, -311],
+      x: [0, 0, 0, 0, -20, -20],
+      y: [0, 0, 0, 0, -280, -280],
       color: ['#fff', '#fff', '#A4BEF3', '#E0B0FF', '#fff', '#fff'],
       transition: {
         duration: 4,
@@ -218,7 +218,7 @@ export default function Landing() {
         <motion.span 
           animate={{
             opacity: [0, 0.5, 1, 0.5, 0],
-            y: [10, -10, 10]
+            y: [5, -5, 5]
           }} 
           transition={{
             duration: 2,
