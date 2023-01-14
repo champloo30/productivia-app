@@ -14,7 +14,7 @@ export default function Home(props) {
   // get task from db
   useEffect(() => {
     async function getTasks() {
-      const response = await fetch(`http://localhost:5000/api/task`, {
+      const response = await fetch(`https://productivia-app.herokuapp.com/api/task`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
@@ -38,7 +38,7 @@ export default function Home(props) {
   // get notes from db
   useEffect(() => {
     async function getNotes() {
-      const response = await fetch(`http://localhost:5000/api/note`, {
+      const response = await fetch(`https://productivia-app.herokuapp.com/api/note`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
