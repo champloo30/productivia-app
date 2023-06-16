@@ -10,7 +10,7 @@ export function useLogin(email, password) {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('https://productivia-app.herokuapp.com/api/user/login', {
+    const response = await fetch('https://productivia-app-aa1913e6aceb.herokuapp.com/api/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

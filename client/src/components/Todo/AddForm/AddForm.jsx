@@ -22,7 +22,7 @@ export default function Form(props) {
     e.preventDefault()
     const newTask = { ...form }
     
-    await fetch(`https://productivia-app.herokuapp.com/api/task/add`, {
+    await fetch(`https://productivia-app-aa1913e6aceb.herokuapp.com/api/task/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

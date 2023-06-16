@@ -16,7 +16,7 @@ export default function EditForm(props) {
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString()
-      const response = await fetch(`https://productivia-app.herokuapp.com/api/task/${params.id.toString()}`, {
+      const response = await fetch(`https://productivia-app-aa1913e6aceb.herokuapp.com/api/task/${params.id.toString()}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
@@ -56,7 +56,7 @@ export default function EditForm(props) {
       name: editForm.name,
     }
 
-    await fetch(`https://productivia-app.herokuapp.com/api/task/edit/${params.id}`, {
+    await fetch(`https://productivia-app-aa1913e6aceb.herokuapp.com/api/task/edit/${params.id}`, {
       method: 'PUT',
       body: JSON.stringify(editedTask),
       headers: {

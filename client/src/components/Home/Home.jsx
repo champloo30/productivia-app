@@ -14,7 +14,7 @@ export default function Home(props) {
   // get task from db
   useEffect(() => {
     async function getTasks() {
-      const response = await fetch(`https://productivia-app.herokuapp.com/api/task`, {
+      const response = await fetch(`https://productivia-app-aa1913e6aceb.herokuapp.com/api/task`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }

@@ -62,7 +62,7 @@ export default function Notes(props) {
   // get note from db
   useEffect(() => {
     async function getNotes() {
-      const response = await fetch(`https://productivia-app.herokuapp.com/api/note`, {
+      const response = await fetch(`https://productivia-app-aa1913e6aceb.herokuapp.com/api/note`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
@@ -85,7 +85,7 @@ export default function Notes(props) {
 
   // delete note
   async function deleteNote(id) {
-    await fetch(`https://productivia-app.herokuapp.com/api/note/${id}`, {
+    await fetch(`https://productivia-app-aa1913e6aceb.herokuapp.com/api/note/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

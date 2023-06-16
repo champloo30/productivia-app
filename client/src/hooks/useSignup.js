@@ -10,7 +10,7 @@ export function useSignup(first, last, email, password) {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('https://productivia-app.herokuapp.com/api/user/signup', {
+    const response = await fetch('https://productivia-app-aa1913e6aceb.herokuapp.com/api/user/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
