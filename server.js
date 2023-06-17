@@ -35,7 +35,7 @@ app.get('*', (req, res) => {
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(ATLAS_URI, {
+mongoose.connect(String(ATLAS_URI), {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
