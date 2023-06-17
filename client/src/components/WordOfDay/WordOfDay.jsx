@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './wordOfDay.scss'
+import './wordofday.scss'
 import axios from 'axios'
 
 export default function WordOfDay(props) {
@@ -44,9 +44,6 @@ export default function WordOfDay(props) {
           : null}
         </div>
       </div>
-      
-      
-      
     </div>
   )
 }

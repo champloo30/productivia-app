@@ -2,7 +2,7 @@
   "name": "productivia-app",
   "version": "1.0.0",
   "description": "Productivity project",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
