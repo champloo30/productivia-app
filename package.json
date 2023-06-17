@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/champloo30/productivia-app#readme",
   "engines": {
+    "start": "node server.js",
     "node": "19.x"
   },
   "dependencies": {
