@@ -36,12 +36,11 @@ app.get('*', (req, res) => {
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(ATLAS_URI.toString(), {
+mongoose.connect(ATLAS_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
     console.log('Successfully connected to MongoDB.')
-    console.log(ATLAS_URI);
     app.listen(PORT, () => {
         console.log(`Server running on port: ${PORT}`);
     })
