@@ -9,6 +9,7 @@ require('dotenv').config({ path: './config.env' })
 const noteRouter = require('./routes/note.routes')
 const taskRouter = require('./routes/task.routes')
 const userRouter = require('./routes/user.routes')
+const { log } = require('console')
 
 const app = express()
 
@@ -35,11 +36,12 @@ app.get('*', (req, res) => {
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(ATLAS_URI, {
+mongoose.connect(ATLAS_URI.toString(), {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
     console.log('Successfully connected to MongoDB.')
+    console.log(ATLAS_URI);
     app.listen(PORT, () => {
         console.log(`Server running on port: ${PORT}`);
     })
