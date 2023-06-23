@@ -78,7 +78,7 @@ function App() {
         (<>
           <Menu mode={mode} />
           <Routes>
-            <Route path={'/dashboard'} element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
+            <Route path={'/'} element={<Home mode={mode} setMode={setMode} expiryTimestamp={expiryTimestamp} seconds={seconds} minutes={minutes} isRunning={isRunning} restart={restart} resume={resume} pause={pause} pomodoro={pomodoro} short={short} long={long} />} />
             <Route path='tasks' element={<Todo mode={mode} />} />
             <Route path='tasks/addTask' element={<AddTask />} />
             <Route path='tasks/edit/:id' element={<EditForm />} />
@@ -90,14 +90,18 @@ function App() {
             <Route path='wordOfTheDay' element={<WOD mode={mode} />} />
           </Routes>
         </>)
-      : null}
-      {!user ?
+      : (<Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>)}
+      {/* {!user ?
         (<Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
         </Routes>)
-      : null} 
+      : null}  */}
     </div>
   );
 }
