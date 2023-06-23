@@ -33,7 +33,7 @@ export default function Landing() {
       name: 'Pomodoro Timer',
       list: {
         one: '• Keep yourself on task to stay productive',
-        two: '• A three setting timing structure to keep your mind focused'
+        two: '• A 3 setting timing structure to keep yourself focused'
       }
     },
     {

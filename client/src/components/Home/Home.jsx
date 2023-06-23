@@ -38,7 +38,7 @@ export default function Home(props) {
   // get notes from db
   useEffect(() => {
     async function getNotes() {
-      const response = await fetch(`https://productivia-app.herokuapp.com/api/note`, {
+      const response = await fetch(`https://productivia-app-aa1913e6aceb.herokuapp.com/api/note`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
