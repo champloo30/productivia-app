@@ -24,7 +24,7 @@ export default function Menu({ mode }) {
     <div className={`${mode}-menu`}>
       <div className="menu-top">
         <h1>Menu</h1>
-        <Link to='/dashboard' className="menuItem">
+        <Link to='/' className="menuItem">
           <p>Home</p>
           <img className='menuIcon' src={home} alt="home" />
         </Link>
