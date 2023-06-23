@@ -22,7 +22,7 @@ export default function Signup() {
         await signup(first, last, email, password)
         console.log(error);
 
-        navigate('/dashboard')
+        navigate('/')
     }
 
     const mobileSize = window.innerWidth <= 450

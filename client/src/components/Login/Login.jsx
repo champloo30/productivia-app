@@ -20,7 +20,7 @@ export default function Login() {
     await login(email, password)
     console.log(error);
 
-    navigate('/dashboard')
+    navigate('/')
   }
 
   const mobileSize = window.innerWidth <= 450
