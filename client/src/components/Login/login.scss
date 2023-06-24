@@ -172,6 +172,14 @@
                 text-transform: uppercase;
             }
 
+            a {
+                font-size: 1rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $mauve;
+            }
+
             .login-form {
                 height: 30%;
                 display: flex;
