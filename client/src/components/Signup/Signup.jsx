@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { useSignup } from '../../hooks/useSignup'
 import { motion } from 'framer-motion'
 import './signup.scss'
-// import facebook from '../../assets/facebook-alt-svgrepo-com.svg'
-// import google from '../../assets/google-plus-svgrepo-com.svg'
-// import linkedIn from '../../assets/linkedin-svgrepo-com.svg'
+import facebook from '../../assets/facebook-alt-svgrepo-com.svg'
+import google from '../../assets/google-plus-svgrepo-com.svg'
+import linkedIn from '../../assets/linkedin-svgrepo-com.svg'
 
 export default function Signup() {
     const [first, setFirst] = useState('')
@@ -59,7 +59,7 @@ export default function Signup() {
             <a href='/' className='title'>Productivia</a>
             <div className="left-container">
                 <h1>Create Account</h1>
-                {/* <div className="outside-btn-group">
+                <div className="outside-btn-group">
                     <div className="outside-btn">
                         <img className='icon' src={facebook} alt="" />
                     </div>
@@ -70,7 +70,7 @@ export default function Signup() {
                         <img className='icon' src={linkedIn} alt="" />
                     </div>
                 </div>
-                <p>- or use your email for registration -</p> */}
+                <p>- or use your email for registration -</p>
                 <form className='signup-form' onSubmit={handleSubmit}>
                     <div className="name">
                         <input 

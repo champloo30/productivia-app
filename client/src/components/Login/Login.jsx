@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { useLogin } from '../../hooks/useLogin'
 import { motion } from 'framer-motion'
 import './login.scss'
-// import facebook from '../../assets/facebook-alt-svgrepo-com.svg'
-// import google from '../../assets/google-plus-svgrepo-com.svg'
-// import linkedIn from '../../assets/linkedin-svgrepo-com.svg'
+import facebook from '../../assets/facebook-alt-svgrepo-com.svg'
+import google from '../../assets/google-plus-svgrepo-com.svg'
+import linkedIn from '../../assets/linkedin-svgrepo-com.svg'
 
 export default function Login() {
   const [email, setEmail] = useState()
@@ -70,14 +70,14 @@ export default function Login() {
       >
         <div className="right-container">
         <h1>Login to Your Account</h1>
-        {/* <p>Login using social networks</p>
+        <p>Login using social networks</p>
         <div className="outside-btn-group">
           <div className="outside-btn">
             <img className='icon' src={facebook} alt="" />
           </div>
           <div className="outside-btn">
           <img className='icon' src={google} alt="" />
-            <GoogleLogin onSuccess={credentialResponse => {
+            {/* <GoogleLogin onSuccess={credentialResponse => {
                 console.log(credentialResponse);
               }}
               onError={() => {
@@ -88,13 +88,13 @@ export default function Login() {
               theme='outline'
               size='large'
               allowed_parent_origin={['http://localhost:3000/login']}
-            />
+            /> */}
           </div>
           <div className="outside-btn">
             <img className='icon' src={linkedIn} alt="" />
           </div>
         </div>
-        <p>- or -</p> */}
+        <p>- or -</p>
         <form className='login-form' onSubmit={handleSubmit}>
           <input 
             className='form-text' 
